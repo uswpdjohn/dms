@@ -1,0 +1,310 @@
+$inputcolor : #D9D9D9;
+$bgwhite: #FFFFFF;
+$bgblack : #000000;
+$navbackground: #FEFEFE;
+$textgray : #979797;
+$sidebartextcolor:#FFFFFF;
+$highlightedtextcolor : #B1303D;
+$buttoncolor : #3E4153;
+$bordercolor : #D9D9D9;
+$mainbodycolor : #F0F2F5;
+
+.main-body{
+    padding: 20px 15px;
+    background-color: $mainbodycolor;
+        .left-main-body{
+            padding-right: 15px;
+            border-right: 2px solid $bordercolor;
+        }
+        .main-body-text{
+            color: $textgray;
+        }
+        .card{
+            background-color: $bgwhite;
+            border: none;
+            border-radius: 2px;
+            margin-top: 20px;
+            .card-body{
+                input,
+                .select{
+                    color: $textgray !important;
+                    &:active,
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                        border: 1px solid $textgray !important;
+                    }
+                }
+                .required-sign{
+                    color: $highlightedtextcolor;
+                    margin-right: 4px;
+                }
+                .optional-text{
+                    color: $textgray !important;
+                }
+                .submit-btn{
+                    background-color: $buttoncolor;
+                    float: right;
+                    color: $bgwhite;
+                    bottom: 15px;
+                    position: absolute;
+                    right: 15px;
+                }
+                .ticket-card-header{
+                    .header-text{
+                        display: inline;
+                        font-weight: bold;
+                    }
+                    .see-all-ticket-btn{
+                        float: right;
+                        text-decoration: none;
+                    }
+                }
+                .ticket-card-body{
+                    margin-top: 10px;
+                    .tickets{
+                        padding: 5px 0px;
+                        border-top: 2px solid $bordercolor !important;
+                        // border-bottom: 1px solid $textgray !important;
+                        .ticket-name{
+                            display: inline;
+                        }
+                        .ticket-status{
+                            float: right;
+                        }
+                    }
+                }
+                .uploadActivity-card-header{
+                    padding-bottom: 10px;
+                    .header-text{
+                        display: inline;
+                        font-weight: bold;
+                    }
+                    .see-all-uploadActivity-btn{
+                        float: right;
+                        text-decoration: none;
+                    }
+                    .uploadActivity-modal{
+                        .uploadActivity-modal-body{
+                            padding: 15px 20px;
+                            .uploadActivity-modal-header{
+                                .modal-title{
+                                    display: inline;
+                                    font-weight: bolder  !important;
+                                }
+                                .uploadActivity-modal-close-btn{
+                                    float: right;
+                                    border: 2px solid $bgblack !important;
+                                    border-radius: 50%;
+                                    font-size: 9px;
+                                    margin-top: 5px;
+                                    padding: 6px;
+                                    color: $bgblack !important;
+                                }
+                            }
+                            .uploadActivity-modal-content-body{
+                                width: 100%;
+                                margin-top: 10px;
+                                border: 1px solid $textgray;
+                                height: 80%;
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+                .uploadActivity-modal-content-body,
+                .uploadActivity-card-body{
+                    .header-part{
+                        padding-top: 10px;
+                        border-top: 2px solid $bordercolor !important;
+                        p{
+                            font-size: 14px;
+                            display: inline-block;
+                        }
+                        .latest-uploads{
+                            width: 47%;
+                        }
+                        .date,
+                        .service{
+                            width: 24%;
+                        }
+                        
+                    } 
+                    .body-part{
+    
+                        .activities{
+                            border-top: 2px solid $bordercolor !important;
+                            padding: 10px 0px;
+                            .file-info{
+                                display: inline-block;
+                                width: 47%;
+                                .uploaded-file{
+                                    font-weight: bold;
+                                    margin-bottom: 5px !important;
+                                }
+                                .file-type{
+                                    color: $textgray;
+                                    font-size: 12px;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+                        .upload-date,
+                        .service-name{
+                            display: inline-block;
+                            width: 24%;
+                            vertical-align: top;
+                        }
+                    }
+                }
+                .uploadActivity-modal-content-body{
+                    padding: 0px !important;
+                    .header-part{
+                        padding: 2px 10px;
+                        border-top: none !important;
+                        p{
+                            font-size: 14px !important;
+                            margin-bottom: 5px;
+                        }
+                        .latest-uploads{
+                            width: 48%;
+                        }
+                        .date,
+                        .service{
+                            width: 24%;
+                        }
+                    }
+                    .body-part{
+                        .activities{
+                            padding: 5px 10px;
+                            padding-bottom: 2px;
+                            .file-info{
+                                width: 48%;
+                            }
+                            .upload-date,
+                            .service-name{
+                                margin-bottom: 5px;
+                            }
+                            // .service-name{
+                                // padding: 6px;
+                                // padding-bottom: 2px;
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+        .right-main-body{
+            padding-left: 15px;
+            .body-header{
+                color: $textgray;
+                p{
+                    display: inline-block;
+                    margin-bottom: 0px;
+                    .badge{
+                        background-color: $buttoncolor;
+                        color: $bgwhite;
+                        border-radius: 40%;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    float: right;
+                }
+            }
+            .reminder-body{
+                .reminders{
+                    .card{
+                        margin-top: 0px;
+                        .card-body{
+                            .card-image{
+                                width: 14%;
+                                height: fit-content;
+                                margin-right: 15px;
+                                border-radius: 50%;
+                            }
+                            .card-text-body{
+                                width: 100%;
+                                // .reminder-text{
+                                //     margin-bottom: 0px !important;
+                                // }
+                                .due-time{
+                                   color: $textgray; 
+                                   font-size: 12px;
+                                }
+                                .view-reminder-btn{
+                                    text-decoration: none;
+                                    background-color: $buttoncolor;
+                                    color: $bgwhite;
+                                    border-radius: 2px;
+                                    padding: 5px 15px;
+                                    float: right;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .activity-body{
+                .activities{
+                    .card{
+                        margin-top: 0px;
+                        .card-body{
+                            .card-image{
+                                width: 14%;
+                                height: fit-content;
+                                margin-right: 15px;
+                                border-radius: 50%;
+                            }
+                            .card-text-body{
+                                width: 100%;
+                                .due-time{
+                                   color: $textgray; 
+                                   font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+@media (max-width:767px) and (min-width:300px) {
+    .main-body{
+        p,
+        a{
+            font-size: 15px !important;
+        }
+        .left-main-body{
+            padding-right: 0px;
+            border-right: none;
+        }
+        
+        .card{
+            .card-body{
+                .submit-btn{
+                    position: initial;
+                }
+                .uploadActivity-card-body{
+                    .header-part{
+                        .latest-uploads{
+                            width: 47%;
+                        }
+                    }
+                    .body-part{
+                        .activities{
+                            .file-info{
+                                width: 47%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right-main-body{
+            margin-top: 10px;
+            padding-left: 0px;
+        }
+    }
+}

@@ -1,0 +1,199 @@
+@use '../abstracts/_variables.scss' as *;
+.customer-dashboard-top-portion{
+    .b-info-img{
+        width: 80%;
+        margin: 0% 10%;
+        padding: 10px;
+        border: 1px solid $bordercolor;
+        background-color: $bgwhite;
+        border-radius: 2px;
+    }
+    .card{
+        margin-top: 0px;
+        .company-info-part {
+            flex-direction: column;
+            justify-content: space-between;
+            .company-info-sec {
+                flex-direction: row;
+                align-items: baseline;
+            }
+        }
+        .company-info-label{
+            font-size: 15px;
+            // margin-top: 6%;
+        }
+        .company-info-data{
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+.customer-dashboard-left-card-portion{
+    padding-right: 12px;
+    .card{
+        .card-body{
+            padding: 24px 24px;
+            .company-info-label{
+                font-size: 15px;
+                margin-bottom: 18px;
+            }
+            .company-info-data{
+                font-size: 17px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            .company-info-last-data{
+                margin-bottom: 0px;
+            }
+            .create-ticket-btn {
+                @include commonButton;
+                padding: 4px;
+            }
+        }
+    }
+    .section-title{
+        color: $textgray;
+        margin-top: 20px;
+    }
+    .create-ticket-card{
+        .card-body{
+            padding: 15px;
+            label{
+                padding-bottom: 10px;
+            }
+            .see-all-ticket-btn{
+                text-decoration: none;
+                text-align: right;
+            }
+        }
+    }
+}
+.customer-dashboard-right-card-portion{
+    padding-left: 12px;
+    .card{
+        height:356px;
+       .card-body{
+            display: block;
+            overflow-y: auto;
+            overflow-x: none;
+            h6{
+                margin-top: 10px;
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+            .directors,
+            .shareholders{
+                border: 1px solid $bordercolor;
+                padding: 10px;
+                margin-top: 10px;
+                height: fit-content;
+                border-radius: 3px;
+                background-color: $cardgray;
+                p{
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                }
+            }
+       }
+    }
+}
+@media (max-width:1300px) and (min-width:992px){
+    .main-body{
+        .customer-dashboard-left-card-portion{
+            padding-right: 0px;
+            .card{
+                .create-ticket-btn {
+                    width: 5rem;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .customer-dashboard-left-card-portion{
+            padding-right: 0px;
+            .card{
+                margin-top: 25px;
+                .company-info-label{
+                    font-size: 13px;
+                }
+                .company-info-data{
+                    font-size: 15px;
+                }
+            }
+        }
+        .customer-dashboard-right-card-portion{
+            padding-left: 0px;
+            .card-body{
+                height: 35vh !important;
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px){
+    .main-body{
+        .customer-dashboard-left-card-portion{
+            padding-right: 0px !important;
+            .card{
+                margin-top: 20px;
+                .company-info-label{
+                    font-size: 12px;
+                    margin-bottom: 16px;
+                }
+                .company-info-data{
+                    font-size: 14px;
+                    margin-bottom: 22px;
+                }
+                .card-body {
+                    .create-ticket-btn {
+                        position: absolute;
+                        width: 5.5rem;
+                     }
+                }
+            }
+        }
+        .customer-dashboard-right-card-portion{
+            padding-left: 0px !important;
+            .card-body{
+                height: 40vh !important;
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px){
+    .main-body{
+        .customer-dashboard-top-portion{
+            .b-info-img{
+                width: 80%;
+                padding: 5px;
+                margin: 0% 5%;
+            }
+            h5{
+                font-size: 16px;
+            }
+
+        }
+
+        .customer-dashboard-left-card-portion{
+            padding-right: 0px;
+            .card{
+                .card-body{
+                    padding: 20px 22px;
+                    .create-ticket-btn {
+                       margin-top: 20px;
+                    }
+                }
+            }
+        }
+        .customer-dashboard-right-card-portion{
+            padding-left: 0px;
+            .card-body{
+                height: 40vh !important;
+            }
+        }
+    }
+}

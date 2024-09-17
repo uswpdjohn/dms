@@ -1,0 +1,455 @@
+html, body {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "SF Pro Text", sans-serif;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: #D9D9D9;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-track {
+  background: #D9D9D9;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3E4153;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #3E4153;
+}
+
+.sidebar {
+  background-color: #000000;
+}
+.sidebar .logo-part {
+  text-align: center;
+  background-color: #FFFFFF;
+}
+.sidebar .logo-part .logo-img {
+  height: 72px;
+}
+.sidebar .item-part {
+  background-color: #000000;
+}
+.sidebar .item-part .nav-pills {
+  min-width: 100%;
+  padding: 0px;
+}
+.sidebar .item-part .nav-pills .nav-item {
+  padding-left: 20px;
+  min-width: 100%;
+}
+.sidebar .item-part .nav-pills .nav-item:active, .sidebar .item-part .nav-pills .nav-item:hover {
+  background-color: #C8102E;
+}
+.sidebar .item-part .nav-pills .nav-item .nav-link {
+  color: #FFFFFF;
+}
+.sidebar .item-part .nav-pills .nav-item .nav-link .sidebar-icons {
+  width: 18px;
+}
+.sidebar .item-part .nav-pills .nav-item .nav-link .bb-icon {
+  width: 15px;
+  margin-right: 3px;
+}
+.sidebar .footer-part {
+  position: fixed;
+  bottom: 10px;
+  padding-left: 20px;
+}
+.sidebar .footer-part .nav-link {
+  color: #FFF07C;
+}
+.sidebar .footer-part .expire-icon {
+  width: 18px;
+}
+.sidebar .subscription-modal {
+  width: 400px;
+  bottom: -15px;
+  position: absolute;
+  left: 10px;
+}
+.sidebar .subscription-modal .expire-modal-icon {
+  width: 18px;
+}
+.sidebar .subscription-modal .modal-content {
+  display: flex !important;
+}
+.sidebar .subscription-modal .expire-modal-body {
+  padding: 15px;
+  display: flex;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-image,
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text {
+  display: inline;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text {
+  width: 100%;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-header {
+  width: 100%;
+  display: flex;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-header .expire-modal-close-btn {
+  margin-left: 130px;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-body-text {
+  padding-top: 10px;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-footer .dont-show-today-form {
+  width: 100%;
+  display: flex;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-footer .dont-show-today-form .modal-footer-text {
+  padding-top: 3px;
+  padding-left: 10px;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-footer .dont-show-today-form .renew-btn {
+  float: right;
+  background-color: #3E4153;
+  color: #D9D9D9;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-left: 70px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-footer .dont-show-today-form .renew-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.sidebar .subscription-modal .expire-modal-body .expire-modal-text .expire-modal-footer .dont-show-today-form .renew-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav-part {
+  background-color: #F0F2F5;
+}
+.nav-part .top-nav {
+  background-color: #FEFEFE;
+  box-shadow: 0px 3px 10px 1px rgba(106, 101, 101, 0.38);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-part .top-nav .navbar-nav {
+  margin-left: auto;
+}
+.nav-part .top-nav .navbar-nav .nav-link {
+  color: #313131;
+}
+.nav-part .top-nav .navbar-nav .search-part {
+  margin-right: 12px;
+}
+.nav-part .top-nav .navbar-nav .search-part .nav-search-box {
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+.nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search {
+  border: none;
+}
+.nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search:focus, .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search:hover, .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search:active {
+  outline: none;
+  box-shadow: none;
+}
+.nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search-icon {
+  padding: 10px !important;
+  font-size: 12px !important;
+}
+.nav-part .top-nav .navbar-nav .notifications {
+  border-right: 2px solid #D9D9D9;
+  padding-right: 25px;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-icon {
+  padding: 10px;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
+  font-size: 18px;
+}
+.nav-part .top-nav .navbar-nav .notifications .badge {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  padding: 4px 6px;
+  border-radius: 40%;
+  background: #B1303D;
+  color: #FFFFFF;
+  gap: 8px;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu {
+  width: 350px;
+  left: -80%;
+  margin-top: 8px;
+  height: 400px;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-upper {
+  height: 360px;
+  overflow: auto;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-upper .notifications-part {
+  padding-left: 0px !important;
+  list-style: none;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-body {
+  white-space: normal;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-body li:hover {
+  background-color: #EBF7FF !important;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-body .notification-text {
+  font-size: 14px;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-body .notification-time {
+  font-size: 11px;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-footer {
+  text-align: center;
+}
+.nav-part .top-nav .navbar-nav .notifications .notification-menu .notification-footer a {
+  text-decoration: none;
+}
+.nav-part .top-nav .navbar-nav .dropdown-toggle::after {
+  display: none;
+}
+.nav-part .top-nav .navbar-nav .profile-image .pro-img {
+  height: 40px;
+  padding: 0px 15px;
+  border-radius: 50%;
+}
+.nav-part .top-nav .navbar-nav .profile-portion .down-icon {
+  font-size: 12px;
+}
+
+@media (min-width: 1201px) {
+  .sidebar .footer-part {
+    padding-left: 8px;
+  }
+  .sidebar .footer-part span {
+    font-size: 14px;
+  }
+  .nav-part .top-nav .navbar-nav {
+    margin-left: auto;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu {
+    left: -15%;
+  }
+}
+@media (max-width: 1200px) and (min-width: 993px) {
+  .nav-part .top-nav .navbar-nav {
+    margin-left: auto;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu {
+    left: -15%;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .sidebar .logo-part {
+    display: none;
+  }
+  .sidebar .item-part .nav-pills .nav-item {
+    padding-left: 10px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link span {
+    font-size: 15px;
+  }
+  .sidebar .footer-part {
+    padding-left: 8px;
+    bottom: 5px;
+  }
+  .sidebar .footer-part .expire-icon {
+    width: 18px;
+    padding-left: 0px;
+  }
+  .sidebar .footer-part span {
+    font-size: 13px;
+  }
+  .nav-part .top-nav .navbar-nav {
+    margin-left: auto;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu {
+    left: -15%;
+  }
+}
+@media (max-width: 768px) and (min-width: 576px) {
+  .sidebar .logo-part {
+    display: none;
+  }
+  .sidebar .item-part .nav-pills .nav-item {
+    padding-left: 0px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link {
+    font-size: 13px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link span {
+    font-size: 12px;
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link .sidebar-icons {
+    width: 22px;
+    padding-left: 6px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link .bb-icon {
+    width: 17px;
+    padding-left: 6px;
+    padding-right: 0px !important;
+  }
+  .sidebar .footer-part {
+    padding-left: 0;
+    bottom: 5px;
+  }
+  .sidebar .footer-part .expire-icon {
+    width: 17px;
+    padding-left: 5px;
+  }
+  .sidebar .footer-part span {
+    font-size: 10px;
+  }
+  .nav-part .top-nav {
+    padding: 10px;
+  }
+  .nav-part .top-nav .nav-title {
+    font-size: 16px;
+  }
+  .nav-part .top-nav .navbar-nav {
+    margin-left: auto;
+  }
+  .nav-part .top-nav .navbar-nav .search-part {
+    margin-right: 5px;
+  }
+  .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search {
+    padding: 2px;
+  }
+  .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search-icon {
+    padding: 0px !important;
+    padding-top: 5px !important;
+    padding-right: 3px !important;
+  }
+  .nav-part .top-nav .navbar-nav .notifications {
+    padding-right: 5px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .nav-link {
+    padding: 3px 4px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .notification-icon {
+    font-size: 16px;
+    padding: 6px 7px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .badge {
+    right: -10px !important;
+    padding: 4px 5px !important;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .notification-menu {
+    width: 300px;
+    left: -300%;
+  }
+  .nav-part .top-nav .navbar-nav .profile-image .pro-img {
+    height: 30px;
+    padding: 0px 8px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .profile-dropdown {
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .down-icon {
+    font-size: 10px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu {
+    left: -70%;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu li .dropdown-item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) and (min-width: 300px) {
+  .sidebar .logo-part {
+    display: none;
+  }
+  .sidebar .item-part .nav-pills .nav-item {
+    padding-left: 0px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link .sidebar-icons {
+    width: 22px;
+    padding-left: 6px;
+  }
+  .sidebar .item-part .nav-pills .nav-item .nav-link .bb-icon {
+    width: 21px;
+    padding-left: 8px;
+  }
+  .sidebar .footer-part {
+    padding-left: 0;
+    bottom: 5px;
+  }
+  .sidebar .footer-part .expire-icon {
+    width: 23px;
+    padding-left: 7px;
+  }
+  .nav-part .top-nav {
+    flex-wrap: wrap !important;
+    padding: 10px;
+  }
+  .nav-part .top-nav .nav-title {
+    font-size: 16px;
+  }
+  .nav-part .top-nav .navbar-nav {
+    margin-left: 0;
+  }
+  .nav-part .top-nav .navbar-nav .search-part {
+    margin-right: 5px;
+  }
+  .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search {
+    padding: 2px;
+  }
+  .nav-part .top-nav .navbar-nav .search-part .nav-search-box .nav-search-icon {
+    padding: 0px !important;
+    padding-top: 5px !important;
+    padding-right: 3px !important;
+  }
+  .nav-part .top-nav .navbar-nav .notifications {
+    padding-right: 5px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .nav-link {
+    padding: 3px 4px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .notification-icon {
+    font-size: 16px;
+    padding: 6px 7px;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .badge {
+    right: -10px !important;
+    padding: 4px 5px !important;
+  }
+  .nav-part .top-nav .navbar-nav .notifications .notification-menu {
+    width: 200px;
+    left: -40%;
+  }
+  .nav-part .top-nav .navbar-nav .profile-image .pro-img {
+    height: 30px;
+    padding: 0px 8px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .profile-dropdown {
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .down-icon {
+    font-size: 10px;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu {
+    left: -70%;
+  }
+  .nav-part .top-nav .navbar-nav .profile-portion .dropdown-menu li .dropdown-item {
+    font-size: 14px;
+  }
+}

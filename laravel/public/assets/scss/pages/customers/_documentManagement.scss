@@ -1,0 +1,631 @@
+@use '../abstracts/_variables.scss' as *;
+.customer-document-management-new-mail-doc-portion{
+    border: 1px solid $textbeaver;
+    margin-top: 20px;
+    border-radius: 4px;
+    .accordion-item{
+        border-radius: 4px;
+        .accordion-button{
+            color: $textbeaver;
+            padding: 10px 20px;
+            &:not(.collapsed){
+                color: $textbeaver;
+                background-color: $bgwhite;
+                border-bottom: 1px solid $textbeaver;
+                &::after{
+                    background-image: url("../icons/beaver-arrow-icon.png");
+                    transform: none;
+                    height: 1.5em;
+                    width: 1.5rem;
+                    margin-top:1px;
+                }
+            }
+            &:focus{
+                border-color: none !important;
+                box-shadow: none;
+            }
+            &::after{
+                background-image: url("../icons/beaver-arrow-icon.png");
+                transform: rotate(-180deg);
+                height: 1.5em;
+                width: 1.5rem;
+            }
+            .badge{
+                padding: 4px 7px;
+                border-radius: 50%;
+                background: $textbeaver;
+                color: $textwhite;
+                margin-left:15px;
+                font-size: 15px;
+            }
+        }
+        .accordion-body{
+            padding-bottom: 25px;
+            .clear-all-btn-portion{
+               text-align: right;
+             .clear-all-btn {
+                    font-size: 14px;
+                 }
+            }
+            .card{
+                max-height: 230px !important;
+                overflow: hidden;
+                border: 1px solid $bordercolor;
+                border-radius: 4px;
+                .card-body{
+                    padding: 22px 25px;
+                    padding-bottom: 0px;
+                    background-color: $mainbodycolor;
+                    height: 230px;
+                    .image-portion{
+                        .document-image{
+                            width: 100%;
+                            margin-bottom: 0;
+                            box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                            -webkit-box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                            -moz-box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                        }
+                    }
+                }
+                .text-btn-portion{
+                    z-index: 999;
+                    position: absolute;
+                    bottom: 0;
+                    background: $bgwhite;
+                    width: 100% !important;
+                    height: 60px;
+                    border-bottom-left-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    padding: 15px 13px;
+                    border-bottom: 1px solid $bordercolor;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+.customer-document-management-search-btn-portion{
+    .card{
+        border: 1px solid $bordercolor !important;
+        border-radius: 7px !important;
+        .card-body{
+            .left-side-portion{
+                .download-btn{
+                    @include commonButton;
+                    border:1px solid $buttonsilver;
+                    color: $textwhite;
+                    background-color : $buttonsilver;
+                    padding: 3px 15px;
+                }
+            }
+            .right-side-portion{
+                margin-left: auto;
+                .search-box-part{
+                    display: inline-block;
+                    transform: translateY(-1px);
+                    .form-inputs{
+                        position:relative;
+                        border: 1px solid $bordercolor;
+                        border-radius: 2px;
+                        height: 2rem;
+                        .form-control{
+                            height:1.9rem;
+                            border: 0px;
+                            &:focus{
+                                box-shadow:none;
+                                border: none !important;
+                            }
+                        }
+                        i{
+                            position:absolute;
+                            right:15px;
+                            top:10px;
+                            font-size: 15px;
+                        }
+                        .search-btn{
+                            width: 35px;
+                            color: $textwhite;
+                            background-color: $buttonsilver;
+                            border-radius: 0px;
+                            border-top-right-radius: 2px;
+                            border-bottom-right-radius: 2px;
+                            height: 1.9rem;
+                            font-size: 13px;
+                            padding: 3px 8px;
+                        }
+                    }
+                }
+                .btn-group{
+                    display: inline-block;
+                    margin-top: -5px;
+                    a{
+                        padding: 0px;
+                        margin: 0px 5px;
+                        width: 2rem;
+                        height: 2rem;
+                        svg{
+                            border: 2px solid $icongray;
+                            border-radius: 3px;
+                            color: $icongray;
+                            font-size: 14px;
+                            padding: 7px;
+                            vertical-align: middle;
+                        }
+                        .active{
+                            color: $textwhite;
+                            border:2px solid $buttonsilver !important;
+                            background-color : $buttonsilver !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.customer-document-management-yearly-accordion{
+    margin-top: 20px;
+    border-radius: 4px;
+    .accordion-item{
+        border-radius: 4px;
+        margin-bottom: 20px;
+        .accordion-button{
+            color: $textblack;
+            padding: 10px 20px;
+            border: 1px solid $bordercolor;
+            border-radius: 4px;
+            &:not(.collapsed){
+                background-color: $bgwhite;
+                border-bottom: 1px solid $bordercolor;
+                &::after{
+                    background-image: url("../icons/silver-arrow-icon.png");
+                    transform: none;
+                    height: 1.5em;
+                    width: 1.5rem;
+                    margin-top:1px;
+                }
+            }
+            &:focus{
+                border-color: none !important;
+                box-shadow: none;
+            }
+            &::after{
+                background-image: url("../icons/silver-arrow-icon.png");
+                transform: rotate(-180deg);
+                height: 1.5em;
+                width: 1.5rem;
+            }
+            span{
+                margin-left: 10px;
+            }
+        }
+        .accordion-body{
+            padding-bottom: 25px;
+            .nav-pills{
+                // it will be used if select all portion is used
+                // margin-top: -15px;
+                // it will be used if select all portion is used
+                width: 90%;
+                .nav-item{
+                    .nav-link{
+                        color : $textblack;
+                        font-size: 12px;
+                        padding: 2px 5px;
+                        border : 1px solid $bordercolor;
+                        border-radius: 3px;
+                        margin-right: 15px;
+                        margin-bottom: 5px;
+                        width: 3rem;
+                        height: 1.5rem;
+                    }
+                    .active{
+                        background-color: $buttonsilver;
+                        color: $textwhite;
+                    }
+                }
+            }
+            .select-all-portion {
+                text-align: right;
+                // margin-bottom: -15px;
+                .select-all-link {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+            }
+            .tab-content{
+                .tab-pane{
+                    .card{
+                        // height: 300px !important;
+                        overflow: hidden;
+                        border: 1px solid $bordercolor;
+                        border-radius: 4px;
+                        .card-body{
+                            padding: 30px 40px;
+                            padding-bottom: 0px;
+                            background-color: $mainbodycolor;
+                            height: 230px;
+                            .image-portion{
+                                .document-image{
+                                    width: 100%;
+                                    margin-bottom: 0;
+                                    box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                                    -webkit-box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                                    -moz-box-shadow: 0px -1px 13px -4px rgba(0,0,0,0.49);
+                                }
+                            }
+                        }
+                        .checkbox-area{
+                            z-index: 999;
+                            position: absolute;
+                            right: 8px;
+                            top:5px;
+                            .document-checkbox{
+                                width: 15px !important;
+                                border: 1px solid $icongray !important;
+                                &:hover{
+                                    border: 1px solid $icongray !important;
+                                }
+                                &:focus{
+                                    border: 1px solid $icongray !important;
+                                }
+                            }
+                        }
+                        .text-btn-portion{
+                            // z-index: 999;
+                            // position: absolute;
+                            // bottom: 0;
+                            background: $bgwhite;
+                            width: 100% !important;
+                            height: 90px;
+                            // border-bottom-left-radius: 7px;
+                            // border-bottom-right-radius: 7px;
+                            padding: 15px 13px;
+                            // border-bottom: 1px solid $bordercolor;
+                            display:flex;
+                            .text-portion{
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                margin-right: 10px;
+                                .doc-name{
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                }
+                                .update-time{
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    font-size: 12px !important;
+                                    color: $textgray;
+                                }
+
+                            }
+                            .btn-portion{
+                                margin-left: auto;
+                                margin-top: 5px;
+                                img{
+                                    width:26px;
+                                }
+                                .download-warning-text{
+                                    font-size: 13px;
+                                    color: $warningtextcolor;
+                                }
+                                .download-remaining-time-text{
+                                    font-size: 13px;
+                                    color:$borderblue;
+                                }
+                                .download-bth{
+                                    padding-bottom: 2px;
+                                }
+                            }
+                        }
+                        .checked{
+                            background-color: $shadeblue;
+                        }
+                    }
+                    .checkedCard{
+                        border: 1px solid $borderblue;
+                    }
+                    .list-view{
+                        min-width: 800px;
+                        margin: 0px 5px;
+                        .document-table{
+                            .thead{
+                                border-bottom: 1px solid $bordercolor;
+                                .tr{
+                                   .th{
+                                     padding-bottom: 10px !important;
+                                     font-weight: bold;
+                                   }
+                                   .name-header{
+                                        padding-left: 25px;
+                                   }
+                                }
+                            }
+                            .tbody{
+                                .tr{
+                                    border-bottom: 1px solid $bordercolor;
+                                    .td{
+                                        padding:10px 0px !important;
+                                        display: inline-block;
+                                        .download-btn{
+                                            @include downloadedButton;
+                                            background-color: $buttonsilver;
+                                            color: $textwhite;
+                                            font-size: 13px;
+                                            padding: 2px 8px;
+                                        }
+
+                                        .document-checkbox{
+                                            width: 15px;
+                                            height: 15px;
+                                            border: 1px solid $icongray !important;
+                                            margin-right: 8px;
+                                            &:hover{
+                                                border: 1px solid $icongray !important;
+                                            }
+                                            &:focus{
+                                                border: 1px solid $icongray !important;
+                                            }
+                                        }
+                                    }
+                                    .name-data{
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        padding-right: 30px !important;
+                                    }
+                                    .update-date-data,
+                                    .expire-date-data{
+                                        padding-left:14px !important;
+                                    }
+                                    .action-data{
+                                        .warning{
+                                            background-color: $highlightedtextcolor !important;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .customer-document-management-new-mail-doc-portion{
+            .accordion-item{
+                .accordion-body{
+                    .card{
+                        max-height: 150px !important;
+                    }
+                }
+            }
+        }
+        .customer-document-management-search-btn-portion{
+            .card{
+                .card-body{
+                    .left-side-portion{
+                        .download-btn{
+                            font-size: 12px;
+                        }
+                    }
+                    .right-side-portion{
+                        .search-box-part{
+                            .search-btn{
+                                margin-top: 0;
+                            }
+                        }
+                        .btn-group{
+                            a{
+                                svg{
+                                    padding:8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .customer-document-management-yearly-accordion{
+            .accordion-item{
+                .accordion-body{
+                    .tab-content{
+                        .tab-pane{
+                            .card{
+                                max-height: 180px !important;
+                                .card-body{
+                                    padding: 20px 25px !important;
+                                }
+                                .checkbox-area{
+                                    right: 10px !important;
+                                    top: 6px !important;
+                                    .document-checkbox{
+                                        width: 15px !important;
+                                        height: 15px !important;
+                                    }
+                                }
+                            }
+                            .text-btn-portion{
+                                height: 80px;
+                                .text-portion{
+                                    .doc-name{
+                                        font-size: 12px !important;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                                .btn-portion{
+                                    button{
+                                        padding-bottom: 3px;
+                                        img{
+                                            width:22px !important;
+                                            margin-top:-10px;
+                                        }
+                                    }
+                                    span{
+                                        font-size:12px !important
+                                    }
+                                }
+                            }
+                            .list-view{
+                                .document-table{
+                                    .thead{
+                                        .tr{
+                                            .th{
+                                                font-size:15px
+                                            }
+                                        }
+                                    }
+                                    .tbody{
+                                        .tr{
+                                            .td{
+                                                font-size:14px;
+                                                .document-checkbox{
+                                                    height:13px;
+                                                    width:13px;
+                                                }
+                                            }
+                                            .name-data{
+                                                padding-right: 10px !important ;
+                                            }
+                                            .action-data{
+                                                font-size: 11px !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px) {
+    .main-body{
+        .customer-document-management-search-btn-portion{
+            .card{
+                .card-body{
+                    .left-side-portion{
+                        .download-btn{
+                            width: 5rem;
+                            height: 32px;
+                            border:1px solid $buttonsilver;
+                            color: $textwhite;
+                            background-color : $buttonsilver;
+                            padding: 4px 10px;
+                            font-size: 13px;
+                            // margin-left: 10px;
+                        }
+                    }
+                    .right-side-portion{
+                        display: flex;
+                        margin-left: 10px;
+                        .search-box-part{
+                            .search-btn{
+                                margin-top: 0;
+                            }
+                        }
+                        .btn-group{
+                            display: inline-flex;
+                            margin-top: -3px;
+                            a{
+                                svg{
+                                    padding:8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+        .customer-document-management-search-btn-portion{
+            .card{
+                .card-body{
+                    flex-direction: column-reverse;
+                    .left-side-portion{
+                        text-align: center;
+                        .download-btn{
+
+                            border:1px solid $buttonsilver;
+                            color: $textwhite;
+                            background-color : $buttonsilver;
+                            padding: 4px 6px;
+                            font-size: 13px;
+                            // margin-left: 10px;
+                        }
+                    }
+                    .right-side-portion{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        margin-bottom: 10px;
+                        margin-left: 0;
+                        .search-box-part{
+                            margin-top: 10px;
+                            .search-btn{
+                                margin-top: 0;
+                            }
+                        }
+                        .btn-group{
+                            text-align: center;
+                            a{
+                                svg{
+                                    padding:8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .customer-document-management-new-mail-doc-portion {
+            .accordion-item {
+                .accordion-button{
+                    font-size: 12px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .customer-document-management-yearly-accordion {
+            .accordion-item {
+                .accordion-body {
+                    .select-all-portion{
+                        margin-bottom: 5px;
+                        text-align: center;
+                    }
+                    .nav-pills {
+                        justify-content: center;
+                        margin-top: 0;
+                        .nav-item {
+                            .nav-link{
+                                margin: 2.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

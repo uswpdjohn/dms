@@ -1,0 +1,554 @@
+$inputcolor : #D9D9D9;
+$bgwhite: #FFFFFF;
+$bgblack : #000000;
+$navbackground: #FEFEFE;
+$mainbodycolor : #F0F2F5;
+$textcolor : #313131;
+$sidebartextcolor:#FFFFFF;
+$highlightedtextcolor : #B1303D;
+$buttoncolor : #3E4153;
+$bordercolor : #D9D9D9;
+$notification-focus: #EBF7FF;
+$notification-active: #C8102E;
+$subscription-alert-color: #FFF07C;
+html,body{
+    margin:0;
+    // overflow: auto;
+    // position: relative;
+}
+// html, body{min-height:100%;}
+// body{height:100vh;
+// // max-width: 100%;
+// }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Text', sans-serif;
+    &::-webkit-scrollbar{
+        width: 8px;
+        background-color: $bordercolor;
+        border-radius:50px;
+    }
+    &::-webkit-scrollbar-track{
+        background: $bordercolor; 
+        border-radius:50px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $buttoncolor; 
+        border-radius:50px;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background: $buttoncolor; 
+    }   
+}
+
+.sidebar{
+    // min-height: 100% !important;
+    background-color: $bgblack;
+    .logo-part{
+        text-align: center;
+        background-color: $bgwhite;
+        .logo-img{
+            height: 72px;
+        }
+    }
+    .item-part{
+        background-color: $bgblack;
+        .nav-pills{
+            min-width: 100%;
+            padding: 0px;
+            .nav-item{
+                padding-left: 20px;
+                min-width: 100%;
+                &:active,
+                &:hover{
+                    background-color: $notification-active;
+                }
+                .nav-link{
+                    color: $sidebartextcolor;
+                    .sidebar-icons{
+                        width:18px;
+                    }
+                    .bb-icon{
+                        width: 15px;
+                        margin-right: 3px;
+                    }
+                }
+            }            
+        }
+    }
+    .footer-part{
+        
+        position: fixed;
+        bottom: 10px;
+        padding-left: 20px;
+        .nav-link{
+            color: $subscription-alert-color;
+        }
+        .expire-icon{
+            width:18px;
+        }
+        
+    }
+    .subscription-modal{
+        width: 400px;
+        bottom: -15px;
+        position: absolute;
+        left: 10px;
+        .expire-modal-icon{
+            width:18px;
+        }
+        .modal-content{
+            display: flex !important;
+        }
+        .expire-modal-body{
+            padding: 15px;
+            display: flex;
+            .expire-modal-image,
+            .expire-modal-text{
+                display: inline;
+            }
+            .expire-modal-text{
+                width: 100%;
+                margin-left: 15px;
+                margin-top: 2px;
+                .expire-modal-header{
+                    width: 100%;
+                    display: flex;
+                    .expire-modal-close-btn{
+                        margin-left: 130px;
+                        font-size: 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .expire-modal-body-text{
+                    padding-top: 10px;
+                }
+                .expire-modal-footer{
+                    .dont-show-today-form{
+                        width: 100%;
+                        display: flex;
+                        .modal-footer-text{
+                            padding-top: 3px;
+                            padding-left: 10px;
+                        }
+                        .renew-btn{
+                            float: right;
+                            background-color: $buttoncolor;
+                            color: $inputcolor;
+                            padding: 5px 12px;
+                            border-radius: 2px;
+                            margin-left: 70px;
+                            outline: none !important;
+                            box-shadow: none !important;
+                            &:focus{
+                                outline: none !important;
+                                box-shadow: none !important;
+                            }
+                            &:active{
+                                outline: none !important;
+                                box-shadow: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.nav-part{
+    background-color: $mainbodycolor;
+    .top-nav{
+        background-color: $navbackground;
+        box-shadow: 0px 3px 10px 1px rgba(106,101,101,0.38);
+        padding: 15px 20px;
+        
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        .navbar-nav{
+            margin-left: auto;
+            .nav-link {
+                color: $textcolor;
+            }
+            .search-part{
+                margin-right: 12px;
+                .nav-search-box{
+                    border: 1px solid $bordercolor;
+                    border-radius: 5px;
+                    .nav-search{
+                        border:none;
+                        &:focus,
+                        &:hover,
+                        &:active{
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+                    .nav-search-icon{
+                            padding: 10px !important;
+                            font-size: 12px !important;        
+                    }
+                }
+            }
+            .notifications{
+                border-right: 2px solid $bordercolor;
+                padding-right: 25px;
+                .notification-icon{
+                    padding: 10px;
+                    border: 1px solid $bordercolor;
+                    border-radius: 4px;
+                    font-size: 18px;
+                }
+                .badge{
+                    position: absolute;
+                    top: -10px;
+                    right: 15px;
+                    padding: 4px 6px;
+                    border-radius: 40%;
+                    background: $highlightedtextcolor;
+                    color: $bgwhite;
+                    gap: 8px;
+                }
+                .notification-menu{
+                    width: 350px;
+                    left: -80%;
+                    margin-top: 8px;
+                    height: 400px;
+                    .notification-upper{
+                        height: 360px;
+                        overflow: auto;
+                        .notifications-part{
+                            padding-left: 0px !important;
+                            list-style: none;
+                            }
+                           
+                    }
+                    .notification-body{
+                        white-space: normal;
+                        li:hover{
+                            background-color: $notification-focus !important;
+                        }
+                        .notification-text{
+                            font-size: 14px;
+                        }
+                        .notification-time{
+                            font-size: 11px;
+                        }
+                    }
+                    .notification-footer{
+                        text-align: center;
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                
+            }
+            .dropdown-toggle::after{
+                display: none;
+            }
+            .profile-image{
+                .pro-img{
+                    height: 40px;
+                    padding: 0px 15px;
+                    border-radius: 50%;
+                }
+            }
+            .profile-portion{
+                .down-icon{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1201px){
+    .sidebar{
+        .footer-part{
+            padding-left: 8px;
+            span{
+                font-size: 14px;
+            }
+        }
+    }
+    .nav-part{
+        .top-nav{
+            .navbar-nav{
+                margin-left: auto;
+                .profile-portion{
+                    .dropdown-menu{
+                        left:-15%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:1200px) and (min-width:993px){
+    .nav-part{
+        .top-nav{
+            .navbar-nav{
+                margin-left: auto;
+                .profile-portion{
+                    .dropdown-menu{
+                        left:-15%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .sidebar{
+        .logo-part{
+            display: none;
+        }
+        .item-part{
+            .nav-pills{
+                .nav-item{
+                    padding-left: 10px;
+                    .nav-link{
+                        span{
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-part{
+            padding-left: 8px;
+            bottom: 5px;
+            .expire-icon{
+                width: 18px;
+                padding-left: 0px;
+            }
+            span{
+                font-size: 13px;
+            }
+        }
+    }
+    .nav-part{
+        .top-nav{
+            .navbar-nav{
+                margin-left: auto;
+                .profile-portion{
+                    .dropdown-menu{
+                        left:-15%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:768px)  and (min-width:576px) {
+    .sidebar{
+        .logo-part{
+            display: none;
+        }
+        .item-part{
+            .nav-pills{
+                .nav-item{
+                    padding-left: 0px;
+                    .nav-link{
+                        font-size: 13px;
+                        span{
+                            font-size: 12px;
+                            padding-left: 0px !important;
+                            margin-left: 0px !important;
+                        }
+                        .sidebar-icons{
+                            width: 22px;
+                            padding-left: 6px;
+                        }
+                        .bb-icon{
+                            width: 17px;
+                            padding-left: 6px;
+                            padding-right: 0px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-part{
+            padding-left: 0;
+            bottom: 5px;
+            .expire-icon{
+                width: 17px;
+                padding-left: 5px;
+            }
+            span{
+                font-size: 10px;
+            }
+        }
+    }
+    .nav-part{
+        // max-width: 96%;
+        .top-nav{
+            // flex-wrap: wrap !important;
+            
+            padding: 10px;
+            .nav-title{
+                font-size: 16px;
+            }
+            .navbar-nav{
+                margin-left: auto;
+                .search-part{
+                    margin-right: 5px;
+                    .nav-search-box{
+                        .nav-search{
+                            padding: 2px;
+                        }
+                        .nav-search-icon{
+                            padding: 0px !important;
+                            padding-top: 5px !important;
+                            padding-right: 3px !important;
+                        }
+                    }
+                }
+                .notifications{
+                    padding-right: 5px;
+                    .nav-link{
+                        padding: 3px 4px;
+                    }
+                    .notification-icon{
+                        font-size: 16px;
+                        padding: 6px 7px;
+                    }
+                    .badge{
+                        right: -10px !important;
+                        padding: 4px 5px !important;
+                    }
+                    .notification-menu{
+                        width: 300px;
+                        left: -300%;
+                    }
+                }
+                .profile-image{
+                    .pro-img{
+                        height: 30px;
+                        padding: 0px 8px;
+                    }
+                }
+                .profile-portion{
+                    .profile-dropdown{
+                        font-size: 12px;
+                        padding: 5px 0px;
+                    }
+                    .down-icon{
+                        font-size: 10px;
+                    }
+                    .dropdown-menu{
+                        left:-70%;
+                        li{
+                            .dropdown-item{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }  
+}
+@media (max-width:576px) and (min-width:300px) {
+    .sidebar{
+        .logo-part{
+            display: none;
+        }
+        .item-part{
+            .nav-pills{
+                .nav-item{
+                    padding-left: 0px;
+                    .nav-link{
+                        .sidebar-icons{
+                            width: 22px;
+                            padding-left: 6px;
+                        }
+                        .bb-icon{
+                            width: 21px;
+                            padding-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-part{
+            padding-left: 0;
+            bottom: 5px;
+            .expire-icon{
+                width: 23px;
+                padding-left: 7px;
+            }
+        }
+    }
+    .nav-part{
+        // max-width: 96%;
+        .top-nav{
+            flex-wrap: wrap !important;
+            padding: 10px;
+            .nav-title{
+                font-size: 16px;
+            }
+            .navbar-nav{
+                margin-left: 0;
+                .search-part{
+                    margin-right: 5px;
+                    .nav-search-box{
+                        .nav-search{
+                            padding: 2px;
+                        }
+                        .nav-search-icon{
+                            padding: 0px !important;
+                            padding-top: 5px !important;
+                            padding-right: 3px !important;
+                        }
+                    }
+                }
+                .notifications{
+                    padding-right: 5px;
+                    .nav-link{
+                        padding: 3px 4px;
+                    }
+                    .notification-icon{
+                        font-size: 16px;
+                        padding: 6px 7px;
+                    }
+                    .badge{
+                        right: -10px !important;
+                        padding: 4px 5px !important;
+                    }
+                    .notification-menu{
+                        width: 200px;
+                        left: -40%;
+                    }
+                }
+                .profile-image{
+                    .pro-img{
+                        height: 30px;
+                        padding: 0px 8px;
+                    }
+                }
+                .profile-portion{
+                    .profile-dropdown{
+                        font-size: 12px;
+                        padding: 5px 0px;
+                    }
+                    .down-icon{
+                        font-size: 10px;
+                    }
+                    .dropdown-menu{
+                        left:-70%;
+                        li{
+                            .dropdown-item{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

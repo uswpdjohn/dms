@@ -1,0 +1,449 @@
+@use '../abstracts/_variables.scss' as *;
+.customer-mailbox-card{
+    .select-pagination-portion{
+            padding: 10px 0px;
+            border-bottom: 1px solid $bordercolor;
+            .select-part,
+            .search-box-part,
+            .button-part,
+            .pagination-part{
+                display: inline-block;
+            }
+            .select-part{
+                margin-top: 8px;
+                .select-all-checkbox{
+                    margin-right: 7px;
+                }
+            }
+            .button-part{
+                .mail-delete-modal{
+                    width: 350px;
+                    top: 40%;
+                    margin: auto;
+                    .mail-delete-modal-body{
+                        padding: 25px 20px;
+                        .btn{
+                            border: 2px solid $buttonsilver;
+                            width: 65px;
+                            border-radius: 2px;
+                            margin: 8px;
+                        }
+                        .yes-btn{
+                            background-color: $buttonsilver;
+                            color: $textwhite;
+                        }
+                    }
+                }
+                .download-btn {
+                    @include commonButton;
+                }
+                .delete-btn {
+                    @include commonButton;
+                }
+                .mark-as-download-btn {
+                    @include markDownloadButton;
+                    padding: 0 !important;
+                }
+                .action-buttons{
+                    padding: 4px 10px;
+                    border-radius: 2px;
+                    color: $buttonsilver;
+                    border: 1px solid $buttonsilver;
+                    margin-right: 10px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+                .active{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+
+                }
+            }
+            .pagination-part{
+                // float: right;
+                margin-left: auto;
+                text-align: right;
+                margin-top: 8px;
+                a{
+                    padding: 0;
+                }
+                .pagination-number{
+                    padding: 5px;
+                }
+                .pagination-left-number{
+                    padding: 4px 16px;
+                    border: 1px solid $bordercolor;
+                }
+                .pagination-divider{
+                    padding: 4px 10px;
+                }
+                .pagination-right-number {
+                    padding: 4px ;
+                }
+            }
+
+    }
+    .table-top-portion{
+        border-bottom: 0px;
+        padding-bottom: 20px;
+        .search-data{
+            margin-right: 5%;
+        }
+        .priority-category-select{
+            padding: 0px 15px;
+            .form-control {
+                height: 2rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+        .category-select{
+            padding: 0px 15px;
+            .form-control {
+                height: 2rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+        .form-inputs{
+                    position:relative;
+                    border: 1px solid $bordercolor;
+                    border-radius: 2px;
+                    height: 2rem;
+                    .form-control{
+                        height:1.9rem;
+                        border: 0px;
+                        &:focus{
+                            box-shadow:none;
+                            border: none !important;
+                        }
+                    }
+                    i{
+                        position:absolute;
+                        right:15px;
+                        top:10px;
+                        font-size: 15px;
+                    }
+                    .search-btn{
+                        width: 35px;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 0px;
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        height: 1.9rem;
+                        font-size: 13px;
+                        padding: 3px 8px;
+                    }
+        }
+    }
+
+    .table-bottom-portion{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+            padding-top: 20px;
+            border-top: 1px solid $bordercolor;
+            .search-box-part{
+                .form-inputs{
+                    position:relative;
+                    border: 1px solid $bordercolor;
+                    border-radius: 2px;
+                    width: 50%;
+                    height: 2rem;
+                    .form-control{
+                        height:1.9rem;
+                        border: 0px;
+                        &:focus{
+                            box-shadow:none;
+                            border: none !important;
+                        }
+                    }
+                    i{
+                        position:absolute;
+                        right:15px;
+                        top:10px;
+                        font-size: 15px;
+                    }
+                    .search-btn{
+                        width: 35px;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 0px;
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        font-size: 13px;
+                        height: 1.9rem;
+                        padding: 3px 8px;
+                    }
+                }
+            }
+
+    }
+    .mailbox-body{
+        min-width: 800px;
+            .mails{
+                color: $textgray;
+                padding: 10px 0px;
+                border-top: 1px solid $bordercolor;
+                .checkbox-div{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    img{
+                        width: 16px;
+                        margin-left: 10px;
+                        margin-top: -3px;
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                .message-div{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: fit-content;
+                    overflow-wrap: break-word;
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    padding: 0 10px;
+                    p{
+                        margin-bottom: 5px;
+                    }
+                }
+                .time-div{
+                    text-align: right;
+                    .download-btn{
+                        @include downloadedButton;
+                        border:1px solid $buttonsilver;
+                        color : $buttonsilver;
+                        padding: 2px 10px;
+                        font-size: 13px;
+                        margin-left: 10px;
+                    }
+                    .active{
+                        background-color: $buttonsilver;
+                        color: $textwhite;
+                        padding: 2px 17px;
+                        content: "Download";
+                    }
+                }
+            }
+
+    }
+}
+
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .customer-mailbox-card{
+            .btn{
+                margin-top: 5px;
+            }
+            .search-btn{
+                margin-top: 0;
+            }
+            .select-pagination-portion{
+                .pagination-part{
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number{
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+                .button-part{
+                    .mark-as-download-btn{
+                        width: 8rem;
+                        height: 34px;
+                    }
+                    .download-btn {
+                        width: 5rem;
+                        height: 34px;
+                        padding: 4px 6px;
+                    }
+                    .delete-btn {
+                        width: 5rem;
+                        height: 34px;
+                        padding: 4px 6px;
+                    }
+                }
+            }
+            .table-top-portion{
+                .search-box-part{
+                    padding-right: 15px;
+                }
+                .priority-category-select{
+                    padding: 0px;
+                }
+                .category-select{
+                    padding-left: 15px;
+                }
+            }
+            .table-bottom-portion{
+                .search-box-part{
+                    .form-inputs{
+                        width: 75%;
+                    }
+                }
+            }
+            .mails{
+                .time-div{
+                    .download-btn{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) and (min-width:576px) {
+        .main-body{
+            .customer-mailbox-card{
+                .btn{
+                    margin-top: 5px;
+                }
+                .search-btn{
+                    margin-top: 0;
+                }
+                .select-pagination-portion{
+                    .pagination-part{
+                        .pagination-number {
+                            padding: 3px;
+                        }
+                        .pagination-left-number{
+                            padding: 5px 10px;
+                        }
+                        .pagination-divider {
+                            padding: 5px 0px;
+                        }
+                    }
+                    .button-part{
+                        .mark-as-download-btn{
+                            width: 7.5rem;
+                            height: 32px;
+                            padding: 4px ;
+                        }
+                        .download-btn {
+                            width: 4rem;
+                            height: 32px;
+                            padding: 4px ;
+                        }
+                        .delete-btn {
+                            width: 4rem;
+                            height: 32px;
+                            padding: 4px ;
+                        }
+                        .mail-delete-modal{
+                            width: 280px;
+                            .mail-delete-modal-body{
+                                .btn{
+                                    width:40px;
+                                 }
+                            }
+                        }
+                    }
+                }
+                .table-top-portion{
+                    .priority-category-select{
+                        padding-left: 0px !important;
+                        margin-left: 0 !important;
+                    }
+                    .select-data{
+                        margin-top: 10px;
+                    }
+                    .category-select {
+                        padding-right: 0px;
+                    }
+                }
+
+                .table-bottom-portion{
+                    .search-box-part{
+                        .form-inputs{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+}
+@media (max-width:575px) and (min-width:300px) {
+        .main-body{
+            .customer-mailbox-card{
+                .select-pagination-portion{
+                    .pagination-part{
+                        .pagination-number {
+                            padding: 3px;
+                        }
+                        .pagination-left-number{
+                            padding: 5px 10px;
+                        }
+                        .pagination-divider {
+                            padding: 5px 0px;
+                        }
+                    }
+                    .button-part{
+                        .mark-as-download-btn{
+                            width: 7rem;
+                            height: 30px;
+                            margin: 10px 0px;
+                            padding: 4px 6px;
+                        }
+                        .download-btn {
+                            width: 4rem;
+                            height: 30px;
+                            padding: 4px 6px;
+                        }
+                        .delete-btn {
+                            width: 4rem;
+                            height: 30px;
+                            padding: 4px 6px;
+                        }
+                        .mail-delete-modal{
+                            width: 280px;
+                            .mail-delete-modal-body{
+                                .btn{
+                                    width:40px;
+                                 }
+                            }
+                        }
+                    }
+                }
+                .table-top-portion{
+                    .priority-category-select{
+                        padding-left: 0px !important;
+                        margin-left: 0 !important;
+                    }
+                    .select-data{
+                        margin-top: 10px;
+                    }
+                    .category-select {
+                        padding-right: 0px;
+                    }
+                }
+                .mailbox-body{
+                    .mails{
+                        .message-div{
+                            p{
+                                margin-top: 4px;
+                            }
+                        }
+                        .time-div{
+                            button{
+                                margin: 0px;
+                                padding: 4px;
+                                font-size: 11px;
+                            }
+                            .active{
+                                padding: 4px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}

@@ -1,0 +1,660 @@
+@use '../abstracts/_variables.scss' as *;
+.admin-mailbox-card{
+    .select-pagination-portion{
+        padding: 10px 0px;
+        border-bottom: 1px solid $bordercolor;
+        .select-part,
+        .search-box-part,
+        .button-part,
+        .pagination-part{
+            display: inline-block;
+        }
+        .select-part{
+            margin-top: 8px;
+            .select-all-checkbox{
+                margin-right: 7px;
+            }
+        }
+        .button-part{
+            .action-buttons{
+                padding: 4px 10px;
+                border-radius: 2px;
+                color: $buttonsilver;
+                border: 1px solid $buttonsilver;
+                margin-right: 10px;
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+            .active{
+                background-color: $buttonsilver;
+                color: $textwhite;
+
+            }
+            .download-btn {
+                @include downloadedButton;
+                padding: 0px 10px;
+            }
+            .outbox-delete-btn {
+                @include downloadedButton;
+                padding: 0px 10px;
+                color: $textwhite;
+                background-color: $deleteBtnColor;
+                border: 1px solid $deleteBtnColor
+            }
+        }
+        .pagination-part{
+            margin-left: auto;
+            text-align: right;
+            margin-top: 8px;
+            a{
+                padding: 0;
+            }
+            .pagination-number{
+                padding: 5px;
+            }
+            .pagination-left-number{
+                padding: 4px 16px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider{
+                padding: 4px 10px;
+            }
+            .pagination-right-number {
+                padding: 4px ;
+            }
+        }
+
+    }
+    .table-top-portion{
+        border-bottom: 0px;
+        padding-bottom: 20px;
+        .search-data{
+            margin-right: 5%;
+        }
+        .priority-category-select{
+            padding: 0px 15px;
+            .form-control {
+                height: 2rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+        .category-select{
+            padding: 0px 15px;
+            .form-control {
+                height: 2rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+        .form-inputs{
+            position:relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            .form-control{
+                height: 1.9rem;
+                border: 0px;
+                &:focus{
+                    box-shadow:none;
+                    border: none !important;
+                }
+            }
+            i{
+                position:absolute;
+                right:15px;
+                top:10px;
+                font-size: 15px;
+            }
+            .search-btn{
+                width: 35px;
+                height: 1.9rem;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                padding: 3px 8px;
+                font-size: 13px;
+            }
+        }
+
+    }
+
+    .table-bottom-portion{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+            padding-top: 20px;
+            border-top: 1px solid $bordercolor;
+            .search-box-part{
+                .form-inputs{
+                    position:relative;
+                    border: 1px solid $bordercolor;
+                    border-radius: 2px;
+                    width: 50%;
+                    height: 2rem;
+                    .form-control{
+                        height:1.9rem;
+                        border: 0px;
+                        &:focus{
+                            box-shadow:none;
+                            border: none !important;
+                        }
+                    }
+                    i{
+                        position:absolute;
+                        right:15px;
+                        top:10px;
+                        font-size: 15px;
+                    }
+                    .search-btn{
+                        width: 35px;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 0px;
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        padding: 3px 8px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+    }
+    .mailbox-body{
+        min-width: 800px;
+        .mails{
+            color: $textgray;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+            .checkbox-div{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                img{
+                    width: 16px;
+                    margin-left: 10px;
+                    margin-top: -3px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+            .message-div,
+            .folder-div{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: fit-content;
+                overflow-wrap: break-word;
+                -webkit-line-clamp: 3;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                padding: 0 10px;
+                p{
+                    margin-bottom: 5px;
+                }
+            }
+            .time-div{
+                text-align: right;
+                .download-btn,
+                .delete-btn{
+                    // @include downloadedButton;
+                    border:1px solid $buttonsilver;
+                    color : $buttonsilver;
+                    padding: 4px ;
+                    font-size: 13px;
+                    margin-left: 6px;
+                    // .tooltiptext {
+                    //     visibility: hidden;
+                    //     width: 120px;
+                    //     background-color: $textwhite;
+                    //     color: $bgblack;
+                    //     border: 1px solid $bgblack;
+                    //     text-align: center;
+                    //     border-radius: 6px;
+                    //     padding: 5px 0;
+                    //     font-size: 13px;
+                    //     /* Position the tooltip */
+                    //     position: absolute;
+                    //     z-index: 1;
+                    //     transition: opacity .6s;
+                    //     transform: translate(-40px, -40px);
+                    // }
+                    // &:hover .tooltiptext {
+                    //     visibility: visible;
+                    // }
+                }
+                .delete-btn{
+                    color: $textwhite;
+                    border:1px solid $deleteBtnColor;
+                    background-color: $deleteBtnColor;
+                }
+                .active{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+                    // padding: 4px 17px;
+                    content: "Download";
+                }
+            }
+        }
+
+    }
+}
+.admin-mailbox-body{
+    .card{
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .admin-mailbox-button-card{
+        padding-left: 0px;
+    }
+    .admin-mailbox-card{
+        padding-right: 0px;
+    }
+    .admin-mailbox-button-body{
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+        .tab-buttons{
+            background-color: $bgwhite;
+            .adminMailboxTabLinks {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 6px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+            .active{
+                background-color: $mailboxtabactivebackground;
+                color: $textbeaver;
+                border-right: 4px solid $textbeaver;
+            }
+        }
+        .company-search{
+            .search-btn {
+                width: 7.5rem;
+                height: 2rem;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 4px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                max-width: 100% !important;            
+            }
+        }
+    }
+    .admin-mailbox-content-body{
+        padding: 10px 20px;
+        background-color: $bgwhite !important;
+        /* Add this CSS to hide the tabs initially */
+        .tabcontent {
+            display: none;
+        }
+
+        /* Add this CSS to show the active tab */
+        .tabcontent.active {
+            display: block;
+        }
+        .urgent-checkbox{
+            width: 15px;
+            height: 15px;
+        }
+        .required-msg{
+
+            color: $textgray;
+        }
+        .append{   
+            border: 1px solid $bordercolor;
+            border-bottom: 2px solid $bordercolor;
+            z-index: 999 !important;
+            background-color: $bgwhite;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+            width: -webkit-fill-available;
+            margin-right: 20px;
+            // transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            .dir{
+                display: block;
+                padding: 3px 10px;
+            }
+        }
+        .mailbox-body{
+            .mails{
+                .checkbox-div{
+                    span{
+                        font-weight: normal;
+                        color: $textbeaver;
+                    }
+                }
+                .time-div{
+                    span{
+                        font-size: 14px;
+                    }
+                    .download-btn,
+                    .delete-btn{
+                        font-size: 14px;
+                        padding: 1px 8px;
+                    }
+                }
+            }
+        }
+        .folder-body{
+            .folder{
+                border-bottom: 1px solid $bordercolor;
+                .folder-name-div{
+                    p{
+                        margin-bottom: 10px !important;
+                        margin-top: 12px;
+                        font-weight: bold;
+                    }
+                }
+                .button-div{
+                    .folder-edit-btn,
+                    .folder-delete-btn {
+                        width: 7.5rem;
+                        height: 2rem;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 2px;
+                        padding: 4px 15px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        max-width: 100% !important;            
+                    }  
+                } 
+            }
+               
+        }
+
+        .folder-edit-modal{
+            max-width: 550px;
+            .folder-edit-modal-body{
+                padding: 15px 20px;
+                .modal-title{
+                    font-size: 18px;
+                    padding-right: 0px;
+                    font-weight: bold;
+                }
+                .modal-data{
+                    padding-left: 0px;
+                }
+                .folder-edit-modal-header{
+                    .folder-edit-modal-close-btn{
+                        float: right;
+                        border: 3px solid $bgblack !important;
+                        border-radius: 50%;
+                        font-size: 8px;
+                        margin-top: 5px;
+                        padding: 6px;
+                        color: $bgblack !important;
+                        font-weight: bold;
+                    }
+                }
+                .folder-edit-modal-data{
+                    margin-top: 10px;
+                    .data-body{
+                        .data-row{
+                            margin-top: 15px;
+                            label{
+                                margin-bottom: 8px;
+                                font-size: 15px;
+                            }
+                            .update-folder-btn{
+                                width: 80px;
+                                color: $textwhite;
+                                background-color: $buttonsilver;
+                                border-radius: 0px;
+                                border-top-right-radius: 2px;
+                                border-bottom-right-radius: 2px;
+                                padding: 3px 8px;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .delete-modal{
+            width: 350px;
+            top: 40%;
+            margin: auto;
+            .delete-modal-body{
+                padding: 25px 20px;
+                .btn{
+                    border: 2px solid $buttonsilver;
+                    width: 65px;
+                    border-radius: 2px;
+                    margin: 8px;
+                }
+                .yes-btn{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+                }
+            }
+        }
+    }
+}
+.admin-mail-create-btn-area{
+    text-align: end;
+    .admin-mail-create-send-btn{
+        @include commonButton;
+        color: $textwhite;
+        background-color: $buttonsilver;
+        border-radius: 2px;
+        padding: 4px 20px;
+    }
+}
+::-webkit-scrollbar {
+    height: 5px;
+  }
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .admin-mailbox-card{
+            .btn{
+                margin-top: 5px;
+            }
+            .search-btn{
+                margin-top: 0;
+            }
+            .table-top-portion{
+                .search-box-part{
+                    padding-right: 15px;
+                }
+                .priority-category-select{
+                    padding: 0px;
+                }
+                .category-select{
+                    padding-left: 15px;
+                }
+            }
+            .table-bottom-portion{
+                .search-box-part{
+                    .form-inputs{
+                        width: 75%;
+                    }
+                }
+            }
+            .mails{
+                .time-div{
+                    .download-btn,
+                    .delete-btn{
+                        font-size: 12px;
+                    }
+                }
+            }
+            .folder-edit-modal {
+                max-width: 500px;
+                margin:0.5rem auto;
+            }
+        }
+        .admin-mailbox-body{
+            .pagination-left-number{
+                padding: 5px 8px !important;
+            }
+            .admin-mailbox-button-body{
+                .tab-buttons{
+                    .adminMailboxTabLinks {
+                        padding: 5px 8px;
+                    }
+                }
+            }
+            .mails{
+                .time-div{
+                    button{
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px) {
+    .main-body{
+        .admin-mailbox-body{
+            .admin-mailbox-card {
+                padding:0;
+            }
+            .folder-edit-modal {
+                max-width: 450px;
+                margin:0.5rem auto;
+            }
+            .table-top-portion {
+                .sb-part {
+                    margin-top: 10px;
+                }
+                .select-part {
+                    margin-top: 10px;
+                }
+            }
+            .pagination-left-number{
+                padding: 4px 6px !important;
+            }
+            .admin-mailbox-button-body{
+                .tab-buttons{
+                    .adminMailboxTabLinks {
+                        padding: 3px 6px;
+                    }
+                }
+            }
+            .mails{
+                .time-div{
+                    button{
+                        font-size: 11px !important;
+                    }
+                }
+            }
+            .btn{
+                margin-top: 5px;
+            }
+            .search-btn{
+                margin-top: 0;
+            }
+
+            .table-bottom-portion{
+                .search-box-part{
+                    .form-inputs{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+
+        .admin-mailbox-body{
+            .admin-mailbox-card {
+                padding:0;
+            }
+            .folder-edit-modal {
+                max-width: 330px;
+                margin:0.5rem auto;
+            }
+            .delete-modal{
+                width: 280px;
+                .company-delete-modal-body{
+                    .btn{
+                        width:40px;
+                     }
+                }
+            }
+            .select-pagination-portion{
+                .pagination-part{
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number{
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+                .button-part{
+                    .mark-as-download-btn{
+                        margin: 10px 0px;
+                    }
+                }
+            }
+            .table-top-portion{
+                .sb-part {
+                    margin-top: 5px;
+                }
+                .select-part {
+                    margin-top: 5px;
+                }
+                .priority-category-select{
+                    padding-left: 0px !important;
+                }
+                .select-data{
+                    margin-top: 10px;
+                }
+            }
+            .mailbox-body{
+                .mails{
+                    .message-div,
+                    .folder-div{
+                        p{
+                            margin-top: 4px;
+                        }
+                    }
+                    .time-div{
+                        button{
+                            margin: 0px;
+                            padding: 1px;
+                            font-size: 11px;
+                        }
+                        .active{
+                            padding: 1px 10px;
+                        }
+                    }
+                }
+            }
+            .admin-mailbox-button-body{
+                .tab-buttons{
+                    .adminMailboxTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .admin-mailbox-content-body {
+                padding: 8px 12px;
+            }
+        }
+        .admin-mail-create-btn-area {
+            text-align: center;
+        }
+    }
+}

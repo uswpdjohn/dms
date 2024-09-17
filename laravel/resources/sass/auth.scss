@@ -1,0 +1,323 @@
+//1px = .0625rem
+$inputcolor : #D9D9D9;
+$formcolor : #FFFFFF;
+$textcolor : #313131;
+$highlightedtextcolor : #B1303D;
+$buttoncolor : #3E4153;
+$bordercolor : #CFCCD4;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Text', sans-serif;
+}
+
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    a{
+        text-decoration: none;
+    }
+}
+.form-body{
+    width: 26%;
+    padding: 1rem 2.4rem;
+    padding-bottom: 1.5rem;
+    margin: 5% 37%;
+    background: $formcolor;
+    border-radius: 18px;
+    .logo{
+        width: 100%;
+        height: 5.5rem;
+        background-image: url('../images/goa-logo.jpg');
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
+        margin: 0 25%;   
+    }
+    .slogan{
+        width: 100%;
+        height: 6.5rem;
+        background-image: url('../images/slogan.jpg');
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        margin: 0 5%;    
+    }
+    hr{
+        margin-bottom: 2rem;
+        margin-top: 0.4rem;
+    }
+    
+    .input-group {
+        max-width: 100%;
+        margin-bottom: 20px;
+        color: $inputcolor;
+        border: 2px solid $inputcolor;
+        border-radius: 3px;
+        i {
+                position: absolute;
+        }    
+        .input-icon {
+            padding: 10px;
+            color: black;
+        }
+        
+        .input-field {
+            padding:  0;
+            border: none;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }         
+        }
+    } 
+    .submit-portion{
+        padding-bottom: 30px;
+        a{
+            color: $textcolor;
+            padding-bottom: 2px;
+            line-height: 30px;
+            border-bottom: 2px solid $textcolor;
+        }
+        .submit-btn{
+            float: right;
+            background-color: $buttoncolor;
+            color: $formcolor;
+            padding: 5px 16px;
+            border-radius: 3px;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .terms-policy-portion{
+        font-size: 1rem;
+        padding: 5px 0px;
+        padding-bottom: 20px;
+        a{
+            color: $highlightedtextcolor;
+        }
+    }
+    .sign-up-text{
+        color: $highlightedtextcolor;
+    }
+    
+}
+.forget-sent-body{
+    margin: 7% 37%;
+}
+.terms-policy-body{
+    width: 64%;
+    min-height: 70vh;
+    padding: 2rem;
+    margin: 15vh 18%;
+    background: $formcolor;
+    border-radius: 18px;
+    .header-part{
+        margin-bottom: 20px;
+        .body-header{
+            padding-bottom: 10px;
+            padding-right: 50px;
+            border-bottom: 2px solid $bordercolor;
+        }
+        .close-btn{
+            float: right;
+            background-color: $buttoncolor;
+            color: $formcolor;
+            padding: 5px 16px;
+            border-radius: 3px;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .body-part{
+        height: 52vh;
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+            width: 8px;
+            background-color: $bordercolor;
+            border-radius:50px;
+        }
+        &::-webkit-scrollbar-track{
+            background: $bordercolor; 
+            border-radius:50px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: $buttoncolor; 
+            border-radius:50px;
+        }
+        &::-webkit-scrollbar-thumb:hover{
+            background: $buttoncolor; 
+        }   
+    }
+
+}
+.bottom-link-portion{
+    text-align: right;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    a{
+        color: $formcolor;
+        padding-bottom: 2px;
+        border-bottom: 1px solid $formcolor;
+        margin-right: 0px 2px;
+    }
+    span{
+        color: $formcolor;
+    }
+    
+}
+        
+@media (max-width:992px) and (min-width:768px){
+    .form-body{
+        width: 40%;
+        margin: 25% 30%;
+        .submit-portion{
+            .submit-btn{
+                padding: 5px 15px;
+            }
+        }
+    }
+    .forget-sent-body{
+        margin: 30% 30%;
+    } 
+    .terms-policy-body{
+        .header-part{
+            .close-btn{
+                padding: 5px 15px;
+            }
+        }
+        .body-part{
+                  height: 56vh;
+              }
+    }
+}
+
+@media (max-width:768px)  and (min-width:576px) {
+    *{
+        font-size: 15px;
+    }
+    .form-body{
+        width: 50%;
+        margin: 20% 25%;
+        .submit-portion{
+            .submit-btn{
+                padding: 5px 14px;
+            }
+        }
+    }
+    .forget-sent-body{
+        margin: 25% 25%;
+    }
+    .terms-policy-body{
+        .header-part{
+            .close-btn{
+                padding: 5px 14px;
+            }
+        }
+        .body-part{
+            height: 56vh;
+        }
+    }
+}
+@media (max-width:576px) and (min-width:300px) {
+    *{
+        font-size: 14px;
+    }
+    .form-body{
+        width: 60%;
+        margin: 30% 20%;
+        .logo{
+            height: 4rem;
+            background-size: 48% 100%;
+            margin: 0 26%;
+        }
+        .slogan{
+            height: 4.5rem;
+        }
+        .submit-portion{
+            .submit-btn{
+                padding: 4px 12px;
+            }
+        }
+    }
+    .forget-sent-body{
+        margin: 35% 20%;
+    }
+    .terms-policy-body{
+        padding: 1.5rem;
+        width: 70%;
+        margin: 15vh 15%;
+        .header-part{
+            .body-header{
+                font-size: 16px;
+                padding-right: 30px;
+            }
+            .close-btn{
+                padding: 4px 12px;
+            }
+        }
+        .body-part{
+            height: 56vh;
+        }
+    }
+    
+}  
+@media (max-width:476px) and (min-width:390px) { 
+    .form-body{
+        width: 70%;
+        margin: 30% 15%;
+    }
+    .forget-sent-body{
+        margin: 35% 15%;
+    }
+    .bottom-link-portion{
+        right: unset;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width:330px) and (min-width:350px) { 
+    .form-body{
+        width: 70%;
+        margin: 20% 15%;
+    }
+    .forget-sent-body{
+        margin: 25% 15%;
+    }
+    .bottom-link-portion{
+        right: unset;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width:350px) and (min-width:300px) { 
+    .form-body{
+        width: 80%;
+        margin: 15% 10%;
+    }
+    .forget-sent-body{
+        margin: 20% 10%;
+    }
+    .bottom-link-portion{
+        right: unset;
+        width: 100%;
+        text-align: center;
+    }
+    .terms-policy-body{
+        padding: 1.2rem;
+        width: 76%;
+        margin: 15vh 12%;
+        .header-part{
+            .body-header{
+                font-size: 15px;
+                padding-right: 25px;
+            }
+        }
+    }
+}

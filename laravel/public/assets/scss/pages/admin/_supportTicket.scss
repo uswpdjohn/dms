@@ -1,0 +1,264 @@
+@use "../abstracts/_variables.scss" as *;
+.main-body{
+    .admin-support-ticket-card{
+        .select-pagination-portion{
+            .pagination-part{
+                display: inline-block;
+                margin-left: auto;
+                text-align: right;
+                margin-top: 8px;
+                width: 40%;
+                a{
+                    padding: 0;
+                }
+                .pagination-number{
+                    padding: 5px;
+                }
+                .pagination-left-number{
+                    padding: 5px 20px;
+                    border: 1px solid $bordercolor;
+                }
+                .pagination-divider{
+                    padding: 5px 10px;
+                }
+            }
+
+        }
+        .table-bottom-portion{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+            padding-top: 16px;
+            border-top: 1px solid $bordercolor;
+        }
+        .admin-support-ticket-table{
+                width: 100%;
+                min-width: 900px;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 3% !important;
+                        border-bottom: 1px solid $bordercolor;
+                        &:last-child{
+                            padding-right: 0px !important;
+                        }
+                        vertical-align: baseline;
+                    }
+                    .ticket-no-header,
+                    .status-header,
+                    .ticket-no-data,
+                    .status-data{
+                        width: 10%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        max-width: 90px;
+                        .ticket-status {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                    .ticket-no-header,
+                    .ticket-no-data {
+                        padding-right: 15px !important;
+                    }
+
+                    .category-header,
+                    .file-header,
+                    .category-data,
+                    .file-data{
+                        width: 13%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        max-width: 150px;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 25%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        max-width: 350px;
+                    }
+                    .action-header,
+                    .action-data{
+                        width: 8%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        max-width: 90px;
+                        vertical-align: middle;
+                        .manage-ticket-btn {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            width: 65px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        .file-data{
+                            text-decoration: underline;
+                        }
+                        .action-data{
+                            a{
+                                text-decoration: none;
+                            }
+                        }
+                        .status-data{
+                            text-align:center;
+                            font-size: 13px;
+                            .ticket-status{
+                                width: 5rem;
+                                height: 1.5rem;
+                                display: block;
+                                padding: 1px 15px;
+                                border-radius: 2px;
+                            }
+                        }
+                    }
+                }
+        }
+        ::-webkit-scrollbar {
+            height: 5px;
+          }
+
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .admin-support-ticket-card{
+            .card-body{
+                .admin-support-ticket-table{
+                    tbody{
+                        tr{
+                            .status-data{
+                                .ticket-status{
+                                    padding: 3px 2px;
+                                    border-radius: 2px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px) {
+    .main-body{
+        .admin-support-ticket-card{
+            // Quick Fix
+            .card-body{
+                overflow: scroll;
+            }
+            ////////////////////
+            .admin-support-ticket-table{
+                width: 100%;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 2% !important;
+                    }
+                    .ticket-no-header,
+                    .status-header,
+                    .ticket-no-data,
+                    .status-data{
+                        width: 10%;
+                    }
+
+                    .category-header,
+                    .file-header,
+                    .category-data,
+                    .file-data{
+                        width: 13%;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 31%;
+                    }
+                    .action-header,
+                    .action-data{
+                        width:8%;
+                    }
+                }
+                tbody{
+                    tr{
+                        .status-data{
+                            .ticket-status{
+                                padding: 3px 6px;
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+        .admin-support-ticket-card{
+            .select-pagination-portion {
+                .pagination-part{
+                    width: 100%;
+                }
+            }
+            .admin-support-ticket-table{
+                width: 100%;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 10px !important;
+                    }
+                    .ticket-no-header,
+                    .status-header,
+                    .ticket-no-data,
+                    .status-data{
+                        width: 10%;
+                    }
+                    .ticket-no-header{
+                        text-overflow: unset;
+                    }
+
+                    .category-header,
+                    .file-header,
+                    .category-data,
+                    .file-data{
+                        width: 13%;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 31%;
+                    }
+                    .action-header,
+                    .action-data{
+                        width:8%;
+                    }
+                }
+                tbody{
+                    tr{
+                        .status-data{
+                            .ticket-status{
+                                padding: 3px 6px;
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

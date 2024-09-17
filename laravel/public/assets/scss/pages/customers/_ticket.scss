@@ -1,0 +1,307 @@
+@use '../abstracts/_variables.scss' as *;
+.main-body{
+    .top-part{
+        margin-top: 24px;
+        .back-btn{
+            background-color: $buttonsilver;
+            color: white;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+        }
+        .top-header{
+            display: inline-block;
+        }
+    }
+    .customer-ticket-card{
+        .select-pagination-portion{
+            // padding: 10px 0px;
+            // border-bottom: 1px solid $bordercolor;
+            .pagination-part{
+                display: inline-block;
+                // float: right;
+                margin-left: auto;
+                text-align: right;
+                margin-top: 8px;
+                width: 40%;
+                a{
+                    padding: 0;
+                }
+                .pagination-number{
+                    padding: 5px;
+                }
+                .pagination-left-number{
+                    padding: 5px 20px;
+                    border: 1px solid $bordercolor;
+                }
+                .pagination-divider{
+                    padding: 5px 10px;
+                }
+            }
+
+        }
+        .table-bottom-portion{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+            padding-top: 16px;
+            border-top: 1px solid $bordercolor;
+        }
+        .customer-ticket-table{
+                width: 100%;
+                min-width: 800px;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 3% !important;
+                        border-bottom: 1px solid $bordercolor;
+
+                        &:last-child{
+                            padding-right: 0px !important;
+                        }
+                        vertical-align: baseline;
+                    }
+                    .ticket-no-header,
+                    .ticket-no-data
+                    {
+                        width: 10%;
+                        min-width: 110px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .status-header,
+                    .status-data{
+                        width: 10%;
+                        min-width: 100px;
+                    }
+
+                    .service-header,
+                    .file-header,
+                    .service-data,
+                    .file-data{
+                        width: 13%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 31%;
+                        max-width: 500px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .action-header,
+                    .action-data{
+                        width:8%;
+                    }
+                }
+                tbody{
+                    tr{
+                        .file-data{
+                            text-decoration: underline;
+                        }
+                        .action-data{
+                            a{
+                                text-decoration: none;
+                            }
+                        }
+                        .status-data{
+                            .ticket-status{
+                                // padding: 3px 15px;
+                                border-radius: 2px;
+                                width: 5rem;
+                                height: 1.5rem;
+                                display: inline-block;
+                                text-align: center;
+
+                            }
+                        }
+                        .viewCustomerTicket-modal{
+                            .viewCustomerTicket-modal-body{
+                                padding: 15px 20px;
+                                .modal-title{
+                                    padding-right: 0px;
+                                }
+                                .modal-data{
+                                    padding-left: 0px;
+                                }
+                                .ticket-status{
+                                    border-radius: 2px;
+                                    width: 5rem;
+                                    height: 1.5rem;
+                                    display: inline-block;
+                                }
+                                .viewCustomerTicket-modal-header{
+                                    .viewCustomerTicket-modal-close-btn{
+                                        float: right;
+                                        border: 2px solid $bgblack !important;
+                                        border-radius: 50%;
+                                        font-size: 8px;
+                                        margin-top: 5px;
+                                        padding: 6px;
+                                        color: $bgblack !important;
+                                    }
+                                }
+                                .viewCustomerTicket-modal-data{
+                                    width: 100%;
+                                    margin-top: 10px;
+                                    height: 80%;
+                                    .modal-file-data{
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .customer-ticket-card{
+            .card-body{
+                .customer-ticket-table{
+                    tbody{
+                        tr{
+                            .status-data{
+                                .ticket-status{
+                                    padding: 3px 2px;
+                                    border-radius: 2px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576) {
+    .main-body{
+        .customer-ticket-card{
+            // Quick Fix
+            // .card-body{
+            //     overflow: scroll;
+            // }
+            ////////////////////
+            .customer-ticket-table{
+                width: 100%;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 2% !important;
+                    }
+                    .ticket-no-header,
+                    .status-header,
+                    .ticket-no-data,
+                    .status-data{
+                        width: 10%;
+                    }
+
+                    .service-header,
+                    .file-header,
+                    .service-data,
+                    .file-data{
+                        width: 13%;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 31%;
+                    }
+                    .action-header,
+                    .action-data{
+                        width:8%;
+                    }
+                }
+                tbody{
+                    tr{
+                        .status-data{
+                            .ticket-status{
+                                padding: 3px 6px;
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+        .customer-ticket-card{
+            // Quick Fix
+            // .card-body{
+            //     overflow: scroll;
+            // }
+            ////////////////////
+            .select-pagination-portion {
+                .pagination-part{
+                    width: 100%;
+             }
+           }
+            .customer-ticket-table{
+                width: 100%;
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 0px;
+                        padding-right: 2% !important;
+                    }
+                    .ticket-no-header,
+                    .status-header,
+                    .ticket-no-data,
+                    .status-data{
+                        width: 10%;
+                        font-size: 14px;
+                    }
+
+                    .service-header,
+                    .file-header,
+                    .service-data,
+                    .file-data{
+                        width: 13%;
+                        font-size: 14px;
+                    }
+                    .message-header,
+                    .message-data{
+                        width: 31%;
+                        font-size: 14px;
+                    }
+                    .action-header,
+                    .action-data{
+                        width:8%;
+                        font-size: 14px;
+                    }
+                }
+                tbody{
+                    tr{
+                        .status-data{
+                            .ticket-status{
+                                padding: 3px 6px;
+                                font-size: 11px;
+                            }
+                        }
+                        .viewCustomerTicket-modal {
+                            .viewCustomerTicket-modal-body {
+                                .ticket-status{
+                                    padding: 3px 0 !important;
+                                }
+                            }
+                    }
+                }
+                }
+            }
+        }
+    }
+}

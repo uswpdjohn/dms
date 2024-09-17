@@ -1,0 +1,41 @@
+$inputcolor : #D9D9D9;
+$bgwhite: #FFFFFF;
+$bgblack : #000000;
+$navbackground: #FEFEFE;
+$textwhite: #FFFFFF;
+$textblack: #000000;
+$textgray : #979797;
+$textbeaver : #7F6563;
+$sidebartextcolor:#FFFFFF;
+$highlightedtextcolor : #B1303D;
+$buttonsilver : #3E4153;
+$buttonblue : #5D71EB;
+$buttongreen: #73D13D;
+$bordercolor : #D9D9D9;
+$mainbodycolor : #F0F2F5;
+$selectednotification : #EBF7FF;
+$selectedrowbackground :#EBF7FF;
+$mailboxtabactivebackground : #ECDEDD;
+$successalertbackground : #F6FFED;
+$successalertbordercolor : #B7EB8F;
+$checkedRowColor : #E6F7FF;
+$tableHeaderBg: #FAFAFA;
+$deleteBtnColor: #CF1322;
+$cardgray : #FAFAFA;
+$icongray: #CFCCD4;
+$borderblue: #1890FF;
+$shadeblue: #F0F6FF;
+$warningtextcolor: #FF4D4F;
+
+@mixin commonButton {
+    width: 7.5rem;
+    height: 2rem;
+}
+@mixin markDownloadButton {
+    width: 10.5rem;
+    height: 2rem;
+}
+@mixin downloadedButton {
+    width: 7.5rem;
+    height: 1.5rem;
+}

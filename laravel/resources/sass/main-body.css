@@ -1,0 +1,263 @@
+.main-body {
+  padding: 20px 15px;
+  background-color: #F0F2F5;
+}
+.main-body .left-main-body {
+  padding-right: 15px;
+  border-right: 2px solid #D9D9D9;
+}
+.main-body .main-body-text {
+  color: #979797;
+}
+.main-body .card {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+.main-body .card .card-body input,
+.main-body .card .card-body .select {
+  color: #979797 !important;
+}
+.main-body .card .card-body input:active, .main-body .card .card-body input:focus,
+.main-body .card .card-body .select:active,
+.main-body .card .card-body .select:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #979797 !important;
+}
+.main-body .card .card-body .required-sign {
+  color: #B1303D;
+  margin-right: 4px;
+}
+.main-body .card .card-body .optional-text {
+  color: #979797 !important;
+}
+.main-body .card .card-body .submit-btn {
+  background-color: #3E4153;
+  float: right;
+  color: #FFFFFF;
+  bottom: 15px;
+  position: absolute;
+  right: 15px;
+}
+.main-body .card .card-body .ticket-card-header .header-text {
+  display: inline;
+  font-weight: bold;
+}
+.main-body .card .card-body .ticket-card-header .see-all-ticket-btn {
+  float: right;
+  text-decoration: none;
+}
+.main-body .card .card-body .ticket-card-body {
+  margin-top: 10px;
+}
+.main-body .card .card-body .ticket-card-body .tickets {
+  padding: 5px 0px;
+  border-top: 2px solid #D9D9D9 !important;
+}
+.main-body .card .card-body .ticket-card-body .tickets .ticket-name {
+  display: inline;
+}
+.main-body .card .card-body .ticket-card-body .tickets .ticket-status {
+  float: right;
+}
+.main-body .card .card-body .uploadActivity-card-header {
+  padding-bottom: 10px;
+}
+.main-body .card .card-body .uploadActivity-card-header .header-text {
+  display: inline;
+  font-weight: bold;
+}
+.main-body .card .card-body .uploadActivity-card-header .see-all-uploadActivity-btn {
+  float: right;
+  text-decoration: none;
+}
+.main-body .card .card-body .uploadActivity-card-header .uploadActivity-modal .uploadActivity-modal-body {
+  padding: 15px 20px;
+}
+.main-body .card .card-body .uploadActivity-card-header .uploadActivity-modal .uploadActivity-modal-body .uploadActivity-modal-header .modal-title {
+  display: inline;
+  font-weight: bolder !important;
+}
+.main-body .card .card-body .uploadActivity-card-header .uploadActivity-modal .uploadActivity-modal-body .uploadActivity-modal-header .uploadActivity-modal-close-btn {
+  float: right;
+  border: 2px solid #000000 !important;
+  border-radius: 50%;
+  font-size: 9px;
+  margin-top: 5px;
+  padding: 6px;
+  color: #000000 !important;
+}
+.main-body .card .card-body .uploadActivity-card-header .uploadActivity-modal .uploadActivity-modal-body .uploadActivity-modal-content-body {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #979797;
+  height: 80%;
+  padding: 10px;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part,
+.main-body .card .card-body .uploadActivity-card-body .header-part {
+  padding-top: 10px;
+  border-top: 2px solid #D9D9D9 !important;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part p,
+.main-body .card .card-body .uploadActivity-card-body .header-part p {
+  font-size: 14px;
+  display: inline-block;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .latest-uploads,
+.main-body .card .card-body .uploadActivity-card-body .header-part .latest-uploads {
+  width: 47%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .date,
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .service,
+.main-body .card .card-body .uploadActivity-card-body .header-part .date,
+.main-body .card .card-body .uploadActivity-card-body .header-part .service {
+  width: 24%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities,
+.main-body .card .card-body .uploadActivity-card-body .body-part .activities {
+  border-top: 2px solid #D9D9D9 !important;
+  padding: 10px 0px;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .file-info,
+.main-body .card .card-body .uploadActivity-card-body .body-part .activities .file-info {
+  display: inline-block;
+  width: 47%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .file-info .uploaded-file,
+.main-body .card .card-body .uploadActivity-card-body .body-part .activities .file-info .uploaded-file {
+  font-weight: bold;
+  margin-bottom: 5px !important;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .file-info .file-type,
+.main-body .card .card-body .uploadActivity-card-body .body-part .activities .file-info .file-type {
+  color: #979797;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .upload-date,
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .service-name,
+.main-body .card .card-body .uploadActivity-card-body .body-part .upload-date,
+.main-body .card .card-body .uploadActivity-card-body .body-part .service-name {
+  display: inline-block;
+  width: 24%;
+  vertical-align: top;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body {
+  padding: 0px !important;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part {
+  padding: 2px 10px;
+  border-top: none !important;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part p {
+  font-size: 14px !important;
+  margin-bottom: 5px;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .latest-uploads {
+  width: 48%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .date,
+.main-body .card .card-body .uploadActivity-modal-content-body .header-part .service {
+  width: 24%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities {
+  padding: 5px 10px;
+  padding-bottom: 2px;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .file-info {
+  width: 48%;
+}
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .upload-date,
+.main-body .card .card-body .uploadActivity-modal-content-body .body-part .activities .service-name {
+  margin-bottom: 5px;
+}
+.main-body .right-main-body {
+  padding-left: 15px;
+}
+.main-body .right-main-body .body-header {
+  color: #979797;
+}
+.main-body .right-main-body .body-header p {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+.main-body .right-main-body .body-header p .badge {
+  background-color: #3E4153;
+  color: #FFFFFF;
+  border-radius: 40%;
+}
+.main-body .right-main-body .body-header a {
+  text-decoration: none;
+  float: right;
+}
+.main-body .right-main-body .reminder-body .reminders .card {
+  margin-top: 0px;
+}
+.main-body .right-main-body .reminder-body .reminders .card .card-body .card-image {
+  width: 14%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.main-body .right-main-body .reminder-body .reminders .card .card-body .card-text-body {
+  width: 100%;
+}
+.main-body .right-main-body .reminder-body .reminders .card .card-body .card-text-body .due-time {
+  color: #979797;
+  font-size: 12px;
+}
+.main-body .right-main-body .reminder-body .reminders .card .card-body .card-text-body .view-reminder-btn {
+  text-decoration: none;
+  background-color: #3E4153;
+  color: #FFFFFF;
+  border-radius: 2px;
+  padding: 5px 15px;
+  float: right;
+}
+.main-body .right-main-body .activity-body .activities .card {
+  margin-top: 0px;
+}
+.main-body .right-main-body .activity-body .activities .card .card-body .card-image {
+  width: 14%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.main-body .right-main-body .activity-body .activities .card .card-body .card-text-body {
+  width: 100%;
+}
+.main-body .right-main-body .activity-body .activities .card .card-body .card-text-body .due-time {
+  color: #979797;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) and (min-width: 300px) {
+  .main-body p,
+.main-body a {
+    font-size: 15px !important;
+  }
+  .main-body .left-main-body {
+    padding-right: 0px;
+    border-right: none;
+  }
+  .main-body .card .card-body .submit-btn {
+    position: initial;
+  }
+  .main-body .card .card-body .uploadActivity-card-body .header-part .latest-uploads {
+    width: 47%;
+  }
+  .main-body .card .card-body .uploadActivity-card-body .body-part .activities .file-info {
+    width: 47%;
+  }
+  .main-body .right-main-body {
+    margin-top: 10px;
+    padding-left: 0px;
+  }
+}/*# sourceMappingURL=main-body.css.map */

@@ -1,0 +1,529 @@
+@use '../abstracts/_variables.scss' as *;
+.customer-notification-card{
+    .select-pagination-portion{
+        // padding: 10px 0px;
+        // border-bottom: 1px solid $bordercolor;
+        .select-part,
+        .count-part,
+        .search-box-part,
+        .button-part,
+        .create-btn-part,
+        .pagination-part{
+            display: inline-block;
+        }
+        .search-box-part {
+            width: 40%;
+        }
+        .select-part{
+            margin-top: 8px;
+            // width: 20%;
+            .select-all-checkbox{
+                margin-right: 7px;
+                margin-left: 15px;
+            }
+        }
+        .count-part{
+            margin-top: 8px;
+            p {
+                margin-left: 25px;
+            }
+        }
+        .button-part{
+            .notification-delete-modal{
+                width: 350px;
+                top: 40%;
+                margin: auto;
+                .notification-delete-modal-body{
+                    padding: 25px 20px;
+                    .btn{
+                        border: 2px solid $buttonsilver;
+                        width: 65px;
+                        border-radius: 2px;
+                        margin: 8px;
+                    }
+                    .yes-btn{
+                        background-color: $buttonsilver;
+                        color: $textwhite;
+                    }
+                }
+            }
+            .action-buttons{
+                padding: 5px 10px;
+                border-radius: 2px;
+                color: $buttonsilver;
+                border: 1px solid $buttonsilver;
+                margin-right: 10px;
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+            .delete-btn{
+                @include commonButton;
+                padding: 4px 20px;
+                border:1px solid $buttonsilver;
+                border-radius: 2px;
+                color : $buttonsilver;
+                margin-right: 10px;
+                font-size: 14px;
+                // width: 20%;
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+            .delete-btn.active{
+                background-color: $buttonsilver;
+                color: $textwhite;
+
+            }
+            .unread-btn {
+                @include markDownloadButton;
+                border:1px solid $buttonsilver;
+                border-radius: 2px;
+                color : $buttonsilver;
+                padding: 5px 20px;
+                margin-left: 10px;
+                font-size: 14px;
+                // width: 30%;
+            }
+            .unread-btn.active{
+                background-color: $buttonsilver;
+                color: $textwhite;
+
+            }
+
+        }
+        .create-btn-part{
+            text-align: right;
+            height: 2rem;
+            .action-buttons{
+                padding: 4px 15px;
+                border-radius: 2px;
+                color: $buttonsilver;
+                border: 1px solid $buttonsilver;
+                margin-right: 10px;
+                font-size: 14px;
+                // height: 1.9rem;
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+            .active{
+                background-color: $buttonsilver;
+                color: $textwhite;
+
+            }
+        }
+        .pagination-part{
+            // float: right;
+            margin-left: auto;
+            text-align: right;
+            margin-top: 8px;
+            width: 40%;
+            a{
+                padding: 0;
+            }
+            .pagination-number{
+                padding: 5px;
+            }
+            .pagination-left-number{
+                padding: 5px 20px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider{
+                padding: 5px 10px;
+            }
+        }
+
+    }
+    .table-top-portion{
+        border-bottom: 1px solid $bordercolor;
+        padding-bottom: 16px;
+        .search-data{
+            margin-right: 5%;
+        }
+        .form-inputs{
+            position: relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            width: 40% ;
+            .form-control{
+                height: 1.8rem;
+                border: 0px;
+                &:focus{
+                    box-shadow:none;
+                    border: none !important;
+                }
+            }
+            i{
+                position:absolute;
+                right:15px;
+                top:10px;
+                font-size: 15px;
+            }
+            .search-btn{
+                width: 35px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                padding: 3px 8px;
+                height: 1.9rem;
+                font-size: 13px;
+            }
+        }
+
+    }
+
+    .table-bottom-portion{
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 16px;
+        border-top: 1px solid $bordercolor;
+        .search-data{
+            margin-right: 5%;
+        }
+        .form-inputs{
+            position:relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            width: 40%;
+            .form-control{
+                height: 1.8rem;
+                border: 0px;
+                &:focus{
+                    box-shadow:none;
+                    border: none !important;
+                }
+            }
+            i{
+                position:absolute;
+                right:15px;
+                top:10px;
+                font-size: 15px;
+            }
+            .search-btn{
+                width: 35px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                padding: 3px 8px;
+                height: 1.9rem;
+                font-size: 13px;
+            }
+        }
+
+}
+
+    .customer-notification-body{
+        min-width: 800px;
+        .users-header{
+            background-color:$tableHeaderBg;
+        }
+        .unread{
+            background-color: #fff !important;
+            .data-div {
+                font-weight: 600;
+            }
+        }
+        .notifications{
+            color: $textgray;
+            padding: 15px 0px 10px;
+            border-top: 1px solid $bordercolor;
+            background-color: #fafdff;
+            font-size: 15px;
+            .header-div {
+                text-align: left;
+                vertical-align: baseline;
+                display: flex;
+                background-color: $tableHeaderBg;
+                &:first-child {
+                    padding-left: 25px;
+                }
+                p{
+                    font-weight: bold;
+                    color: #000;
+                    padding-left: 5px;
+                    font-size: 16px;
+                    margin: 0;
+                }
+                .filter-btn{
+                    border: 0px;
+                    background-color: $tableHeaderBg;
+                    .filter-icon{
+                        width: 15px;
+                        margin-left: 5px;
+                        margin-top: -1px;
+                    }
+                }
+            }
+            .checkbox-div{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: left;
+                padding-left: 15px;
+                // width: 20%;
+                span{
+                    font-weight: bold;
+                    color: #000;
+                    padding-left: 5px;
+                }
+            }
+            .data-div{
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 50%;
+                p{
+                    margin-bottom: 5px;
+                    color: #000;
+                }
+            }
+            .time-div{
+                text-align: right;
+                color: #000;
+                width: 30%;
+                padding-right: 15px;
+                // text-align: left;
+            }
+
+        }
+
+    }
+}
+.customer-notification-body{
+    .card{
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .notification-button-card{
+        padding-left: 0px;
+    }
+    .customer-notification-card{
+        padding-right: 0px;
+    }
+    .notification-button-body{
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+    }
+    .notification-content-body{
+        padding: 10px 20px;
+        background-color: $bgwhite !important;
+        .urgent-checkbox{
+            width: 15px;
+            height: 15px;
+        }
+        .required-msg{
+
+            color: $textgray;
+        }
+
+    }
+}
+
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .customer-notification-card{
+            .btn{
+                margin-top: 5px;
+            }
+            .search-btn{
+                margin-top: 0;
+            }
+            .select-pagination-portion{
+                .select-part {
+                    width: 25%;
+                }
+                .button-part{
+                    .unread-btn{
+                        width: 7.5rem;
+                        height: 34px;
+                        padding: 4px 6px !important;
+                        font-size: 14px !important;
+                    }
+                    .delete-btn{
+                        width: 5rem;
+                        height: 34px;
+                        padding: 4px 6px !important;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .table-top-portion{
+                .search-box-part{
+                    padding-right: 15px;
+                }
+                .user-category-select{
+                    padding: 0px;
+                }
+                .category-select{
+                    padding-left: 15px;
+                }
+            }
+            .table-bottom-portion{
+                .search-box-part{
+                    .form-inputs{
+                        width: 75%;
+                    }
+                }
+            }
+            .users{
+                .time-div{
+                    .download-btn{
+                        font-size: 12px;
+                    }
+                }
+                .data-div{
+                        p{
+                           font-size: 12px !important;
+                        }
+                    }
+            }
+        }
+        .customer-notification-body{
+            .pagination-left-number{
+                padding: 5px 8px !important;
+            }
+            .notification-button-body{
+                .tab-buttons{
+                    .adminUserManageTabLinks {
+                        padding: 5px 8px;
+                    }
+                }
+            }
+            .users{
+                .time-div{
+                    button{
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px) {
+    .main-body{
+        .customer-notification-body{
+            .pagination-left-number{
+                padding: 4px 6px !important;
+            }
+            .notification-button-body{
+                .tab-buttons{
+                    .adminUserManageTabLinks {
+                        padding: 3px 6px;
+                    }
+                }
+            }
+            .users{
+                .time-div{
+                    button{
+                        font-size: 11px !important;
+                    }
+                }
+            }
+            .btn{
+                margin-top: 5px;
+            }
+            .search-btn{
+                margin-top: 0;
+            }
+
+            .table-bottom-portion{
+                .search-box-part{
+                    .form-inputs{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+        .customer-notification-card {
+            .select-pagination-portion{
+                .button-part{
+                    .unread-btn{
+                        width: 7.5rem;
+                        height: 32px;
+                        margin: 10px 0px;
+                        padding: 4px 6px;
+                        font-size: 14px;
+                    }
+                    .delete-btn{
+                        width: 5rem;
+                        height: 32px;
+                        margin: 10px 0px;
+                        padding: 4px 6px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+        .customer-notification-card{
+            .select-pagination-portion{
+                .pagination-part{
+                    width: 100%;
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number{
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+                .button-part{
+                    margin-top: 10px;
+                    .notification-delete-modal{
+                        width: 280px;
+                        .notification-delete-modal-body{
+                            .btn{
+                                width:40px;
+                             }
+                        }
+                    }
+
+                    .unread-btn{
+                        width: 6.5rem;
+                        height: 30px;
+                        margin: 10px 0px;
+                        padding: 4px 6px;
+                        font-size: 12px;
+                    }
+                    .delete-btn{
+                        width: 4rem;
+                        height: 30px;
+                        margin: 10px 0px;
+                        padding: 4px 6px;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .table-top-portion{
+                .user-category-select{
+                    padding-left: 0px !important;
+                }
+                .select-data{
+                    margin-top: 10px;
+                }
+            }
+            .notification-button-body{
+                .tab-buttons{
+                    .adminUserManageTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

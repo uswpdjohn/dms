@@ -1,0 +1,111 @@
+@use "../abstracts/_variables.scss" as *;
+.main-body{
+    .admin-support-tickit-manage-top-portion{
+        margin-top: 20px;
+        .b-info-img{
+            width: 80%;
+            margin: 0;
+            padding: 5px;
+            border: 1px solid $bordercolor;
+            background-color: $bgwhite;
+            border-radius: 2px;
+        }
+        .card{
+            margin-top: 0px;
+        }
+        .info-card{
+            border-top: 1px solid $bordercolor;
+            .card-body{
+                .file-name{
+                    a{
+                        color: $borderblue;
+                    }
+                }
+                p.col-3 {
+                    white-space: nowrap;
+                }
+                .ticket-status{
+                    display: inline-block;
+                    width: 5rem;
+                    height: 1.5rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .admin-support-tickit-manage-bottom-portion{
+        .desc-body{
+            border: 1px solid $bordercolor;
+            min-height: 200px;
+            max-height: 60%;
+            margin: 0px;
+            padding: 15px;
+            border-radius: 3px;
+            p{
+                padding-left: 0 !important;
+            }
+        }
+        .button-portion{
+            float: right;
+            margin: 35px 0;
+            margin-bottom: 25px;
+            .reopen-btn{
+                @include commonButton;
+                color: $textwhite;
+                background-color: $buttongreen;
+                margin-right: 10px;
+                padding: 4px 20px;
+            }
+            .close-btn{
+                @include commonButton;
+                color: $textwhite;
+                background-color: $highlightedtextcolor;
+                padding: 4px 15px;
+            }
+        }
+    }
+}
+@media (max-width:1200px) and (min-width:992px){
+    .main-body{
+        .admin-support-tickit-manage-top-portion{
+            .info-card{
+                .card-body{
+                    p.col-3,p.col-9 {
+                        font-size: 14px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:575px) and (min-width:300px){
+    .main-body{
+        .admin-support-tickit-manage-top-portion{
+            .b-info-img{
+                width: 80%;
+                padding: 5px;
+                margin: 0% 5%;
+            }
+            h5{
+                font-size: 16px;
+            }
+        }
+        .admin-support-tickit-manage-bottom-portion{
+            .desc-body{
+                max-height: fit-content;
+            }
+            .button-portion{
+                .reopen-btn{
+                    width: 4rem;
+                    padding: 6px 8px;
+                }
+                .close-btn{
+                    width: 4rem;
+                    padding: 6px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1013 @@
+@use "../abstracts/_variables.scss" as *;
+.admin-setup-card {
+    .admin-setup-content-body {
+        padding: 0;
+        .back-btn-div {
+            background-color: transparent !important;
+            padding: 0 !important;
+            margin-bottom: 10px;
+
+            .back-btn {
+                width: 45px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 4px;
+            }
+        }
+        .custom-file-uploaded {
+            margin-top: 15px;
+            margin-bottom: 4px;
+        }
+        .custom-file-upload {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 8px;
+            padding: 6px 12px;
+            border: none;
+            background-color: transparent;
+            color: #333;
+            position:absolute;
+                &:hover {
+                text-decoration: underline;
+                }
+        }
+        .file-name {
+        flex: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        padding: 6px 16px 6px 36px;
+        background-color: #fff;
+        width: 100%;
+        }
+
+        .document-upload {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        }
+
+        .document-img {
+        width: 100px;
+        height: 100%;
+        }
+
+        .upload-button {
+        background-color: $buttonsilver;
+        color: #fff;
+        border: none;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        padding: 7px 16px;
+        }
+
+        .upload-button:hover {
+            background-color: $buttonsilver;
+        }
+
+        .upload-button:active {
+        background-color: $buttonsilver;
+        }
+
+        // .upload-input {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     // opacity: 0;
+        //     cursor: pointer;
+        // }
+        // .upload-icon {
+        //     font-size: 40px;
+        //     color: #000;
+        //     text-align: center;
+        //     position: relative;
+        // }
+
+        // .upload-icon span {
+        //     display: block;
+        //     font-size: 14px;
+        //     margin-top: 5px;
+        // }
+
+    }
+}
+.admin-setup-body {
+    ::-webkit-scrollbar {
+        height: 5px;
+      }
+    .card {
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .admin-setup-button-card {
+        padding-left: 0px;
+    }
+    .admin-setup-card {
+        padding-right: 0px;
+    }
+    .admin-setup-button-body {
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+        .tab-buttons {
+            background-color: $bgwhite;
+            .adminSetupTabLinks {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 6px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+            .active {
+                background-color: $mailboxtabactivebackground;
+                color: $textbeaver;
+                border-right: 4px solid $textbeaver;
+            }
+        }
+    }
+    .adminSetupTabContent {
+        padding: 16px 20px;
+        background-color: $bgwhite !important;
+        .admin-setup-login-card-portion {
+            .setup-login-card {
+                margin-top: 0;
+                padding:0;
+                background-color: $bgwhite !important;
+              .card-body {
+                display: block;
+                height: 100%;
+                overflow-y: auto !important;
+                overflow-x: none !important;
+                padding: 0;
+                h6 {
+                  margin-bottom: 0px;
+                  font-weight: bold;
+                }
+                .upload-inner {
+                    // display: flex;
+                    // width: 100%;
+
+                    // padding: 10px;
+                    // position: absolute;
+                    justify-content: space-between;
+                    .login-upload-container {
+                    position: relative;
+                    margin-top: 20px;
+                    // margin-left: 15px;
+                    padding:18px 30px;
+                    width: 48%;
+                    max-width: 405px;
+                    height: 215px;
+                    border: 2px dashed #ccc;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    cursor: pointer;
+                    background-color: #F5F5F5;
+
+                    .upload-input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    .upload-icon {
+                        font-size: 40px;
+                        color: #000;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                    .upload-icon span {
+                        display: block;
+                        font-size: 14px;
+                        margin-top: 5px;
+                    }
+                  }
+                  .img-preview-container{
+                    width: 48%;
+                    margin-top: 20px;
+                    max-width: 405px;
+                    height: 215px;
+                    overflow: hidden;
+                    // position: relative;
+                    .preview-img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                      }
+
+                      .preview-name {
+                        margin-top: 5px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                      }
+                  }
+                }
+              }
+            }
+          }
+        .admin-setup-terms-card-portion {
+            .setup-terms-card {
+                margin-top: 0;
+                padding:0;
+                background-color: $bgwhite !important;
+              .card-body {
+                display: block;
+                height: 100%;
+                overflow-y: auto !important;
+                overflow-x: none !important;
+                padding: 0;
+                h6 {
+                  margin-bottom: 0px;
+                  font-weight: bold;
+                  padding-left: 8px;
+                }
+                .terms-container {
+                    max-width: 100%;
+                    margin: 0;
+                    padding: 20px 10px;
+
+                .terms-textarea {
+                    width: 100%;
+                    height: 800px;
+                    resize: none;
+                    overflow: auto;
+                    border: 1px #d9d9d9 solid;
+                    padding: 8px 12px;
+                  }
+                }
+                .save-btn {
+                    // height: 36px;
+                    background-color: $buttonsilver;
+                    color: #fff;
+                    &:hover {
+                        background-color: black;
+                        color: #fff;
+                    }
+                  }
+              }
+            }
+          }
+        .admin-setup-policy-card-portion {
+            .setup-policy-card {
+                margin-top: 0;
+                padding:0;
+                background-color: $bgwhite !important;
+              .card-body {
+                display: block;
+                height: 100%;
+                overflow-y: auto !important;
+                overflow-x: none !important;
+                padding: 0;
+                h6 {
+                  margin-bottom: 0px;
+                  font-weight: bold;
+                  padding-left: 8px;
+                }
+                .terms-container {
+                    max-width: 100%;
+                    margin: 0;
+                    padding: 20px 10px;
+
+                .terms-textarea {
+                    width: 100%;
+                    height: 800px;
+                    resize: none;
+                    overflow: auto;
+                    border: 1px #d9d9d9 solid;
+                    padding: 8px 12px;
+                  }
+                }
+                .save-btn {
+                    // height: 36px;
+                    background-color: $buttonsilver;
+                    color: #fff;
+                    &:hover {
+                        background-color: black;
+                        color: #fff;
+                    }
+                  }
+              }
+            }
+          }
+
+        .support-ticket-body {
+            min-width: 800px;
+            .user-create-modal {
+                margin: 12% auto;
+                .user-create-modal-body {
+                  padding: 15px 20px;
+                  .user-title {
+                    font-size: 18px;
+                    padding-right: 0px;
+                    font-weight: bold;
+                  }
+                  .user-data {
+                    padding-left: 0px;
+                  }
+                  .user-create-modal-header {
+                    .user-create-modal-close-btn {
+                      float: right;
+                      border: 3px solid $bgblack !important;
+                      border-radius: 50%;
+                      font-size: 8px;
+                      margin-top: 5px;
+                      padding: 6px;
+                      color: $bgblack !important;
+                      font-weight: bold;
+                    }
+                  }
+                  .user-create-modal-data {
+                    margin-top: 10px;
+                    .data-body {
+                      .data-row {
+                        margin-top: 15px;
+                        label {
+                          margin-bottom: 8px;
+                        }
+                      }
+                    }
+                  }
+                  .create-user-btn {
+                    @include commonButton;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 2px;
+                    padding: 4px 15px;
+                    margin-top: 35px;
+                    margin-bottom: 20px;
+                  }
+                }
+              }
+            .tickets {
+                .header-div {
+                    font-size: 16px;
+                    color:#000;
+                    font-weight: bold;
+                    line-height: 1.5;
+                    border-bottom: 1px solid #000;
+                    padding: 8px;
+                }
+                .data-div {
+                    padding: 8px;
+                    border-bottom: 1px solid #eee;
+                    .category-name{
+                        border: #d9d9d9 2px solid;
+                        padding: 5px 10px;
+                      }
+                      .users-email{
+                        border: 1px solid $bordercolor;
+                        padding: 4px 10px;
+                        margin-bottom: 5px;
+                        height: fit-content;
+                        border-radius: 3px;
+                        background-color: $cardgray;
+                        width: fit-content;
+                        p{
+                            font-size: 13px !important;
+                            margin-bottom: 0px;
+                        }
+                        .cancel-btn{
+                            margin-top: -3px;
+                            color: $textgray;
+                            &:focus{
+                                box-shadow: 0px;
+                                outline: 0 !important;
+                                border: 0px solid $textwhite;
+                            }
+                        }
+                }
+            }
+          }
+        }
+        .select-pagination-portion{
+            padding: 10px 0px;
+            border-bottom: 1px solid $bordercolor;
+            .select-part,
+            .count-part,
+            .search-box-part,
+            .button-part,
+            .create-btn-part,
+            .pagination-part{
+                display: inline-block;
+            }
+            .select-part{
+                margin-top: 8px;
+                .select-all-checkbox{
+                    margin-right: 7px;
+                }
+            }
+            .count-part{
+                margin-top: 8px;
+                p {
+                    margin-left: 25px;
+                }
+            }
+            .button-part{
+                .action-buttons{
+                    padding: 5px 10px;
+                    border-radius: 2px;
+                    color: $buttonsilver;
+                    border: 1px solid $buttonsilver;
+                    margin-right: 10px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+                .delete-btn{
+                    @include commonButton;
+                    padding: 3px 10px;
+                    border-radius: 2px;
+                    color: #CF1322;
+                    border: 1px solid #CF1322;
+                    margin-right: 10px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+                .active{
+                    background-color: #CF1322;
+                    color: $textwhite;
+
+                }
+            }
+            .create-btn-part{
+                text-align: right;
+                height: 2rem;
+                .download-btn {
+                    @include commonButton;
+                }
+                .action-buttons{
+                    padding: 4px 15px;
+                    border-radius: 2px;
+                    color: $buttonsilver;
+                    border: 1px solid $buttonsilver;
+                    margin-right: 10px;
+                    font-size: 14px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+                .active{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+
+                }
+            }
+            .pagination-part{
+                margin-left: auto;
+                text-align: right;
+                margin-top: 8px;
+                a{
+                    padding: 0;
+                }
+                .pagination-number{
+                    padding: 5px;
+                }
+                .pagination-left-number{
+                    padding: 5px 20px;
+                    border: 1px solid $bordercolor;
+                }
+                .pagination-divider{
+                    padding: 5px 10px;
+                }
+            }
+
+        }
+        .table-top-portion{
+            border-bottom: 0px;
+            padding-bottom: 20px;
+            .search-data{
+                margin-right: 5%;
+            }
+            .faq-category-select{
+                padding: 0px 15px;
+                .form-control {
+                    height: 2rem;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+            }
+            .form-inputs{
+                position:relative;
+                border: 1px solid $bordercolor;
+                border-radius: 2px;
+                height: 2rem;
+                .form-control{
+                    height: 1.9rem;
+                    border: 0px;
+                    &:focus{
+                        box-shadow:none;
+                        border: none !important;
+                    }
+                }
+                i{
+                    position:absolute;
+                    right:15px;
+                    top:10px;
+                    font-size: 15px;
+                }
+                .search-btn{
+                    width: 35px;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 0px;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                    padding: 3px 8px;
+                    height: 1.9rem;
+                    font-size: 13px;
+                }
+            }
+
+        }
+
+        .table-bottom-portion{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+            padding-top: 20px;
+            border-top: 1px solid $bordercolor;
+
+        }
+
+        .faq-table{
+            min-width: 800px;
+            .faq-header{
+                background-color:$tableHeaderBg;
+            }
+            .faqs{
+                color: $textgray;
+                padding: 10px 0px;
+                border-top: 1px solid $bordercolor;
+                .header-div {
+                    text-align: left;
+                    vertical-align: baseline;
+                    display: flex;
+                    background-color: $tableHeaderBg;
+                    p{
+                        font-weight: bold;
+                        color: #000;
+                        padding-left: 5px;
+                        font-size: 16px;
+                        margin: 0;
+                    }
+                }
+                .checkbox-div{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    span{
+                        // font-weight: bold;
+                        color: #000;
+                        padding-left: 5px;
+                    }
+                }
+                .data-div{
+                    p{
+                        margin-bottom: 5px;
+                        color: #000;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        padding-left: 5px;
+                    }
+                }
+                .action-div {
+                    text-align: left;
+                    color: #000;
+                    a{
+                        text-decoration: none;
+                        font-size: 13px !important;
+                        padding: 0 5px;
+                    }
+                    .delete-btn{
+                        color: $deleteBtnColor;
+                    }
+                    .faq-delete-modal{
+                        width: 350px;
+                        top: 40%;
+                        margin: auto;
+                        .faq-delete-modal-body{
+                            padding: 25px 20px;
+                            .btn{
+                                border: 2px solid $buttonsilver;
+                                width: 65px;
+                                border-radius: 2px;
+                                margin: 8px;
+                            }
+                            .yes-btn{
+                                background-color: $buttonsilver;
+                                color: $textwhite;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        .faq-create-modal {
+            margin: 3% auto;
+            .faq-create-modal-body {
+              padding: 15px 20px;
+              .user-title {
+                font-size: 18px;
+                padding-right: 0px;
+                font-weight: bold;
+              }
+              .user-data {
+                padding-left: 0px;
+              }
+              .faq-create-modal-header {
+                .faq-create-modal-close-btn {
+                  float: right;
+                  border: 3px solid $bgblack !important;
+                  border-radius: 50%;
+                  font-size: 8px;
+                  margin-top: 5px;
+                  padding: 6px;
+                  color: $bgblack !important;
+                  font-weight: bold;
+                }
+              }
+              .faq-create-modal-data {
+                margin-top: 10px;
+                .data-body {
+                  .data-row {
+                    margin-top: 15px;
+                    label {
+                      margin-bottom: 8px;
+                      font-size: 14px;
+                    }
+                    .ans-area {
+                        height: 220px;
+                    }
+                  }
+                }
+              }
+              .create-faq-btn {
+                @include commonButton;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 3px;
+                margin-top: 35px;
+                margin-bottom: 20px;
+              }
+            }
+          }
+
+    }
+    .recipient-add-modal-btn{
+        border-radius: 50%;
+        img{
+            width:23px;
+        }
+        &:focus{
+            box-shadow: 0px;
+            outline: 0 !important;
+        }
+    }
+    .save-btn {
+        @include commonButton;
+        background-color: $buttonsilver;
+        color: #fff;
+        padding: 3px;
+        &:hover {
+            background-color: black;
+            color: #fff;
+        }
+      }
+}
+
+
+
+@media (max-width: 1050px) and (min-width: 992px) {
+    .main-body {
+        .admin-setup-body {
+            .admin-setup-button-body {
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        padding: 6px 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+    .main-body {
+        .admin-setup-card {
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+
+        }
+        .admin-setup-body {
+            .save-btn {
+                width: 5rem;
+                height: 34px;
+                padding: 8px 12px;
+            }
+            .adminSetupTabContent {
+                padding: 8px 16px;
+                .support-ticket-body {
+                    .tickets {
+                        .data-div {
+                            .category-name{
+                                font-size: 14px !important;
+                                }
+                                .users-email{
+                                padding:4px 6px;
+                                .cancel-btn{
+                                    padding-left: 5px !important;
+                                }
+                                }
+                        }
+
+                    }
+                }
+            }
+
+            .admin-setup-button-body {
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        padding: 5px 8px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 810px) and (min-width: 791px) {
+    .main-body {
+        .admin-setup-body {
+            .admin-setup-button-body {
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+
+        }
+    }
+}
+@media (max-width: 790px) and (min-width: 768px) {
+    .main-body {
+        .admin-setup-body {
+            .admin-setup-button-body {
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .main-body {
+        .alert-success {
+            width: 50% !important;
+        }
+        .admin-setup-body {
+            .save-btn {
+                width: 4rem;
+                height: 32px;
+                padding: 6px 8px;
+            }
+            .admin-setup-button-card {
+                padding: 10px !important;
+            }
+            .admin-setup-card {
+                padding: 10px !important;
+            }
+            .admin-setup-button-body {
+
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        padding: 3px 6px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+            .adminSetupTabContent {
+                .table-top-portion{
+                    .faq-category-select{
+                        padding-left: 0px !important;
+                    }
+                    .select-data{
+                        margin-top: 5px;
+                    }
+                }
+                .admin-setup-login-card-portion {
+                    .setup-login-card {
+                        .card-body{
+                            .upload-inner {
+                                flex-direction: column;
+                                .login-upload-container{
+                                    width: 100%;
+                                }
+                                .img-preview-container {
+                                    width: 100%;
+                                    height: fit-content;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+    .main-body {
+        .admin-setup-body {
+            .save-btn {
+                width: 4rem;
+                height: 30px;
+                padding: 6px 8px;
+            }
+            .admin-setup-button-card {
+                padding: 10px !important;
+            }
+            .admin-setup-card {
+                padding: 10px !important;
+            }
+            .admin-setup-button-body {
+                .tab-buttons {
+                    .adminSetupTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .adminSetupTabContent {
+                .admin-setup-login-card-portion {
+                    .setup-login-card {
+                        .card-body{
+                            .upload-inner {
+                                flex-direction: column;
+                                .login-upload-container{
+                                    width: 100%;
+                                }
+                                .img-preview-container {
+                                    height: fit-content;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .support-ticket-body {
+
+                    .tickets{
+                        .header-div {
+                            padding: 6px;
+                            font-size: 12px;
+                        }
+                        .data-div {
+                            padding: 6px;
+                            font-size: 12px;
+                            .users-email {
+                                p{
+                                    font-size: 12px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .admin-setup-terms-card-portion {
+                    .setup-terms-card {
+                        .card-body {
+                            .terms-container{
+                                padding: 20px 0;
+                            }
+                        }
+                    }
+                }
+                .admin-setup-policy-card-portion {
+                    .setup-policy-card {
+                        .card-body {
+                            .terms-container{
+                                padding: 20px 0;
+                            }
+                        }
+                    }
+                }
+                .select-pagination-portion{
+                    .pagination-part{
+                        .pagination-number {
+                            padding: 3px;
+                        }
+                        .pagination-left-number{
+                            padding: 5px 10px;
+                        }
+                        .pagination-divider {
+                            padding: 5px 0px;
+                        }
+                    }
+                    .button-part{
+                        .mark-as-download-btn{
+                            margin: 10px 0px;
+                        }
+                    }
+                    .create-btn-part {
+                        margin-top: 10px;
+                        .download-btn {
+                            width: 4rem;
+                            height: 30px;
+                            padding: 4px 7px;
+                        }
+                    }
+                }
+                .table-top-portion{
+                    .faq-category-select{
+                        padding-left: 0px !important;
+                    }
+                    .select-data{
+                        margin-top: 10px;
+                    }
+                }
+                .table-bottom-portion {
+                    .count-part{
+                        width: 40%;
+                        p{
+                            margin-left: 0;
+                        }
+                    }
+                    .bottom-pagination-part {
+                        width: 60%;
+                    }
+                }
+                .faq-table{
+                    .faqs{
+                        .data-div{
+                            p{
+                                margin-top: 4px;
+                            }
+                        }
+                        .action-div {
+                            a {
+                                margin: 0px;
+                                padding: 0;
+                                font-size: 11px;
+                                .faq-delete-modal{
+                                    width: 280px;
+                                    .faq-delete-modal-body{
+                                        .btn{
+                                            width:40px;
+                                         }
+                                    }
+                                }
+
+                            }
+                            .active {
+                                padding: 4px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1181 @@
+@use "../abstracts/_variables.scss" as *;
+.customer-esop-card {
+    .select-pagination-portion {
+        padding: 10px 0px;
+        border-bottom: 1px solid $bordercolor;
+        .search-box-part,
+        .pagination-part {
+            display: inline-block;
+        }
+        .search-box-part {
+            margin-left: 0;
+        }
+        .pagination-part {
+            // float: right;
+            margin-left: auto;
+            text-align: right;
+            margin-top: 8px;
+            padding-bottom: 20px;
+            a {
+                padding: 0;
+            }
+            .pagination-number {
+                padding: 5px;
+            }
+            .pagination-left-number {
+                padding: 5px 20px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider {
+                padding: 5px 10px;
+            }
+        }
+    }
+    .table-top-portion {
+        border-bottom: 0px;
+        padding-bottom: 20px;
+        .search-data {
+            margin-right: 5%;
+        }
+        .form-inputs {
+            position: relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            .form-control {
+                height: 1.9rem;
+                border: 0px;
+                &:focus {
+                    box-shadow: none;
+                    border: none !important;
+                }
+            }
+            i {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                font-size: 15px;
+            }
+            .search-btn {
+                width: 35px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                height: 1.9rem;
+                font-size: 13px;
+                padding: 3px 8px;
+            }
+        }
+    }
+
+    .table-bottom-portion {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+        border-top: 1px solid $bordercolor;
+    }
+    .entries-manage-body {
+        min-width: 800px;
+        .entries {
+            // color: $textgray;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+            .document-div {
+                padding: 0 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            .action-div {
+                a {
+                    text-decoration: none;
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+    .customer-esop-content-body {
+        padding: 0;
+        .overview-manage-body {
+            padding: 0;
+            background-color: transparent !important;
+
+            .esop-overview-card {
+                margin-top: 0 !important;
+                padding: 0;
+                background-color: #fff !important;
+                .card-body {
+                    padding: 1rem 0px;
+                    padding-bottom: 0px;
+                    .overview-card-header {
+                        padding: 10px 25px;
+                        // padding-bottom: 10px;
+                        background-color: #d9d9d9;
+                        .header-text {
+                            display: inline;
+                            font-weight: bold;
+                        }
+                    }
+                    .date-div {
+                        text-align: right;
+                        margin-top: 20px;
+                        margin-right: 3%;
+                    }
+                    .bar-chart-container {
+                        .overview-bar-chart {
+                            width: 100%;
+                            height: 250px;
+                            @media (min-width: 1700px) {
+                                height: 400px;
+                            }
+                        }
+                    }
+                }
+                .overview-card-body {
+                    padding-top: 0;
+                    background-color: #fff;
+                }
+            }
+            .esop-overview-table-card {
+                background-color: #fff !important;
+                padding: 0;
+                .card-body {
+                    padding: 1rem 0px;
+                    padding-bottom: 0px;
+                    background-color: #fff;
+                    .overview-card-header {
+                        padding: 10px 25px;
+                        // padding-bottom: 10px;
+                        background-color: #d9d9d9;
+                        .header-text {
+                            display: inline;
+                            font-weight: bold;
+                        }
+                    }
+                    .esop-overview-table {
+                        width: 100%;
+                        min-width: 900px;
+                        thead {
+                            background-color: #fafafa;
+                        }
+                        thead,
+                        tbody {
+                            th,
+                            td {
+                                padding: 8px 3%;
+                                // padding-right: 3% !important;
+                                border-bottom: 1px solid $bordercolor;
+                                vertical-align: baseline;
+                            }
+                            .description-header,
+                            .description-data {
+                                // width: 90%;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                text-align: left;
+                                max-width: 350px;
+                                a {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .overview-card-body {
+                    padding-top: 0;
+                }
+            }
+        }
+        .entry-view-modal {
+            max-width: 550px;
+            .entry-view-modal-body {
+                padding: 15px 20px;
+                .modal-title {
+                    font-size: 18px;
+                    padding-right: 0px;
+                    font-weight: bold;
+                }
+                .modal-data {
+                    padding-left: 0px;
+                }
+                .entry-view-modal-header {
+                    .entry-view-modal-close-btn {
+                        float: right;
+                        border: 3px solid $bgblack !important;
+                        border-radius: 50%;
+                        font-size: 8px;
+                        margin-top: 5px;
+                        padding: 6px;
+                        color: $bgblack !important;
+                        font-weight: bold;
+                    }
+                }
+                .entry-view-modal-data {
+                    margin-top: 10px;
+                    .data-body {
+                        .data-row {
+                            margin-top: 15px;
+                            label {
+                                margin-bottom: 8px;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                            .entry-data {
+                                font-size: 15px;
+                                padding-left: 10px !important;
+                                border: 1px solid #d9d9d9;
+                                padding: 5px 12px;
+                                height: 40%;
+                            }
+                            .desc-data {
+                                height: 80%;
+                            }
+                            .close-view-btn {
+                                @include commonButton;
+                                color: $textwhite;
+                                background-color: $buttonsilver;
+                                border-radius: 2px;
+                                padding: 4px 15px;
+                                // height: 1.9rem;
+                            }
+                            // after wayne modifications part starts here
+                            .date-input::-webkit-inner-spin-button {
+                                display: none;
+                            }
+
+                            .date-input::-webkit-clear-button {
+                                display: none;
+                            }
+
+                            .date-input::-webkit-datetime-edit-year-field {
+                                visibility: hidden;
+                            }
+                            .date-input::-webkit-datetime-edit-text {
+                                color: transparent;
+                            }
+                            // after wayne modifications part ends here
+                        }
+                        .fye-row {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.customer-esop-body {
+    .card {
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .customer-esop-button-card {
+        padding-left: 0px;
+    }
+    .customer-esop-card {
+        padding-right: 0px;
+    }
+    .customer-esop-button-body {
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+        .tab-buttons {
+            background-color: $bgwhite;
+            .customerESOPTabLinks {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 6px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+            .active {
+                background-color: $mailboxtabactivebackground;
+                color: $textbeaver;
+                border-right: 4px solid $textbeaver;
+            }
+        }
+    }
+    .customerESOPTabContent {
+        padding: 10px 20px;
+        background-color: $bgwhite !important;
+        .urgent-checkbox {
+            width: 15px;
+            height: 15px;
+        }
+        .required-msg {
+            color: $textgray;
+        }
+        .entries-manage-body {
+            .entries {
+                .header-div {
+                    padding: 0 3px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                }
+                .action-div {
+                    a {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+        .customer-document-management-new-mail-doc-portion {
+            border: 1px solid $textbeaver;
+            margin-top: 20px;
+            border-radius: 4px;
+            .accordion-item {
+                border-radius: 4px;
+                .accordion-button {
+                    color: $textbeaver;
+                    padding: 10px 20px;
+                    &:not(.collapsed) {
+                        color: $textbeaver;
+                        background-color: $bgwhite;
+                        border-bottom: 1px solid $textbeaver;
+                        &::after {
+                            background-image: url("../icons/beaver-arrow-icon.png");
+                            transform: none;
+                            height: 1.5em;
+                            width: 1.5rem;
+                            margin-top: 1px;
+                        }
+                    }
+                    &:focus {
+                        border-color: none !important;
+                        box-shadow: none;
+                    }
+                    &::after {
+                        background-image: url("../icons/beaver-arrow-icon.png");
+                        transform: rotate(-180deg);
+                        height: 1.5em;
+                        width: 1.5rem;
+                    }
+                    .badge {
+                        padding: 4px 7px;
+                        border-radius: 50%;
+                        background: $textbeaver;
+                        color: $textwhite;
+                        margin-left: 15px;
+                        font-size: 15px;
+                    }
+                }
+                .accordion-body {
+                    padding-bottom: 25px;
+                    .clear-all-btn-portion {
+                        text-align: right;
+                        .clear-all-btn {
+                            font-size: 14px;
+                        }
+                    }
+                    .card {
+                        max-height: 230px !important;
+                        overflow: hidden;
+                        border: 1px solid $bordercolor;
+                        border-radius: 4px;
+                        .card-body {
+                            padding: 22px 25px;
+                            padding-bottom: 0px;
+                            background-color: $mainbodycolor;
+                            height: 230px;
+                            .image-portion {
+                                .document-image {
+                                    width: 100%;
+                                    margin-bottom: 0;
+                                    box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                    -webkit-box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                    -moz-box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                }
+                            }
+                        }
+                        .text-btn-portion {
+                            z-index: 999;
+                            position: absolute;
+                            bottom: 0;
+                            background: $bgwhite;
+                            width: 100% !important;
+                            height: 60px;
+                            border-bottom-left-radius: 7px;
+                            border-bottom-right-radius: 7px;
+                            padding: 15px 13px;
+                            border-bottom: 1px solid $bordercolor;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-weight: bold;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .customer-document-management-search-btn-portion {
+            .card {
+                border: 1px solid $bordercolor !important;
+                border-radius: 7px !important;
+                .card-body {
+                    .left-side-portion {
+                        .download-btn {
+                            @include commonButton;
+                            border: 1px solid $buttonsilver;
+                            color: $textwhite;
+                            background-color: $buttonsilver;
+                            padding: 3px 15px;
+                        }
+                    }
+                    .right-side-portion {
+                        margin-left: auto;
+                        .search-box-part {
+                            display: inline-block;
+                            transform: translateY(-1px);
+                            .form-inputs {
+                                position: relative;
+                                border: 1px solid $bordercolor;
+                                border-radius: 2px;
+                                height: 2rem;
+                                .form-control {
+                                    height: 1.9rem;
+                                    border: 0px;
+                                    &:focus {
+                                        box-shadow: none;
+                                        border: none !important;
+                                    }
+                                }
+                                i {
+                                    position: absolute;
+                                    right: 15px;
+                                    top: 10px;
+                                    font-size: 15px;
+                                }
+                                .search-btn {
+                                    width: 35px;
+                                    color: $textwhite;
+                                    background-color: $buttonsilver;
+                                    border-radius: 0px;
+                                    border-top-right-radius: 2px;
+                                    border-bottom-right-radius: 2px;
+                                    height: 1.9rem;
+                                    font-size: 13px;
+                                    padding: 3px 8px;
+                                }
+                            }
+                        }
+                        .btn-group {
+                            display: inline-block;
+                            margin-top: -5px;
+                            a {
+                                padding: 0px;
+                                margin: 0px 5px;
+                                width: 2rem;
+                                height: 2rem;
+                                svg {
+                                    border: 2px solid $icongray;
+                                    border-radius: 3px;
+                                    color: $icongray;
+                                    font-size: 14px;
+                                    padding: 7px;
+                                    vertical-align: middle;
+                                }
+                                .active {
+                                    color: $textwhite;
+                                    border: 2px solid $buttonsilver !important;
+                                    background-color: $buttonsilver !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .customer-document-management-yearly-accordion {
+            margin-top: 20px;
+            border-radius: 4px;
+            .accordion-item {
+                border-radius: 4px;
+                margin-bottom: 20px;
+                .accordion-button {
+                    color: $textblack;
+                    padding: 10px 20px;
+                    border: 1px solid $bordercolor;
+                    border-radius: 4px;
+                    &:not(.collapsed) {
+                        background-color: $bgwhite;
+                        border-bottom: 1px solid $bordercolor;
+                        &::after {
+                            background-image: url("../icons/silver-arrow-icon.png");
+                            transform: none;
+                            height: 1.5em;
+                            width: 1.5rem;
+                            margin-top: 1px;
+                        }
+                    }
+                    &:focus {
+                        border-color: none !important;
+                        box-shadow: none;
+                    }
+                    &::after {
+                        background-image: url("../icons/silver-arrow-icon.png");
+                        transform: rotate(-180deg);
+                        height: 1.5em;
+                        width: 1.5rem;
+                    }
+                    span {
+                        margin-left: 10px;
+                    }
+                }
+                .accordion-body {
+                    padding-bottom: 25px;
+                    .nav-pills {
+                        // it will be used if select all portion is used
+                        // margin-top: -15px;
+                        // it will be used if select all portion is used
+                        width: 90%;
+                        .nav-item {
+                            .nav-link {
+                                color: $textblack;
+                                font-size: 12px;
+                                padding: 2px 5px;
+                                border: 1px solid $bordercolor;
+                                border-radius: 3px;
+                                margin-right: 15px;
+                                margin-bottom: 5px;
+                                width: 3rem;
+                                height: 1.5rem;
+                            }
+                            .active {
+                                background-color: $buttonsilver;
+                                color: $textwhite;
+                            }
+                        }
+                    }
+                    .select-all-portion {
+                        text-align: right;
+                        // margin-bottom: -15px;
+                        .select-all-link {
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
+                        }
+                    }
+                    .tab-content {
+                        .tab-pane {
+                            .card {
+                                height: 300px !important;
+                                overflow: hidden;
+                                border: 1px solid $bordercolor;
+                                border-radius: 4px;
+                                .card-body {
+                                    padding: 30px 40px;
+                                    padding-bottom: 0px;
+                                    background-color: $mainbodycolor;
+                                    height: 230px;
+                                    .image-portion {
+                                        .document-image {
+                                            width: 100%;
+                                            margin-bottom: 0;
+                                            box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                            -webkit-box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                            -moz-box-shadow: 0px -1px 13px -4px rgba(0, 0, 0, 0.49);
+                                        }
+                                    }
+                                }
+                                .checkbox-area {
+                                    z-index: 999;
+                                    position: absolute;
+                                    right: 22px;
+                                    top: 28px;
+                                    .document-checkbox {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1px solid $icongray !important;
+                                        &:hover {
+                                            border: 1px solid $icongray !important;
+                                        }
+                                        &:focus {
+                                            border: 1px solid $icongray !important;
+                                        }
+                                    }
+                                }
+                                .text-btn-portion {
+                                    z-index: 999;
+                                    position: absolute;
+                                    bottom: 0;
+                                    background: $bgwhite;
+                                    width: 100% !important;
+                                    height: 90px;
+                                    border-bottom-left-radius: 7px;
+                                    border-bottom-right-radius: 7px;
+                                    padding: 15px 13px;
+                                    border-bottom: 1px solid $bordercolor;
+                                    display: flex;
+                                    .text-portion {
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        margin-right: 10px;
+                                        .doc-name {
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            font-weight: bold;
+                                            font-size: 14px;
+                                        }
+                                        .update-time {
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            font-size: 12px !important;
+                                            color: $textgray;
+                                        }
+                                    }
+                                    .btn-portion {
+                                        margin-left: auto;
+                                        img {
+                                            width: 30px;
+                                        }
+                                        .download-warning-text {
+                                            font-size: 13px;
+                                            color: $warningtextcolor;
+                                        }
+                                        .download-remaining-time-text {
+                                            font-size: 13px;
+                                            color: $borderblue;
+                                        }
+                                    }
+                                }
+                                .checked {
+                                    background-color: $shadeblue;
+                                }
+                            }
+                            .checkedCard {
+                                border: 1px solid $borderblue;
+                            }
+                            .list-view {
+                                min-width: 800px;
+                                margin: 0px 5px;
+                                .document-table {
+                                    .thead {
+                                        border-bottom: 1px solid $bordercolor;
+                                        .tr {
+                                            .th {
+                                                padding-bottom: 10px !important;
+                                                font-weight: bold;
+                                            }
+                                            .name-header {
+                                                padding-left: 25px;
+                                            }
+                                        }
+                                    }
+                                    .tbody {
+                                        .tr {
+                                            border-bottom: 1px solid $bordercolor;
+                                            .td {
+                                                padding: 10px 0px !important;
+                                                display: inline-block;
+                                                .download-btn {
+                                                    @include downloadedButton;
+                                                    background-color: $buttonsilver;
+                                                    color: $textwhite;
+                                                    font-size: 13px;
+                                                    padding: 2px 8px;
+                                                }
+
+                                                .document-checkbox {
+                                                    width: 15px;
+                                                    height: 15px;
+                                                    border: 1px solid $icongray !important;
+                                                    margin-right: 8px;
+                                                    &:hover {
+                                                        border: 1px solid $icongray !important;
+                                                    }
+                                                    &:focus {
+                                                        border: 1px solid $icongray !important;
+                                                    }
+                                                }
+                                            }
+                                            .name-data {
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                padding-right: 30px !important;
+                                            }
+                                            .update-date-data,
+                                            .expire-date-data {
+                                                padding-left: 14px !important;
+                                            }
+                                            .action-data {
+                                                .warning {
+                                                    background-color: $highlightedtextcolor !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1201px) {
+    .main-body {
+        .customer-esop-card {
+            .entries-manage-body {
+                .entries {
+                    .action-div {
+                        a {
+                            padding: 2px;
+                            font-size: 15px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+    .main-body {
+        .customer-esop-card {
+            .entries-manage-body {
+                .entries {
+                    .action-div {
+                        a {
+                            padding: 2px;
+                            font-size: 14px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1050px) and (min-width: 992px) {
+    .main-body {
+        .customer-esop-body {
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        padding: 6px 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+    .main-body {
+        .customer-esop-card {
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+            .table-top-portion {
+                .search-box-part {
+                    padding-right: 15px;
+                }
+            }
+            .entries {
+                .action-div {
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .customer-esop-body {
+            .customerESOPTabContent {
+                padding: 8px 16px;
+                .customer-document-management-new-mail-doc-portion {
+                    .accordion-item {
+                        .accordion-body {
+                            .card {
+                                max-height: 150px !important;
+                            }
+                        }
+                    }
+                }
+                .customer-document-management-search-btn-portion {
+                    .card {
+                        .card-body {
+                            .left-side-portion {
+                                .download-btn {
+                                    font-size: 12px;
+                                }
+                            }
+                            .right-side-portion {
+                                .search-box-part {
+                                    .search-btn {
+                                        margin-top: 0;
+                                    }
+                                }
+                                .btn-group {
+                                    a {
+                                        svg {
+                                            padding: 8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .customer-document-management-yearly-accordion {
+                    .accordion-item {
+                        .accordion-body {
+                            .tab-content {
+                                .tab-pane {
+                                    .card {
+                                        max-height: 180px !important;
+                                        .card-body {
+                                            padding: 20px 25px !important;
+                                        }
+                                        .checkbox-area {
+                                            right: 10px !important;
+                                            top: 16px !important;
+                                            .document-checkbox {
+                                                width: 15px !important;
+                                                height: 15px !important;
+                                            }
+                                        }
+                                    }
+                                    .text-btn-portion {
+                                        height: 80px;
+                                        .text-portion {
+                                            .doc-name {
+                                                font-size: 13px !important;
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                        .btn-portion {
+                                            button {
+                                                padding-bottom: 3px;
+                                                img {
+                                                    width: 22px !important;
+                                                    margin-top: -10px;
+                                                }
+                                            }
+                                            span {
+                                                font-size: 12px !important;
+                                            }
+                                        }
+                                    }
+                                    .list-view {
+                                        .document-table {
+                                            .thead {
+                                                .tr {
+                                                    .th {
+                                                        font-size: 15px;
+                                                    }
+                                                }
+                                            }
+                                            .tbody {
+                                                .tr {
+                                                    .td {
+                                                        font-size: 14px;
+                                                        .document-checkbox {
+                                                            height: 13px;
+                                                            width: 13px;
+                                                        }
+                                                    }
+                                                    .name-data {
+                                                        padding-right: 10px !important ;
+                                                    }
+                                                    .action-data {
+                                                        font-size: 11px !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pagination-left-number {
+                padding: 5px 8px !important;
+            }
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        padding: 5px 8px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .entries {
+                .header-div {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+                .document-div {
+                    p {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    a {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 810px) and (min-width: 791px) {
+    .main-body {
+        .customer-esop-body {
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 790px) and (min-width: 768px) {
+    .main-body {
+        .customer-esop-body {
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .main-body {
+        .alert-success {
+            width: 50% !important;
+        }
+        .customer-esop-body {
+            .entries {
+                .document-div {
+                    p {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    a {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .customer-esop-button-card {
+                padding: 10px !important;
+            }
+            .customer-esop-card {
+                padding: 10px !important;
+            }
+            .pagination-left-number {
+                padding: 4px 6px !important;
+            }
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        padding: 3px 6px;
+                    }
+                }
+            }
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+            .customer-document-management-search-btn-portion {
+                .card {
+                    .card-body {
+                        .left-side-portion {
+                            .download-btn {
+                                width: 5rem;
+                                height: 32px;
+                                border: 1px solid $buttonsilver;
+                                color: $textwhite;
+                                background-color: $buttonsilver;
+                                padding: 4px 10px;
+                                font-size: 13px;
+                                // margin-left: 10px;
+                            }
+                        }
+                        .right-side-portion {
+                            display: flex;
+                            margin-left: 10px;
+                            .search-box-part {
+                                .search-btn {
+                                    margin-top: 0;
+                                }
+                            }
+                            .btn-group {
+                                display: inline-flex;
+                                margin-top: -3px;
+                                a {
+                                    svg {
+                                        padding: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+    .main-body {
+        .customer-esop-body {
+            .entries {
+                .document-div {
+                    p {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    a {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .customer-esop-button-card {
+                padding: 10px !important;
+            }
+            .customer-esop-card {
+                padding: 10px !important;
+            }
+            .select-pagination-portion {
+                .pagination-part {
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number {
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+            }
+            .entries-manage-body {
+                .entries {
+                    .action-div {
+                        a {
+                            margin: 0px;
+                            padding: 0;
+                            font-size: 11px;
+                        }
+                        .active {
+                            padding: 4px 10px;
+                        }
+                    }
+                }
+            }
+            .customer-esop-button-body {
+                .tab-buttons {
+                    .customerESOPTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .customer-document-management-search-btn-portion {
+                .card {
+                    .card-body {
+                        flex-direction: column-reverse;
+                        .left-side-portion {
+                            text-align: center;
+                            .download-btn {
+                                border: 1px solid $buttonsilver;
+                                color: $textwhite;
+                                background-color: $buttonsilver;
+                                padding: 4px 6px;
+                                font-size: 13px;
+                                // margin-left: 10px;
+                            }
+                        }
+                        .right-side-portion {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            margin-bottom: 10px;
+                            margin-left: 0;
+                            .search-box-part {
+                                margin-top: 10px;
+                                .search-btn {
+                                    margin-top: 0;
+                                }
+                            }
+                            .btn-group {
+                                text-align: center;
+                                a {
+                                    svg {
+                                        padding: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .customer-document-management-new-mail-doc-portion {
+                .accordion-item {
+                    .accordion-button {
+                        font-size: 12px;
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            .customer-document-management-yearly-accordion {
+                .accordion-item {
+                    .accordion-body {
+                        .select-all-portion {
+                            margin-bottom: 5px;
+                            text-align: center;
+                        }
+                        .nav-pills {
+                            justify-content: center;
+                            margin-top: 0;
+                            .nav-item {
+                                .nav-link {
+                                    margin: 2.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

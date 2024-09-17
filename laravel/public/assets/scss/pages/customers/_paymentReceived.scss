@@ -1,0 +1,200 @@
+@use '../abstracts/_variables.scss' as *;
+
+.main-body.payment-main-body {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: $bgwhite !important;
+    .body-container{
+        margin: 10rem auto;
+        .logo-portion{
+            width: 20%;
+            padding: 2rem 2.2rem;
+            padding-bottom: 1.5rem;
+            margin: 0 auto ;
+            border-radius: 18px;
+            .logo{
+                width: 56%;
+                margin:5% 27%;
+                height: 7.25rem;
+                background-image: url('../images/goa-logo.jpg');
+                background-repeat: no-repeat;
+                background-size: 80% 100%;
+            }
+            .slogan{
+                width: 66%;
+                margin: 0 auto;
+                height: 8.375rem;
+                background-image: url('../images/slogan.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .top-message-portion{
+            .top-message {
+                text-align: center;
+                font-size: 16px !important;
+                line-height: 24px;
+            }
+        }
+        .bottom-message-portion{
+            .bottom-message {
+                text-align: center;
+                font-size: 16px !important;
+                line-height: 24px;
+            }
+        }
+        .button-portion{
+            text-align: center;
+            margin-top: 7rem;
+            .back-btn {
+                @include commonButton;
+                padding: 3px 6px;
+                border:1px solid $buttonsilver;
+                border-radius: 2px;
+                background-color: $buttonsilver;
+                color: $textwhite;
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1799px) {
+    .body-container {
+        .logo-portion {
+            .logo {
+                width: 56% !important;
+                height: 5.8rem !important;
+                margin: 5% 27% !important;
+            }
+            .slogan {
+                width: 66% !important;
+                height: 6.5rem !important;
+            }
+        }
+    }
+}
+@media (max-width: 4000px) and (min-width: 1800px) {
+    .body-container {
+        .logo-portion {
+            .logo {
+                width: 12rem !important;
+                margin: 20% auto 0 !important;
+            }
+            .slogan {
+                width: 20rem !important;
+                margin: 7% auto 20% !important;
+            }
+        }
+    }
+}
+@media (max-width:1599px) and (min-width:1400px){
+    .body-container {
+        margin:3rem auto !important;
+        .button-portion{
+            margin-top: 3rem;
+        }
+
+    }
+}
+@media (max-width:1399px) and (min-width:993px){
+    .body-container {
+        margin:2.5rem auto !important;
+        .button-portion{
+            margin-top: 3rem;
+        }
+        .logo-portion {
+            width: 40% !important;
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .body-container {
+        margin:3rem auto !important;
+        .button-portion{
+            margin-top: 2.5rem !important;
+        }
+        .logo-portion {
+            width: 60% !important;
+        }
+    }
+}
+
+@media (max-width:767px)  and (min-width:576px) {
+    .body-container {
+        margin:20% auto !important;
+        .button-portion{
+            margin-top: 2rem !important;
+        }
+        .logo-portion {
+            width: 70% !important;
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .body-container {
+        margin:30% auto !important;
+        .button-portion{
+            margin-top: 1.5rem !important;
+        }
+        .logo-portion {
+            width: 80% !important;
+        }
+    }
+}
+// @media (max-width:476px) and (min-width:390px) {
+//     .form-body{
+//         width: 70%;
+//         margin: 30% 15%;
+//     }
+//     .forget-sent-body{
+//         margin: 35% 15%;
+//     }
+//     .bottom-link-portion{
+//         right: unset;
+//         width: 100%;
+//         text-align: center;
+//     }
+// }
+// @media (max-width:350px) and (min-width:330px) {
+//     .form-body{
+//         width: 70%;
+//         margin: 20% 15%;
+//     }
+//     .forget-sent-body{
+//         margin: 25% 15%;
+//     }
+//     .bottom-link-portion{
+//         right: unset;
+//         width: 100%;
+//         text-align: center;
+//     }
+// }
+// @media (max-width:350px) and (min-width:300px) {
+//     .form-body{
+//         width: 80%;
+//         margin: 15% 10%;
+//         padding: 2rem 1.2rem;
+//     }
+//     .forget-sent-body{
+//         margin: 20% 10%;
+//     }
+//     .bottom-link-portion{
+//         right: unset;
+//         width: 100%;
+//         text-align: center;
+//     }
+//     .terms-policy-body{
+//         padding: 1.2rem;
+//         width: 76%;
+//         margin: 15vh 12%;
+//         .header-part{
+//             .body-header{
+//                 font-size: 15px;
+//                 padding-right: 25px;
+//             }
+//         }
+//     }
+// }

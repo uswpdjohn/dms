@@ -1,0 +1,679 @@
+@use '../abstracts/_variables.scss' as *;
+.admin-company-management-edit-top-portion{
+    .b-info-img{
+        width: 80%;
+        margin: 0% 10%;
+        padding: 10px;
+        border: 1px solid $bordercolor;
+        background-color: $bgwhite;
+        border-radius: 2px;
+    }
+    .upload-inner {
+        .company-upload-container {
+        position: relative;
+        margin: 0 10%;
+        padding: 10px;
+        width: 80%;
+        height: 100%;
+        max-width: 8.25rem;
+        max-height: 8.25rem;
+        border: 1px solid $bordercolor;
+        border-radius: 2px;
+        align-items: flex-start;
+        cursor: pointer;
+        background-color: $bgwhite;
+
+        .upload-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .upload-icon {
+            font-size: 50px;
+            color: #000;
+            text-align: center;
+            position: relative;
+        }
+
+        .upload-icon span {
+            display: block;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+      }
+      .img-preview-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        overflow: hidden;
+        .preview-item {
+            height: 100%;
+            width: 100%;
+            .preview-img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+          }
+
+            .preview-name {
+                margin-top: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+      }
+    }
+    .card{
+        margin-top: 0px;
+       .company-data-container {
+
+            .company-info-label{
+                font-size: 15px;
+                margin-top: 45px;
+            }
+            .company-info-data{
+                font-size: 17px;
+                font-weight: bold;
+                margin-bottom: 0px;
+            }
+        }
+        .btn{
+            color: $textwhite;
+            padding: 5px 20px;
+        }
+        .save-btn{
+            @include commonButton;
+            padding: 4px 20px;
+            margin-right: 20px;
+            background-color: $buttonsilver;
+        }
+        .status-btn{
+            @include commonButton;
+            padding: 4px 20px;
+            margin-right: 20px;
+        }
+        .billing-btn{
+            @include commonButton;
+            padding: 4px 20px;
+            margin-right: 20px;
+            background-color: $buttonblue;
+        }
+        .company-exit-modal{
+            width: 350px;
+            top: 40%;
+            margin: auto;
+            .company-exit-modal-body{
+                padding: 25px 20px;
+                .btn{
+                    border: 2px solid $buttonsilver;
+                    width: 65px;
+                    border-radius: 2px;
+                    margin: 8px;
+                    color: #212529;
+                    padding: 4px 8px;
+                }
+                .yes-btn{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+                }
+            }
+        }
+
+    }
+}
+
+.admin-company-management-edit-left-card-portion{
+    padding-right: 8px;
+    .card{
+        margin-top: 30px;
+        .card-body{
+            padding: 20px 25px;
+            h6{
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+            .company-info-label{
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            .company-info-data{
+                font-size: 15px;
+                margin-bottom: 20px !important;
+            }
+            .company-info-last-data{
+                margin-bottom: 0px !important;
+            }
+            .date-input::-webkit-inner-spin-button {
+                display: none;
+            }
+
+            .date-input::-webkit-clear-button {
+                display: none;
+            }
+
+            .date-input::-webkit-datetime-edit-year-field {
+                visibility: hidden;
+            }
+            .date-input::-webkit-datetime-edit-text {
+                color: transparent;
+            }
+            // after wayne modifications part ends here
+        }
+    }
+    .user-card{
+        .card-body{
+            padding: 20px 15px;
+            overflow-y: auto !important;
+            overflow-x: none !important;
+            height: 230px;
+            .user-create-modal-btn{
+                border-radius: 50%;
+                margin-left: 5px;
+                margin-top: -5px;
+                img{
+                    width:23px;
+                }
+                &:focus{
+                    box-shadow: 0px;
+                    outline: 0 !important;
+                }
+            }
+            .user-create-modal{
+                margin: 12% auto;
+                .user-create-modal-body{
+                    padding: 15px 20px;
+                    .user-title{
+                        font-size: 18px;
+                        padding-right: 0px;
+                        font-weight: bold;
+                    }
+                    .user-data{
+                        padding-left: 0px;
+                    }
+                    .user-create-modal-header{
+                        .user-create-modal-close-btn{
+                            float: right;
+                            border: 3px solid $bgblack !important;
+                            border-radius: 50%;
+                            font-size: 8px;
+                            margin-top: 5px;
+                            padding: 6px;
+                            color: $bgblack !important;
+                            font-weight: bold;
+                        }
+                    }
+                    .user-create-modal-data{
+                        margin-top: 10px;
+                        .data-body{
+                            .data-row{
+                                margin-top: 15px;
+                                label{
+                                    margin-bottom: 8px;
+                                }
+                            }
+                        }
+                    }
+                    .create-user-btn{
+                        @include commonButton;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 2px;
+                        padding: 4px 15px;
+                        margin-top: 35px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .users{
+                border: 1px solid $bordercolor;
+                padding: 4px 10px;
+                margin-top: 10px;
+                height: fit-content;
+                border-radius: 3px;
+                background-color: $cardgray;
+                width: 70%;
+                p{
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                }
+                .cancel-btn{
+                    margin-top: -3px;
+                    color: $textgray;
+                    &:focus{
+                        box-shadow: 0px;
+                        outline: 0 !important;
+                        border: 0px solid $textwhite;
+                    }
+                }
+            }
+        }
+    }
+}
+.admin-company-management-edit-right-card-portion{
+    padding-left: 8px;
+    .card{
+        height: 336px;
+       .card-body{
+            display: block;
+            overflow-y: auto !important;
+            overflow-x: none !important;
+            h6{
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+            .director-create-modal-btn,
+            .shareholder-create-modal-btn{
+                border-radius: 50%;
+                margin-left: 5px;
+                margin-top: -5px;
+                img{
+                    width:23px;
+                }
+                &:focus{
+                    box-shadow: 0px;
+                    outline: 0 !important;
+                }
+            }
+            .ds-create-modal{
+                margin: 3% auto;
+                .ds-create-modal-body{
+                    padding: 15px 20px;
+                    .ds-title{
+                        font-size: 18px;
+                        padding-right: 0px;
+                        font-weight: bold;
+                    }
+                    .ds-data{
+                        padding-left: 0px;
+                    }
+                    .ds-create-modal-header{
+                        .ds-create-modal-close-btn{
+                            float: right;
+                            border: 3px solid $bgblack !important;
+                            border-radius: 50%;
+                            font-size: 8px;
+                            margin-top: 5px;
+                            padding: 6px;
+                            color: $bgblack !important;
+                            font-weight: bold;
+                        }
+                    }
+                    .ds-create-modal-data{
+                        .data-body{
+                            .data-row{
+                                margin-top: 15px;
+                                label{
+                                    margin-bottom: 8px;
+                                }
+                                .form-control{
+                                  margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .create-ds-btn{
+                        @include commonButton;
+                        color: $textwhite;
+                        background-color: $buttonsilver;
+                        border-radius: 2px;
+                        padding: 4px 15px;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            .directors,
+            .shareholders{
+                border: 1px solid $bordercolor;
+                padding: 10px;
+                margin-top: 10px;
+                height: fit-content;
+                border-radius: 3px;
+                background-color: $cardgray;
+                width: 70%;
+                justify-content: space-between;
+                p{
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                }
+                .button-sec{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .cancel-btn{
+                        margin-top: -3px;
+                        color: $textgray;
+
+                        &:focus{
+                            box-shadow: 0px;
+                            outline: 0 !important;
+                            border: 0px solid $textwhite;
+                        }
+                    }
+                    .dir-shr-edit-btn{
+                        margin-top: -3px;
+                        color: $buttonblue;
+                        font-size: 13px;
+                        &:focus{
+                            box-shadow: 0px;
+                            outline: 0 !important;
+                            border: 0px solid $textwhite;
+                        }
+                    }
+                }
+            }
+       }
+    }
+}
+@media (max-width:1200px) and (min-width:993px){
+    .main-body{
+        .admin-company-management-edit-top-portion{
+            .company-data-container{
+                .company-data-inner{
+                    flex-direction: column;
+                }
+            }
+
+        }
+        .admin-company-management-edit-right-card-portion{
+            padding-left: 0px;
+            .card-body{
+                .directors,
+                .shareholders{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .admin-company-management-edit-top-portion{
+            .upload-inner {
+                .company-upload-container {
+                    width: 80%;
+                    height: 80%;
+                    max-width: 8.25rem;
+                    max-height: 8.25rem;
+                .upload-icon {
+                    font-size: 40px;
+                }
+
+                .upload-icon span {
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+              }
+            }
+            .company-data-container{
+                .company-info-label {
+                    margin-top: 5%;
+                }
+                .company-data-inner{
+                    flex-direction: column;
+                    .company-name {
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .save-btn , .status-btn{
+                height: 34px;
+                width: 5rem;
+                padding: 7px 12px;
+            }
+            .billing-btn{
+                height: 34px;
+                width: 5rem;
+                padding: 7px 12px;
+            }
+        }
+        .admin-company-management-edit-left-card-portion{
+            padding-right: 0px;
+            .card{
+                margin-top: 25px;
+                .company-info-label{
+                    font-size: 13px;
+                }
+                .company-info-data{
+                    font-size: 13px;
+                }
+            }
+            .user-card{
+                .card-body{
+                    padding: 20px 15px;
+                    height: 35vh !important;
+                }
+            }
+        }
+        .admin-company-management-edit-right-card-portion{
+            padding-left: 0px;
+            .card-body{
+                height: 35vh !important;
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px){
+    .main-body{
+        .admin-company-management-edit-top-portion{
+            .upload-inner {
+                .company-upload-container {
+                    width: 80%;
+                    height: 80%;
+                    max-width: 8.25rem;
+                    max-height: 8.25rem;
+                    margin: 0 auto;
+                .upload-icon {
+                    font-size: 40px;
+                }
+
+                .upload-icon span {
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+              }
+            }
+            .company-data-container {
+                padding: 15px !important;
+                text-align: center;
+                .company-info-label {
+                    margin-top: 5%;
+                }
+                .company-data-inner{
+                    flex-direction: column;
+                    .company-name {
+                    font-size: 1rem;
+                    }
+                    .company-data-btns{
+                        justify-content: center;
+                        margin-left: unset !important;
+                    }
+                }
+            }
+            .card{
+
+                .btn{
+                    padding: 5px 15px;
+                }
+                .save-btn , .status-btn{
+                    height: 32px;
+                    width: 4rem;
+                    padding: 5px 10px;
+                }
+                .billing-btn{
+                    height: 32px;
+                    width: 4rem;
+                    padding: 5px 10px;
+                }
+            }
+        }
+        .admin-company-management-edit-left-card-portion{
+            padding-right: 0px !important;
+            .card{
+                margin-top: 20px;
+                .company-info-label{
+                    font-size: 12px;
+                    margin-bottom: 16px;
+                }
+                .company-info-data{
+                    font-size: 12px;
+                    margin-bottom: 22px;
+                }
+            }
+            .user-card{
+                .card-body{
+                    padding: 20px 15px;
+                    height: 40vh !important;
+                }
+            }
+        }
+        .admin-company-management-edit-right-card-portion{
+            padding-left: 0px !important;
+            .card-body{
+                height: 40vh !important;
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px){
+    .main-body{
+        .admin-company-management-edit-top-portion{
+            .upload-inner {
+                .company-upload-container {
+                    width: 80%;
+                    height: 80%;
+                    max-width: 8.25rem;
+                    max-height: 8.25rem;
+                    margin: 0 auto;
+                .upload-icon {
+                    font-size: 40px;
+                }
+
+                .upload-icon span {
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+              }
+            }
+            .company-data-container {
+                padding: 15px !important;
+                text-align: center;
+                .company-info-label {
+                    margin-top: 5%;
+                }
+                .company-data-btns{
+                    justify-content: center;
+                }
+            }
+            .card{
+                .b-info-img{
+                    width: 80%;
+                    padding: 5px;
+                    margin: 0% 5%;
+                }
+                h5{
+                    font-size: 16px;
+                }
+                .btn{
+                    padding: 5px 15px;
+                }
+                .company-name {
+                    font-size: 1rem;
+                }
+                .btn{
+                    padding: 5px 15px;
+                }
+                .d-flex{
+                    flex-direction: column;
+                    margin-left: unset !important;
+                   .d-flex{
+                    flex-direction: row;
+                    .save-btn{
+                        height: 30px;
+                        width: 3rem;
+                        padding: 5px 7px;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                    }
+                    .status-btn{
+                        height: 30px;
+                        width: 3.2rem;
+                        padding: 5px 7px;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                    }
+                    .billing-btn{
+                        height: 30px;
+                        width: 3rem;
+                        padding: 5px 7px;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                        .company-exit-modal{
+                            width: 280px;
+                            .company-exit-modal-body{
+                                .btn{
+                                    width:40px;
+                                 }
+                            }
+                        }
+                    }
+                  }
+                }
+            }
+        }
+
+        .admin-company-management-edit-left-card-portion{
+            padding-right: 0px;
+            .card{
+                .card-body{
+                    padding: 20px;
+                }
+            }
+            .user-card{
+                .card-body{
+                    padding: 20px 15px;
+                    height: 40vh !important;
+                    .users{
+                        width: 100%;
+                        .cancel-btn {
+                            padding-left: 8px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .admin-company-management-edit-right-card-portion{
+            padding-left: 0px;
+            .card-body{
+                height: 40vh !important;
+                .directors,
+                .shareholders{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 340px) and (min-width: 300px) {
+    .admin-company-management-edit-left-card-portion{
+        padding-right: 0px;
+        .card{
+            .company-info-label{
+                font-size: 10px !important;
+            }
+
+        }
+    }
+}

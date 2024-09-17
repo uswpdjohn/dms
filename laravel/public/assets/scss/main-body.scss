@@ -1,0 +1,266 @@
+@use "pages/abstracts/_variables.scss" as *;
+
+@use "pages/customers/billing" as cb;
+@use "pages/customers/customerSupport" as ccs;
+@use "pages/customers/dashboard" as cd;
+@use "pages/customers/documentManagement" as cdm;
+@use "pages/customers/mailbox" as cm;
+@use "pages/customers/notifications" as cnt;
+@use "pages/customers/paymentReceived" as cpr;
+@use "pages/customers/ticket" as ct;
+@use "pages/customers/capTable" as cct;
+@use "pages/customers/esop" as ce;
+
+@use "pages/admin/billing" as ab;
+@use "pages/admin/companyManagementEdit" as acme;
+@use "pages/admin/companyManagementIndex" as acmi;
+@use "pages/admin/companyManagementView" as acmv;
+@use "pages/admin/dashboard" as ad;
+@use "pages/admin/documentManagementView" as admv;
+@use "pages/admin/mailbox" as am;
+@use "pages/admin/notifications" as ant;
+@use "pages/admin/setup" as asp;
+@use "pages/admin/supportTicket" as ast;
+@use "pages/admin/supportTicketManage" as astm;
+@use "pages/admin/userManagement" as aum;
+@use "pages/admin/settings" as asg;
+@use "pages/admin/capTable" as act;
+@use "pages/admin/esop" as ae;
+
+.main-body {
+    padding: 0px 24px 24px;
+    background-color: $mainbodycolor;
+    input,
+    textarea,
+    select,
+    .btn {
+        &:focus,
+        &:active {
+            outline: 0 !important;
+            box-shadow: none !important;
+            border: 1px solid $bordercolor;
+        }
+    }
+    .form-control {
+        color: $textblack !important;
+    }
+
+    .form-inputs {
+        width: 100% !important;
+    }
+    select {
+        color: $textgray !important;
+        background-position: right 0.35rem center !important;
+    }
+    input[type="checkbox"] {
+        height: 1rem !important;
+        width: 1rem !important;
+        @media (max-width: 575px) and (min-width: 300px) {
+            height: 10px !important;
+            width: 10px !important;
+        }
+        @media (max-width: 767px) and (min-width: 576px) {
+            height: 13px !important;
+            width: 13px !important;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+            height: 14px !important;
+            width: 14px !important;
+        }
+    }
+    .select2-container {
+        display: block !important;
+        width: unset;
+        .select2-selection__rendered {
+            padding: 4px 8px;
+            padding-right: 40px;
+        }
+        .select2-selection--single {
+            height: 38px;
+            border-top-left-radius: 2px !important;
+            border-top-right-radius: 2px !important;
+            border: 1px solid $bordercolor !important;
+            .select2-selection__clear {
+                display: none !important;
+            }
+        }
+        .select2-selection__arrow {
+            top: 6px !important;
+        }
+    }
+    .main-body-text {
+        color: $textgray;
+    }
+    .card {
+        background-color: $bgwhite;
+        border: none;
+        border-radius: 2px;
+        margin-top: 20px;
+        .card-body {
+            input,
+            .select {
+                // color: $textgray !important;
+                &:active,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border: 1px solid $textgray !important;
+                }
+            }
+            .required-sign {
+                color: $highlightedtextcolor;
+                margin-right: 4px;
+            }
+            .optional-text {
+                color: $textgray !important;
+            }
+            .submit-btn {
+                background-color: $buttonsilver;
+                float: right;
+                color: $textwhite;
+                bottom: 15px;
+                position: absolute;
+                right: 15px;
+            }
+            .checked-row {
+                background-color: $checkedRowColor;
+            }
+        }
+    }
+    .alert-success {
+        width: 25rem;
+        height: 2.5rem;
+        padding: 8px 20px;
+        display: flex;
+        background-color: $successalertbackground;
+        border: 1px solid $successalertbordercolor;
+        position: absolute;
+        z-index: 1010;
+        top: 50px;
+        margin: 0 25%;
+        box-shadow: -1px 3px 11px 0px rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: -1px 3px 11px 0px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: -1px 3px 11px 0px rgba(0, 0, 0, 0.7);
+
+        animation: signup-response 0.5s 1;
+        -webkit-animation: signup-response 1s 1;
+        animation-fill-mode: forwards;
+
+        animation-delay: 3s;
+        -webkit-animation-delay: 3s; /* Safari and Chrome */
+        -webkit-animation-fill-mode: forwards;
+        @keyframes signup-response {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes signup-response {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .alert-img {
+            width: 15px;
+            padding: 4px 0px;
+            margin-right: 10px;
+        }
+        .alert-text {
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+    }
+    .login-alert-error {
+        height: 3.5rem !important;
+        .alert-img {
+            width: 25px;
+            height: 25px;
+            margin: auto 0px;
+            margin-right: 10px;
+        }
+    }
+    // .alert-access {
+    //     height: 3.5rem !important;
+    //     .alert-img {
+    //         width: 25px;
+    //     }
+    // }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .main-body {
+        p,
+        a,
+        label,
+        .form-control {
+            font-size: 14px !important;
+        }
+        .action-buttons {
+            padding: 3px 5px !important;
+        }
+
+        span,
+        .btn {
+            font-size: 12px !important;
+        }
+        .alert-success {
+            width: 50% !important;
+            margin: 0 8% !important;
+        }
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .main-body {
+        p,
+        a,
+        label,
+        .form-control {
+            font-size: 13px !important;
+        }
+        span,
+        .btn {
+            font-size: 12px;
+        }
+        .card {
+            .card-body {
+                .submit-btn {
+                    position: initial;
+                }
+            }
+        }
+        .alert-success {
+            width: 50% !important;
+            margin: 0 8% !important;
+        }
+    }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+    .main-body {
+        label,
+        p,
+        a,
+        .form-control {
+            font-size: 12px !important;
+        }
+        span,
+        .btn {
+            font-size: 11px;
+        }
+        .card {
+            .card-body {
+                .submit-btn {
+                    position: initial;
+                }
+            }
+        }
+        .alert-success {
+            width: 70%;
+            margin: 0 8%;
+        }
+    }
+}

@@ -1,0 +1,217 @@
+@use '../abstracts/_variables.scss' as *;
+.admin-dashboard-overview-card{
+    .card-body{
+        padding: 1rem 0px;
+        padding-bottom: 0px;
+        .overview-card-header{
+            padding: 10px 25px;
+            background-color: #D9D9D9;
+            .header-text{
+                display: inline;
+                font-weight: bold;
+            }
+            .see-all-ticket-btn{
+                float: right;
+                text-decoration: none;
+            }
+        }
+        .overview-card-body{
+            .overviews{
+                border-top: 1px solid $bordercolor;
+                p{
+                    padding: 0px 25px;
+                    margin: 10px 0px;
+                }
+            }
+        }
+        .pie-chart-container {
+            .customer-pie-chart {
+                width: 100%;
+                height: 550px;
+                @media (min-width:1700px) {
+                    height: 800px;
+                }
+            }
+        }
+        .overview-card-footer {
+            text-align: end;
+            padding: 15px 20px;
+            .dashboard-overview-send-btn {
+                @include markDownloadButton;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 3px 10px;
+            }
+        }
+    }
+    .header-card-body{
+        padding-top: 0;
+    }
+}
+
+.admin-dashboard-task-card{
+    .card-body{
+        padding: 1rem 0px;
+        padding-bottom: 0px;
+        .overview-card-header{
+            padding: 15px 25px;
+            background-color: #D9D9D9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header-text{
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+            .dashboard-overview-send-btn {
+                @include commonButton;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 3px 10px;
+            }
+        }
+        .admin-dashboard-table{
+            width: 100%;
+            min-width: 900px;
+            thead,
+            tbody{
+                th,
+                td{
+                    padding: 8px 3%;
+                    border-bottom: 1px solid $bordercolor;
+                    &:last-child{
+                        padding-left: 0px !important;
+                    }
+                    vertical-align: baseline;
+                }
+                .status-header,
+                .status-data{
+                    width: 10%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    max-width: 90px;
+                    .ticket-status {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+                .description-header,
+                .description-data{
+                    width: 90%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    max-width: 350px;
+                }
+            }
+            tbody{
+                tr{
+                    .status-data{
+                        text-align:center;
+                        font-size: 13px;
+                        .ticket-status{
+                            width: 5rem;
+                            height: 1.5rem;
+                            display: block;
+                            padding: 1px 15px;
+                            border-radius: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-card-body{
+        padding-top: 0;
+    }
+
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .admin-support-ticket-card{
+            .card-body{
+                .admin-dashboard-table{
+                    tbody{
+                        tr{
+                            .status-data{
+                                .ticket-status{
+                                    padding: 3px 2px !important;
+                                    border-radius: 2px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px){
+    .admin-dashboard-table{
+        width: 100%;
+        thead,
+        tbody{
+            th,
+            td{
+                padding: 8px 0px;
+                padding-right: 2% !important;
+            }
+            .status-data{
+                width: 10%;
+            }
+            .description-header,
+            .description-data{
+                width: 31%;
+            }
+        }
+        tbody{
+            tr{
+                .status-data{
+                    .ticket-status{
+                        padding: 3px 6px !important;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px){
+    .overview-card-header{
+        padding: 15px !important;
+    }
+    .admin-dashboard-table{
+        width: 100%;
+        thead,
+        tbody{
+            th,
+            td{
+                padding: 8px 0px;
+                padding-right: 10px !important;
+            }
+            .status-data{
+                width: 10%;
+            }
+            .description-header,
+            .description-data{
+                width: 31%;
+            }
+        }
+        tbody{
+            tr{
+                .status-data{
+                    .ticket-status{
+                        padding: 3px 6px !important;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}

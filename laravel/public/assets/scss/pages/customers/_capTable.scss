@@ -1,0 +1,1002 @@
+@use "../abstracts/_variables.scss" as *;
+.customer-captable-card {
+    .select-pagination-portion {
+        padding: 10px 0px;
+        border-bottom: 1px solid $bordercolor;
+        .search-box-part,
+        .pagination-part {
+            display: inline-block;
+        }
+        .search-box-part {
+            margin-left: 0;
+        }
+        .pagination-part {
+            // float: right;
+            margin-left: auto;
+            text-align: right;
+            margin-top: 8px;
+            a {
+                padding: 0;
+            }
+            .pagination-number {
+                padding: 5px;
+            }
+            .pagination-left-number {
+                padding: 5px 20px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider {
+                padding: 5px 10px;
+            }
+        }
+    }
+    .table-top-portion {
+        border-bottom: 0px;
+        padding-bottom: 20px;
+        .search-data {
+            margin-right: 5%;
+        }
+        .form-inputs {
+            position: relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            .form-control {
+                height: 1.9rem;
+                border: 0px;
+                &:focus {
+                    box-shadow: none;
+                    border: none !important;
+                }
+            }
+            i {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                font-size: 15px;
+            }
+            .search-btn {
+                width: 35px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                height: 1.9rem;
+                font-size: 13px;
+                padding: 3px 8px;
+            }
+        }
+    }
+
+    .table-bottom-portion {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+        border-top: 1px solid $bordercolor;
+        .search-box-part {
+            .form-inputs {
+                position: relative;
+                border: 1px solid $bordercolor;
+                border-radius: 2px;
+                width: 50%;
+                .form-control {
+                    height: 35px;
+                    border: 0px;
+                    &:focus {
+                        box-shadow: none;
+                        border: none !important;
+                    }
+                }
+                i {
+                    position: absolute;
+                    right: 15px;
+                    top: 10px;
+                    font-size: 15px;
+                }
+                .search-btn {
+                    width: 45px;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 0px;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                }
+            }
+        }
+    }
+    .activity-manage-body {
+        min-width: 800px;
+        .activities {
+            // color: $textgray;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+            .document-div {
+                padding: 0 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                p {
+                    margin-bottom:0;
+                }
+            }
+            .action-div {
+                a{
+                    text-decoration: none;
+                    font-size: 16px !important;
+                }
+                .delete-btn{
+                    color: $deleteBtnColor;
+                }
+                .activity-view-modal{
+                    max-width: 550px;
+                    .activity-view-modal-body{
+                        padding: 15px 20px;
+                        .modal-title{
+                            font-size: 18px;
+                            padding-right: 0px;
+                            font-weight: bold;
+                        }
+                        .modal-data{
+                            padding-left: 0px;
+                        }
+                        .activity-view-modal-header{
+                            .activity-view-modal-close-btn{
+                                float: right;
+                                border: 3px solid $bgblack !important;
+                                border-radius: 50%;
+                                font-size: 8px;
+                                margin-top: 5px;
+                                padding: 6px;
+                                color: $bgblack !important;
+                                font-weight: bold;
+                            }
+                        }
+                        .activity-view-modal-data{
+                            margin-top: 10px;
+                            .data-body{
+                                .data-row{
+                                    margin-top: 15px;
+                                    label{
+                                        margin-bottom: 8px;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                    }
+                                    .entry-data {
+                                        font-size: 15px;
+                                        padding-left: 10px !important;
+                                    }
+                                    .close-view-btn{
+                                        @include commonButton;
+                                        color: $textwhite;
+                                        background-color: $buttonsilver;
+                                        border-radius: 2px;
+                                        padding: 4px 15px;
+                                        // height: 1.9rem;
+                                    }
+                                    // after wayne modifications part starts here
+                                    .date-input::-webkit-inner-spin-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-clear-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-datetime-edit-year-field {
+                                        visibility: hidden;
+                                    }
+                                    .date-input::-webkit-datetime-edit-text {
+                                        color: transparent;
+                                    }
+                                    // after wayne modifications part ends here
+                                }
+                                .fye-row{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .certificate-manage-body {
+        min-width: 800px;
+        .certificate {
+            // color: $textgray;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+            .status-div {
+                padding: 5px;
+                text-align:center;
+                font-size: 13px;
+                // width:85%;
+
+                .doc-status{
+                    width: 5rem;
+                    height: 1.5rem;
+                    margin: 0 auto;
+                    padding: 2px 0;
+                }
+            }
+            .document-div {
+                padding: 0 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                p {
+                    margin-bottom:0;
+                }
+                .status-data {
+                    color: #73E41D;
+                    // color: #CF1322;
+
+                }
+            }
+            .action-div {
+                a{
+                    text-decoration: none;
+                    font-size: 16px !important;
+                }
+                .delete-btn{
+                    color: $deleteBtnColor;
+                }
+                .certificate-view-modal{
+                    max-width: 550px;
+                    .certificate-view-modal-body{
+                        padding: 15px 20px;
+                        .modal-title{
+                            font-size: 18px;
+                            padding-right: 0px;
+                            font-weight: bold;
+                        }
+                        .modal-data{
+                            padding-left: 0px;
+                        }
+                        .certificate-view-modal-header{
+                            .certificate-view-modal-close-btn{
+                                float: right;
+                                border: 3px solid $bgblack !important;
+                                border-radius: 50%;
+                                font-size: 8px;
+                                margin-top: 5px;
+                                padding: 6px;
+                                color: $bgblack !important;
+                                font-weight: bold;
+                            }
+                        }
+                        .certificate-view-modal-data{
+                            margin-top: 10px;
+                            .data-body{
+                                .data-row{
+                                    margin-top: 15px;
+                                    label{
+                                        margin-bottom: 8px;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                    }
+                                    .entry-data {
+                                        font-size: 15px;
+                                        border-radius: 2px;
+                                        border: 1px solid #d9d9d9;
+                                        padding: 5px 12px;
+                                        width: 100%;
+                                    }
+                                    .download-pdf-btn{
+                                        @include markDownloadButton;
+                                        color: $textwhite;
+                                        background-color: $buttonsilver;
+                                        border-radius: 2px;
+                                        padding: 4px 15px;
+                                        // height: 1.9rem;
+                                    }
+                                    // after wayne modifications part starts here
+                                    .date-input::-webkit-inner-spin-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-clear-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-datetime-edit-year-field {
+                                        visibility: hidden;
+                                    }
+                                    .date-input::-webkit-datetime-edit-text {
+                                        color: transparent;
+                                    }
+                                    // after wayne modifications part ends here
+                                }
+                                .fye-row{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .member-manage-body {
+        min-width: 800px;
+        .member {
+            // color: $textgray;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+            .document-div {
+                padding: 0 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a {
+                    text-decoration: none;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+                .member-view-modal {
+                    max-width: 750px;
+                    .member-view-modal-body {
+                        padding: 15px 20px;
+                        .modal-title {
+                            font-size: 14px;
+                            padding-right: 0px;
+                            font-weight: bold;
+                            padding-top: 7px;
+                        }
+                        .modal-data {
+                            padding-left: 0px;
+                        }
+                        .member-view-modal-header {
+                            .member-view-modal-close-btn {
+                                float: right;
+                                border: 3px solid $bgblack !important;
+                                border-radius: 50%;
+                                font-size: 8px;
+                                margin-top: 5px;
+                                padding: 6px;
+                                color: $bgblack !important;
+                                font-weight: bold;
+                            }
+                        }
+                        .member-view-modal-data {
+                            margin-top: 10px;
+                            .data-body {
+                                .data-row {
+                                    margin-top: 15px;
+                                    label {
+                                        margin-bottom: 8px;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                    }
+                                    .entry-data {
+                                        font-size: 15px;
+                                        padding-left: 10px !important;
+                                    }
+                                    .close-view-btn {
+                                        @include commonButton;
+                                        color: $textwhite;
+                                        background-color: $buttonsilver;
+                                        border-radius: 2px;
+                                        padding: 4px 15px;
+                                        // height: 1.9rem;
+                                    }
+                                    // after wayne modifications part starts here
+                                    .date-input::-webkit-inner-spin-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-clear-button {
+                                        display: none;
+                                    }
+
+                                    .date-input::-webkit-datetime-edit-year-field {
+                                        visibility: hidden;
+                                    }
+                                    .date-input::-webkit-datetime-edit-text {
+                                        color: transparent;
+                                    }
+                                    // after wayne modifications part ends here
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .action-div {
+                a {
+                    text-decoration: none;
+                    font-size: 16px !important;
+                }
+            }
+        }
+        .member-table-header {
+            background-color: #fafafa;
+        }
+    }
+    .customer-captable-content-body {
+        padding: 0;
+        .back-btn-div {
+            background-color: transparent !important;
+            padding: 0 !important;
+            margin-bottom: 10px;
+
+            .back-btn {
+                width: 45px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+.customer-captable-body {
+    .card {
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .customer-captable-button-card {
+        padding-left: 0px;
+    }
+    .customer-captable-card {
+        padding-right: 0px;
+    }
+    .customer-captable-button-body {
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+        .tab-buttons {
+            background-color: $bgwhite;
+            .customerCapTableTabLinks {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 6px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+            .active {
+                background-color: $mailboxtabactivebackground;
+                color: $textbeaver;
+                border-right: 4px solid $textbeaver;
+            }
+        }
+    }
+    .customerCapTableTabContent {
+        padding: 10px 20px;
+        background-color: $bgwhite !important;
+        .urgent-checkbox {
+            width: 15px;
+            height: 15px;
+        }
+        .required-msg {
+            color: $textgray;
+        }
+        .activity-manage-body {
+            .activities {
+                .header-div {
+                    padding: 0 3px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                    // &:last-child {
+                    //     padding-left: 15px;
+                    // }
+                }
+                .status-header {
+                    text-align: Center;
+                }
+                .action-div {
+                    width: 7%;
+                    a {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                }
+                // .amount-div {
+                //     // width: 16%;
+                // }
+                .member-div {
+                    // width:10%;
+                    p {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+        .certificate-manage-body {
+            .certificate {
+                .header-div {
+                    padding: 0 3px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                    // &:last-child {
+                    //     padding-left: 15px;
+                    // }
+                }
+                .status-header {
+                    text-align: Center;
+                }
+                .action-div {
+                    width: 7%;
+                    a {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                }
+                // .amount-div {
+                //     // width: 16%;
+                // }
+                .member-div {
+                    // width:10%;
+                    p {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+        .member-manage-body {
+            .member {
+                .header-div,
+                .footer-div {
+                    padding: 0 3px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                }
+                .status-header {
+                    text-align: Center;
+                }
+                .action-div {
+                    width: 7%;
+                    a {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                }
+
+                .member-div {
+                    p {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+            .header-row,
+            .footer-row {
+                background-color: #ededed;
+            }
+        }
+    }
+    .captable-overview-card{
+        margin-top: 0 !important;
+        padding: 0;
+        background-color: #fff !important;
+        .card-body{
+            padding: 1rem 0px;
+            padding-bottom: 0px;
+            .overview-card-header{
+                padding: 10px 25px;
+                // padding-bottom: 10px;
+                background-color: #D9D9D9;
+                .header-text{
+                    display: inline;
+                    font-weight: bold;
+                }
+            }
+            .date-div {
+                text-align: right;
+                margin-top: 20px;
+                margin-right: 3%;
+            }
+            .pie-chart-container {
+                .overview-pie-chart {
+                    width: 100%;
+                    height: 550px;
+                    @media (min-width:1700px) {
+                        height: 800px;
+                    }
+                }
+            }
+            .overview-card-footer {
+                text-align: end;
+                padding: 15px 20px;
+            }
+        }
+        .overview-card-body{
+            padding-top: 0;
+            background-color: #fff;
+        }
+    }
+
+    .captable-overview-table-card{
+        background-color: #fff !important;
+        margin-top: 0 !important;
+        .card-body{
+            padding: 0px;
+            background-color: #fff;
+            .captable-overview-table{
+                width: 100%;
+                min-width: 900px;
+                thead {
+                background-color: #FAFAFA;
+                }
+                thead,
+                tbody{
+                    th,
+                    td{
+                        padding: 8px 3%;
+                        // padding-right: 3% !important;
+                        border-bottom: 1px solid $bordercolor;
+                        vertical-align: baseline;
+                    }
+                    .description-header,
+                    .description-data{
+                        // width: 90%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        max-width: 350px;
+                    }
+                }
+            }
+        }
+        .overview-card-body{
+            padding-top: 0;
+
+        }
+
+    }
+    .overview-manage-body{
+    padding: 0 !important;
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1201px) {
+    .main-body {
+        .customer-captable-card {
+            .activity-manage-body {
+              .activities {
+                  .action-div {
+                      a {
+                          padding: 2px;
+                          font-size: 15px !important;
+                      }
+                  }
+              }
+          }
+            .certificate-manage-body {
+              .certificate {
+                  .action-div {
+                      a {
+                          padding: 2px;
+                          font-size: 15px !important;
+                      }
+                  }
+              }
+          }
+            .member-manage-body {
+                .member {
+                    .action-div {
+                        a {
+                            padding: 2px;
+                            font-size: 15px !important;
+                        }
+                    }
+                }
+          }
+        }
+ }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+    .main-body {
+        .customer-captable-card {
+          .activity-manage-body {
+            .activities {
+                .action-div {
+                    a {
+                        padding: 2px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+          .certificate-manage-body {
+            .certificate {
+                .action-div {
+                    a {
+                        padding: 2px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+          .member-manage-body {
+                .member {
+                    .action-div {
+                        a {
+                            padding: 2px;
+                            font-size: 14px !important;
+                        }
+                    }
+                }
+        }
+     }
+ }
+}
+@media (max-width: 1050px) and (min-width: 992px) {
+    .main-body {
+        .customer-captable-body {
+            .customer-captable-button-body {
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        padding: 6px 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+    .main-body {
+        .customer-captable-card {
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+            .table-top-portion {
+                .search-box-part {
+                    padding-right: 15px;
+                }
+                .category-select {
+                    padding-left: 15px;
+                }
+            }
+            .table-bottom-portion {
+                .search-box-part {
+                    .form-inputs {
+                        width: 75%;
+                    }
+                }
+            }
+            .activities {
+                .action-div {
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .customer-captable-body {
+            .customerCapTableTabContent {
+                padding: 8px 16px;
+
+            }
+            .pagination-left-number {
+                padding: 5px 8px !important;
+            }
+            .customer-captable-button-body {
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        padding: 5px 8px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .activities {
+                .header-div {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+                .document-div {
+                    p {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    a {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 810px) and (min-width: 791px) {
+    .main-body {
+        .customer-captable-body {
+            .customer-captable-button-body {
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 790px) and (min-width: 768px) {
+    .main-body {
+        .customer-captable-body {
+            .customer-captable-button-body {
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .main-body {
+        .alert-success {
+            width: 50% !important;
+        }
+        .customer-captable-body {
+              .activities {
+                    .document-div {
+                       p {
+                            font-size: 14px !important;
+                       }
+                    }
+                    .action-div {
+                       a {
+                            font-size: 14px !important;
+                       }
+                    }
+
+            }
+            .customer-captable-button-card {
+                padding: 10px !important;
+            }
+            .customer-captable-card {
+                padding: 10px !important;
+            }
+            .pagination-left-number {
+                padding: 4px 6px !important;
+            }
+            .customer-captable-button-body {
+
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        padding: 3px 6px;
+                    }
+                }
+            }
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+
+            .table-bottom-portion {
+                .search-box-part {
+                    .form-inputs {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+    .main-body {
+        .customer-captable-body {
+            .activities {
+                .document-div {
+                   p {
+                        font-size: 14px !important;
+                   }
+                }
+                .action-div {
+                   a {
+                        font-size: 14px !important;
+                   }
+                }
+            }
+            .customer-captable-button-card {
+                padding: 10px !important;
+            }
+            .customer-captable-card {
+                padding: 10px !important;
+            }
+            .select-pagination-portion {
+                .pagination-part {
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number {
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+            }
+            .table-top-portion {
+                .select-data {
+                    margin-top: 10px;
+                }
+            }
+            .activity-manage-body {
+                .activities {
+                    .action-div {
+                        a {
+                            margin: 0px;
+                            padding: 0;
+                            font-size: 11px;
+                        }
+                        .active {
+                            padding: 4px 10px;
+                        }
+                    }
+                }
+            }
+            .certificate-manage-body {
+                .certificate {
+                    .action-div {
+                        a {
+                            margin: 0px;
+                            padding: 0;
+                            font-size: 11px;
+                        }
+                        .active {
+                            padding: 4px 10px;
+                        }
+                    }
+                }
+            }
+            .member-manage-body {
+                .member {
+                    .action-div {
+                        a {
+                            margin: 0px;
+                            padding: 0;
+                            font-size: 11px;
+                        }
+                        .active {
+                            padding: 4px 10px;
+                        }
+                    }
+                }
+            }
+            .customer-captable-button-body {
+                .tab-buttons {
+                    .customerCapTableTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,379 @@
+@use '../abstracts/_variables.scss' as *;
+
+
+.company-management-index-card{
+    .upper-part{
+        margin-bottom: 15px;
+        .search-box-part{
+            .form-inputs{
+                position:relative;
+                border: 1px solid $bordercolor;
+                border-radius: 2px;
+                width: 50%;
+                height: 2rem;
+                .form-control{
+                    height:1.9rem;
+                    border: 0px;
+                    &:focus{
+                        box-shadow:none;
+                        border: none !important;
+                    }
+                }
+                i{
+                    position:absolute;
+                    right:15px;
+                    top:10px;
+                    font-size: 15px;
+                }
+                .search-btn{
+                    width: 35px;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 0px;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                    height: 1.9rem;
+                    padding: 3px 8px;
+                    font-size: 13px;
+                }
+            }
+        }
+        .create-company-btn{
+            @include commonButton;
+            color: $textwhite;
+            background-color: $buttonsilver;
+            border-radius: 2px;
+            padding: 4px 15px;
+        }
+        .download-all {
+            padding: 4px 6px;
+        }
+        .company-create-modal{
+            max-width: 550px;
+            .company-create-modal-body{
+                padding: 15px 20px;
+                .modal-title{
+                    font-size: 18px;
+                    padding-right: 0px;
+                    font-weight: bold;
+                }
+                .modal-data{
+                    padding-left: 0px;
+                }
+                .company-create-modal-header{
+                    .company-create-modal-close-btn{
+                        float: right;
+                        border: 3px solid $bgblack !important;
+                        border-radius: 50%;
+                        font-size: 8px;
+                        margin-top: 5px;
+                        padding: 6px;
+                        color: $bgblack !important;
+                        font-weight: bold;
+                    }
+                }
+                .company-create-modal-data{
+                    margin-top: 10px;
+                    .data-body{
+                        .data-row{
+                            margin-top: 15px;
+                            label{
+                                margin-bottom: 8px;
+                                font-size: 15px;
+                            }
+                            // after wayne modifications part starts here
+                            .date-input::-webkit-inner-spin-button {
+                                display: none;
+                            }
+
+                            .date-input::-webkit-clear-button {
+                                display: none;
+                            }
+
+                            .date-input::-webkit-datetime-edit-year-field {
+                                visibility: hidden;
+                            }
+                            .date-input::-webkit-datetime-edit-text {
+                                color: transparent;
+                            }
+                            // after wayne modifications part ends here
+                        }
+                        .fye-row{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .company-management-index-table{
+            width: 100%;
+            min-width: 1450px;
+            thead,
+            tbody{
+                th,
+                td{
+                    padding: 8px 0px;
+                    padding-right: 2% !important;
+                    border-bottom: 1px solid $bordercolor;
+                    &:last-child{
+                        padding-right: 0px !important;
+                    }
+                    vertical-align: baseline;
+                    width: 10%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .name-data , .name-header , .action-data , .action-header {
+                    width: 20%;
+                }
+                .startDate-header {
+                    padding-right: 1% !important;
+                }
+                .renewal-header {
+                    padding-right: 1% !important;
+                }
+            }
+            thead{
+                tr{
+                    background-color: $tableHeaderBg;
+                    th{
+                        .filter-btn{
+                            border: 0px;
+                            background-color: $bgwhite;
+                            .filter-icon{
+                                width: 15px;
+                                margin-left: 5px;
+                                margin-top: -1px;
+                            }
+                        }
+                        .btn-background{
+                            background: transparent;
+                        }
+                        .icon-color {
+                            color: skyblue;
+                        }
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    .action-data{
+                        a{
+                            text-decoration: none;
+                        }
+                        .edit-btn{
+                            padding: 0px 15px;
+                        }
+                        .delete-btn{
+                            color: $deleteBtnColor;
+                        }
+                    }
+                    .status-data{
+                        .company-status{
+                            border-radius: 2px;
+                            width: 5rem;
+                            height: 1.5rem;
+                            display: inline-block;
+                            text-align: center;
+                        }
+                    }
+                    .company-delete-modal{
+                        width: 350px;
+                        top: 40%;
+                        margin: auto;
+                        .company-delete-modal-body{
+                            padding: 25px 20px;
+                            .btn{
+                                border: 2px solid $buttonsilver;
+                                width: 65px;
+                                border-radius: 2px;
+                                margin: 8px;
+                            }
+                            .yes-btn{
+                                background-color: $buttonsilver;
+                                color: $textwhite;
+                            }
+                        }
+                    }
+                }
+            }
+
+    }
+
+    .bottom-part{
+        margin-top: 15px;
+        .pagination-part{
+            margin-top: 8px;
+            a{
+                padding: 0;
+            }
+            .pagination-number{
+                padding: 5px;
+            }
+            .pagination-left-number{
+                padding: 5px 20px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider{
+                padding: 5px 10px;
+            }
+        }
+    }
+    ::-webkit-scrollbar {
+        height: 5px;
+      }
+}
+@media (max-width:992px) and (min-width:768px){
+    .main-body{
+        .upper-part{
+            .create-company-btn{
+                padding: 7px 4px;
+                width: 6rem;
+            }
+            .company-create-modal {
+                max-width: 500px;
+                margin:0.5rem auto;
+            }
+        }
+        .company-management-index-card{
+            .card-body{
+                .company-management-index-table{
+                    tbody{
+                        tr{
+                            font-size: 14px;
+                            .status-data{
+                                .company-status{
+                                    padding: 2px 4px;
+                                    font-size: 12px;
+                                }
+                            }
+                            .edit-btn {
+                                padding: 0px !important;
+                            }
+                        }
+                    }
+                    thead {
+                        tr {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .bottom-part{
+                    .pagination-part{
+                        .pagination-left-number{
+                            padding: 5px 8px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) and (min-width:576px) {
+    .main-body{
+        .upper-part{
+            .create-company-btn{
+                padding: 6px 1px;
+                width: 5rem;
+                font-size: 12px !important;
+            }
+            .company-create-modal {
+                max-width: 450px;
+                margin:0.5rem auto;
+            }
+        }
+        .company-management-index-table{
+            tbody{
+                tr{
+                    font-size: 12px;
+                    .status-data{
+                        .company-status{
+                            padding: 2px;
+                            font-size: 11px;
+                        }
+                    }
+                    .edit-btn {
+                        padding: 0px !important;
+                    }
+                }
+            }
+            thead {
+                tr {
+                    font-size: 12px;
+                }
+            }
+        }
+        .bottom-part{
+            .pagination-part{
+                .pagination-left-number{
+                    padding: 4px 6px !important;
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px) and (min-width:300px) {
+    .main-body{
+        .upper-part{
+            .create-company-btn{
+                padding: 7px 2px;
+                width: 5rem;
+                margin-top: 10px;
+                margin-left: 15px;
+                font-size: 12px !important;
+            }
+            .company-create-modal {
+                max-width: 330px;
+                margin:0.5rem auto;
+            }
+        }
+        .company-management-index-table{
+            tbody{
+                tr{
+                    font-size: 12px;
+                    .status-data{
+                        .company-status{
+                            padding: 2px;
+                            font-size: 11px;
+                        }
+                    }
+                    .edit-btn {
+                        padding: 0px !important;
+                    }
+                    .company-delete-modal{
+                        width: 280px;
+                        .company-delete-modal-body{
+                            .btn{
+                                width:40px;
+                             }
+                        }
+                    }
+                }
+            }
+            thead {
+                tr {
+                    font-size: 12px;
+                }
+            }
+        }
+        .bottom-part{
+            .pagination-part{
+                .pagination-number {
+                    padding: 3px;
+                }
+                .pagination-left-number{
+                    padding: 5px 10px;
+                }
+                .pagination-divider {
+                    padding: 5px 0px;
+                }
+            }
+        }
+    }
+}
+

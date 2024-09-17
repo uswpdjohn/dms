@@ -1,0 +1,133 @@
+.main-body.forbidden-error-main-body {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #FFFFFF !important;
+}
+.main-body.forbidden-error-main-body .body-container {
+  margin: 10rem auto;
+}
+.main-body.forbidden-error-main-body .body-container .logo-portion {
+  width: 20%;
+  padding: 2rem 2.2rem;
+  padding-bottom: 1.5rem;
+  margin: 0 auto;
+  border-radius: 18px;
+}
+.main-body.forbidden-error-main-body .body-container .logo-portion .logo {
+  width: 56%;
+  margin: 5% 27%;
+  height: 7.25rem;
+  background-image: url("../images/goa-logo.jpg");
+  background-repeat: no-repeat;
+  background-size: 80% 100%;
+}
+.main-body.forbidden-error-main-body .body-container .logo-portion .slogan {
+  width: 66%;
+  margin: 0 auto;
+  height: 8.375rem;
+  background-image: url("../images/slogan.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.main-body.forbidden-error-main-body .body-container .top-message-portion .top-message {
+  text-align: center;
+  font-size: 18px !important;
+  line-height: 24px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.main-body.forbidden-error-main-body .body-container .bottom-message-portion .bottom-message {
+  text-align: center;
+  font-size: 16px !important;
+  line-height: 24px;
+}
+.main-body.forbidden-error-main-body .body-container .button-portion {
+  text-align: center;
+  margin-top: 7rem;
+}
+.main-body.forbidden-error-main-body .body-container .button-portion .back-btn {
+  width: 7.5rem;
+  height: 2rem;
+  padding: 3px 6px;
+  border: 1px solid #3E4153;
+  border-radius: 2px;
+  background-color: #3E4153;
+  color: #FFFFFF;
+  font-size: 14px !important;
+}
+
+@media screen and (max-width: 1799px) {
+  .body-container .logo-portion .logo {
+    width: 56% !important;
+    height: 5.8rem !important;
+    margin: 5% 27% !important;
+  }
+  .body-container .logo-portion .slogan {
+    width: 66% !important;
+    height: 6.5rem !important;
+  }
+}
+@media (max-width: 4000px) and (min-width: 1800px) {
+  .body-container .logo-portion .logo {
+    width: 12rem !important;
+    margin: 20% auto 0 !important;
+  }
+  .body-container .logo-portion .slogan {
+    width: 20rem !important;
+    margin: 7% auto 20% !important;
+  }
+}
+@media (max-width: 1599px) and (min-width: 1400px) {
+  .body-container {
+    margin: 3rem auto !important;
+  }
+  .body-container .button-portion {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 1399px) and (min-width: 993px) {
+  .body-container {
+    margin: 2.5rem auto !important;
+  }
+  .body-container .button-portion {
+    margin-top: 3rem;
+  }
+  .body-container .logo-portion {
+    width: 40% !important;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .body-container {
+    margin: 3rem auto !important;
+  }
+  .body-container .button-portion {
+    margin-top: 2.5rem !important;
+  }
+  .body-container .logo-portion {
+    width: 60% !important;
+  }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+  .body-container {
+    margin: 20% auto !important;
+  }
+  .body-container .button-portion {
+    margin-top: 2rem !important;
+  }
+  .body-container .logo-portion {
+    width: 70% !important;
+  }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+  .body-container {
+    margin: 30% auto !important;
+  }
+  .body-container .button-portion {
+    margin-top: 1.5rem !important;
+  }
+  .body-container .logo-portion {
+    width: 80% !important;
+  }
+}/*# sourceMappingURL=forbiddenError.css.map */

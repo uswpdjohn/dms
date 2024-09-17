@@ -1,0 +1,1240 @@
+@use "../abstracts/_variables.scss" as *;
+.modal-alert{
+    margin: 0 37% !important ;
+}
+.admin-cap-table-card {
+    .select-pagination-portion {
+        padding: 10px 0px;
+        border-bottom: 1px solid $bordercolor;
+        .select-part,
+        .search-box-part,
+        .button-part,
+        .pagination-part {
+            display: inline-block;
+        }
+        .search-box-part {
+            margin-left: 0;
+        }
+        .select-part {
+            margin-top: 8px;
+            .select-all-checkbox {
+                margin-right: 7px;
+            }
+        }
+        .button-part {
+            text-align: right;
+            height: 2rem;
+            .create-btn, .download-btn {
+                @include commonButton;
+            }
+            .action-buttons{
+                padding: 4px 15px;
+                border-radius: 2px;
+                color: $buttonsilver;
+                border: 1px solid $buttonsilver;
+                margin-right: 10px;
+                font-size: 14px;
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+            .active {
+                background-color: $buttonsilver;
+                color: $textwhite;
+            }
+        }
+        .od-part{
+            text-align: right;
+            input,
+            input:focus,
+            input:active{
+                border: 1px solid #ced4da !important;
+            }
+        }
+        .pagination-part {
+            margin-left: auto;
+            text-align: right;
+            margin-top: 8px;
+            a {
+                padding: 0;
+            }
+            .pagination-number {
+                padding: 5px;
+            }
+            .pagination-left-number {
+                padding: 5px 20px;
+                border: 1px solid $bordercolor;
+            }
+            .pagination-divider {
+                padding: 5px 10px;
+            }
+        }
+    }
+    .table-top-portion {
+        border-bottom: 0px;
+        padding-bottom: 20px;
+        .search-data {
+            margin-right: 5%;
+        }
+        .company-category-select {
+            padding: 0px 15px;
+            .form-control {
+                height: 2rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+        }
+        .form-inputs {
+            position: relative;
+            border: 1px solid $bordercolor;
+            border-radius: 2px;
+            height: 2rem;
+            .form-control {
+                height: 1.9rem;
+                border: 0px;
+                &:focus {
+                    box-shadow: none;
+                    border: none !important;
+                }
+            }
+            i {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                font-size: 15px;
+            }
+            .search-btn {
+                width: 35px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 0px;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                height: 1.9rem;
+                font-size: 13px;
+                padding: 3px 8px;
+            }
+        }
+    }
+    .table-bottom-portion {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+        border-top: 1px solid $bordercolor;
+        .search-box-part {
+            .form-inputs {
+                position: relative;
+                border: 1px solid $bordercolor;
+                border-radius: 2px;
+                width: 50%;
+                .form-control {
+                    height: 35px;
+                    border: 0px;
+                    &:focus {
+                        box-shadow: none;
+                        border: none !important;
+                    }
+                }
+                i {
+                    position: absolute;
+                    right: 15px;
+                    top: 10px;
+                    font-size: 15px;
+                }
+                .search-btn {
+                    width: 45px;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 0px;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                }
+            }
+        }
+    }
+    .cap-table-manage-body {
+        min-width: 1200px;
+        .table-rows {
+            color: $textblack;
+            padding: 10px 0px;
+            border-top: 1px solid $bordercolor;
+
+            .data-div {
+                padding: 0 3px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                p {
+                    margin-bottom:0;
+                }
+                .sign-status{
+                    font-size: 13px;
+                    border-radius: 3px;
+                    padding: 3px 5px;
+                }
+            }
+            .action-div {
+                button{
+                    text-decoration: none;
+                    font-size: 16px !important;
+                    color: #1890FF;
+                    padding: 0;
+                    border: none;
+                }
+                .delete-btn{
+                    color: $deleteBtnColor;
+                }
+            }
+            .delete-modal{
+                width: 350px;
+                top: 40%;
+                margin: auto;
+                .delete-modal-body{
+                    padding: 25px 20px;
+                    .btn{
+                        border: 2px solid $buttonsilver;
+                        width: 65px;
+                        border-radius: 2px;
+                        margin: 8px;
+                    }
+                    .yes-btn{
+                        background-color: $buttonsilver;
+                        color: $textwhite;
+                    }
+                }
+            }
+        }
+    }
+    .admin-cap-table-content-body {
+        padding: 0;
+        .back-btn-div {
+            background-color: transparent !important;
+            padding: 0 !important;
+            margin-bottom: 10px;
+
+            .back-btn {
+                width: 45px;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 4px;
+            }
+        }
+        .modal{
+            background-color: rgb(10 10 10 / 70%)
+        }
+        .captable-overview-card{
+            margin-top: 0 !important;
+            padding: 0;
+            background-color: #fff !important;
+            .card-body{
+                padding: 1rem 0px;
+                padding-bottom: 0px;
+                .overview-card-header{
+                    padding: 10px 25px;
+                    // padding-bottom: 10px;
+                    background-color: #D9D9D9;
+                    .header-text{
+                        display: inline;
+                        font-weight: bold;
+                    }
+                }
+                .date-div {
+                    text-align: right;
+                    margin-top: 20px;
+                    margin-right: 3%;
+                }
+                .pie-chart-container {
+                    .overview-pie-chart {
+                        width: 100%;
+                        height: 550px;
+                        @media (min-width:1700px) {
+                            height: 800px;
+                        }
+                    }
+                }
+                .overview-card-footer {
+                    text-align: end;
+                    padding: 15px 20px;
+                }
+            }
+            .overview-card-body{
+                padding-top: 0;
+                background-color: #fff;
+            }
+        }
+        .captable-overview-table-card{
+            background-color: #fff !important;
+            .card-body{
+                padding: 1rem 0px;
+                padding-bottom: 0px;
+                background-color: #fff;
+                .captable-overview-table{
+                    width: 100%;
+                    min-width: 900px;
+                    thead {
+                    background-color: #FAFAFA;
+                    }
+                    thead,
+                    tbody{
+                        th,
+                        td{
+                            padding: 8px 3%;
+                            // padding-right: 3% !important;
+                            border-bottom: 1px solid $bordercolor;
+                            vertical-align: baseline;
+                        }
+                        .description-header,
+                        .description-data{
+                            // width: 90%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            text-align: left;
+                            max-width: 350px;
+                        }
+                    }
+                }
+            }
+            .overview-card-body{
+                padding-top: 0;
+    
+            }
+    
+        }
+        .activity-entry-modal {
+            margin: 3% auto;
+            .activity-entry-modal-body {
+              padding: 15px 20px;
+              .user-title {
+                font-size: 18px;
+                padding-right: 0px;
+                font-weight: bold;
+              }
+              .user-data {
+                padding-left: 0px;
+              }
+              .activity-entry-modal-header {
+                .activity-entry-modal-close-btn {
+                    float: right;
+                    border: 3px solid $bgblack !important;
+                    border-radius: 50%;
+                    font-size: 8px;
+                    margin-top: 5px;
+                    padding: 6px;
+                    color: $bgblack !important;
+                    font-weight: bold;
+                }
+              }
+              .activity-entry-modal-data {
+                margin-top: 10px;
+                .data-body {
+                    .data-row {
+                        margin-top: 15px;
+                        label {
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        }
+                    }
+                    .transfer-checkbox-area{
+                        padding-top: 40px;
+                        .transfer-checkbox-text{
+                            transform: translateY(-3px)
+                        }
+                    }
+                    .member-select,
+                    .transfer-select{
+                        width: 90% !important;
+                    }
+                    .add-btn{
+                        padding: 0;
+                        width: 10%;
+                        margin-left: auto;
+                        border: none;
+                        outline: none;
+                    }
+                }
+              }
+              .create-user-btn {
+                @include commonButton;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 3px;
+                margin-top: 35px;
+                margin-bottom: 20px;
+              }
+            }
+        }
+        .member-transfer-modal{
+            margin: 9% auto;
+            backdrop-filter: blur !important;
+            -webkit-backdrop-filter: blur(1);
+        }
+        .delete-modal{
+            width: 350px;
+            top: 40%;
+            margin: auto;
+            .delete-modal-body{
+                padding: 25px 20px;
+                .btn{
+                    border: 2px solid $buttonsilver;
+                    width: 65px;
+                    border-radius: 2px;
+                    margin: 8px;
+                }
+                .yes-btn{
+                    background-color: $buttonsilver;
+                    color: $textwhite;
+                }
+            }
+        }
+        .members{
+            .table-responsive{
+                .cap-table-manage-body {
+                    min-width: 800px;
+                    .member-body {
+                        // color: $textgray;
+                        padding: 10px 0px;
+                        border-top: 1px solid $bordercolor;
+                        .data-div {
+                            padding: 0 3px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            a {
+                                text-decoration: none;
+                            }
+                            p {
+                                margin-bottom: 0;
+                            }
+                            .member-view-modal {
+                                max-width: 800px;
+                                .member-view-modal-body {
+                                    padding: 15px 20px;
+                                    
+                                    .modal-data {
+                                        padding-left: 0px;
+                                    }
+                                    .member-view-modal-header {
+                                        .modal-title {
+                                            font-size: 16px;
+                                            padding-right: 0px;
+                                            font-weight: bold;
+                                            padding-top: 7px;
+                                        }
+                                        .member-view-modal-close-btn {
+                                            float: right;
+                                            border: 3px solid $bgblack !important;
+                                            border-radius: 50%;
+                                            font-size: 8px;
+                                            margin-top: 5px;
+                                            padding: 6px;
+                                            color: $bgblack !important;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .member-view-modal-data {
+                                        margin-top: 10px;
+                                        .data-body {
+                                            overflow: auto;
+                                            .close-view-btn {
+                                                @include commonButton;
+                                                color: $textwhite;
+                                                background-color: $buttonsilver;
+                                                border-radius: 2px;
+                                                padding: 4px 15px;
+                                            }
+                                            .member-manage-body{
+                                                min-width: 750px;
+                                                .member-body {
+                                                    margin-top: 15px;
+                                                    .header-div,
+                                                    .footer-div {
+                                                        margin-bottom: 8px;
+                                                        font-size: 14px;
+                                                        font-weight: bold;
+                                                    }
+                                                    .entry-data {
+                                                        font-size: 14px;
+                                                    }
+                                                    .close-view-btn {
+                                                        @include commonButton;
+                                                        color: $textwhite;
+                                                        background-color: $buttonsilver;
+                                                        border-radius: 2px;
+                                                        padding: 4px 15px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .action-div {
+                            a {
+                                text-decoration: none;
+                                font-size: 16px !important;
+                            }
+                        }
+                    }
+                    .member-table-header {
+                        background-color: #fafafa;
+                    }
+                }
+            }
+        }
+        .certificate-modal {
+            margin: 3% auto;
+            max-width: 950px;
+            .certificate-modal-body {
+              padding: 15px 20px;
+              .user-title {
+                font-size: 18px;
+                padding-right: 0px;
+                font-weight: bold;
+              }
+              .user-data {
+                padding-left: 0px;
+              }
+              .certificate-modal-header {
+                width: 107%;
+                .certificate-modal-close-btn {
+                    float: right;
+                    border: 3px solid $bgblack !important;
+                    border-radius: 50%;
+                    font-size: 8px;
+                    margin-top: 5px;
+                    padding: 6px;
+                    color: $bgblack !important;
+                    font-weight: bold;
+                }
+              }
+              .certificate-modal-data {
+                margin-top: 10px;
+                form{
+                    .data-body {
+                        .data-row {
+                            margin-top: 15px;
+                            label {
+                                margin-bottom: 8px;
+                                font-size: 14px;
+                            }
+                        }
+                        .transfer-checkbox-area{
+                            padding-top: 40px;
+                            .transfer-checkbox-text{
+                                transform: translateY(-3px)
+                            }
+                        }
+                        .member-select,
+                        .transfer-select{
+                            width: 90% !important;
+                        }
+                        .add-btn{
+                            padding: 0;
+                            width: 10%;
+                            margin-left: auto;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                    .right-body{
+                        label{
+                            font-size: 14px;
+                        }
+                        .director-div{
+                            height: 385px;
+                            display: block;
+                            border: 1px solid $textgray;
+                            border-radius: 5px;
+                            padding: 5px 8px;
+                            overflow-y: auto !important;
+                            // overflow-x: none !important;
+                            h6{
+                                margin-bottom: 0px;
+                                font-weight: bold;
+                                font-size: 15px;
+                            }
+                            .director-create-modal-btn{
+                                border-radius: 50%;
+                                margin-left: 5px;
+                                margin-top: -5px;
+                                img{
+                                    width:20px;
+                                }
+                                &:focus{
+                                    box-shadow: 0px;
+                                    outline: 0 !important;
+                                }
+                            }
+                            
+                            .directors,
+                            .secretarys{
+                                border: 1px solid $bordercolor;
+                                padding: 10px;
+                                margin-top: 10px;
+                                height: fit-content;
+                                border-radius: 3px;
+                                background-color: $inputcolor;
+                                justify-content: space-between;
+                                p{
+                                    font-size: 11px;
+                                    margin-bottom: 5px;
+                                }
+                                .button-sec{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    .cancel-btn{
+                                        margin-top: -3px;
+                                        color: $textgray;
+                
+                                        &:focus{
+                                            box-shadow: 0px;
+                                            outline: 0 !important;
+                                            border: 0px solid $textwhite;
+                                        }
+                                    }
+                                    .dir-shr-edit-btn{
+                                        margin-top: -3px;
+                                        color: $buttonblue;
+                                        font-size: 13px;
+                                        &:focus{
+                                            box-shadow: 0px;
+                                            outline: 0 !important;
+                                            border: 0px solid $textwhite;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                      }
+                }
+                
+              }
+              
+              .create-user-btn {
+                @include commonButton;
+                color: $textwhite;
+                background-color: $buttonsilver;
+                border-radius: 2px;
+                padding: 3px;
+                margin-top: 35px;
+                margin-bottom: 20px;
+              }
+            }
+        }
+        .ds-select-modal{
+            margin: 3% auto;
+            .ds-select-modal-body{
+                padding: 15px 20px;
+                .ds-title{
+                    font-size: 18px;
+                    padding-right: 0px;
+                    font-weight: bold;
+                }
+                .ds-data{
+                    padding-left: 0px;
+                }
+                .ds-select-modal-header{
+                    .ds-select-modal-close-btn{
+                        float: right;
+                        border: 3px solid $bgblack !important;
+                        border-radius: 50%;
+                        font-size: 8px;
+                        margin-top: 5px;
+                        padding: 6px;
+                        color: $bgblack !important;
+                        font-weight: bold;
+                    }
+                }
+                .ds-select-modal-data{
+                    // margin-top: 10px;
+                    justify-content: center;
+                    .data-body{
+                        height: fit-content;
+                        .data-row{
+                            overflow-y:auto !important;
+                            margin-top: 15px;
+                            height: 70%;
+                            label{
+                                margin-bottom: 8px;
+                            }
+                            .form-control{
+                              margin-bottom: 10px;
+                            }
+                            .directors {
+                                width:100% !important;
+                                // margin:10px auto 0px;
+                                border: 1px solid $bordercolor;
+                                padding: 10px;
+                                margin-top: 10px;
+                                height: fit-content;
+                                border-radius: 3px;
+                                background-color: $cardgray;
+                                width: 70%;
+                                p{
+                                    font-size: 13px !important;
+                                    margin-bottom: 5px;
+                                }
+                                .cancel-btn{
+                                    margin-top: -3px;
+                                    color: $textgray;
+                                    &:focus{
+                                        box-shadow: 0px;
+                                        outline: 0 !important;
+                                        border: 0px solid $textwhite;
+                                    }
+                                }
+                                .select-checkbox {
+                                    margin-top: 40%;
+                                }
+                            }
+                            .secretarys {
+                                width:100% !important;
+                                border: 1px solid $bordercolor;
+                                padding: 10px;
+                                margin-top: 10px;
+                                height: fit-content;
+                                border-radius: 3px;
+                                background-color: $cardgray;
+                                width: 70%;
+                                p{
+                                    font-size: 13px !important;
+                                    margin-bottom: 5px;
+                                }
+                                .cancel-btn{
+                                    margin-top: -3px;
+                                    color: $textgray;
+                                    &:focus{
+                                        box-shadow: 0px;
+                                        outline: 0 !important;
+                                        border: 0px solid $textwhite;
+                                    }
+                                }
+                                .select-checkbox {
+                                    margin-top: 40%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .create-ds-btn{
+                    @include commonButton;
+                    color: $textwhite;
+                    background-color: $buttonsilver;
+                    border-radius: 2px;
+                    padding: 4px 15px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .defaultTab{
+            margin-top: 18%;
+        }
+    }  
+}
+.admin-cap-table-body {
+    .card {
+        background-color: $mainbodycolor !important;
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .admin-cap-table-button-card {
+        padding-left: 0px;
+        .search-btn{
+            @include commonButton;
+            color: $textwhite;
+            background-color: $buttonsilver;
+            border-radius: 2px;
+            padding: 4px 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            max-width: 100% !important;
+        }
+    }
+    .admin-cap-table-card {
+        padding-right: 0px;
+    }
+    .admin-cap-table-button-body {
+        padding: 0px;
+        background-color: $mainbodycolor !important;
+        .tab-buttons {
+            background-color: $bgwhite;
+            .adminCapTableTabLinks {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 6px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+            .active {
+                background-color: $mailboxtabactivebackground;
+                color: $textbeaver;
+                border-right: 4px solid $textbeaver;
+            }
+        }
+    }
+    .adminCapTableTabContent {
+        padding: 10px 20px;
+        background-color: $bgwhite !important;
+        .urgent-checkbox {
+            width: 15px;
+            height: 15px;
+        }
+        .required-msg {
+            color: $textgray;
+        }
+        .cap-table-manage-body {
+            .table-rows {
+                .header-div {
+                    padding: 0 3px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                    // &:last-child {
+                    //     padding-left: 15px;
+                    // }
+                }
+                .status-header {
+                    text-align: Center;
+                }
+                .action-div {
+                    button {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+.admin-doc-create-btn, .download-btn-section {
+    text-align: end;
+    .admin-doc-create-send-btn {
+        color: $textwhite;
+        background-color: $buttonsilver;
+        border-radius: 2px;
+        padding: 5px 20px;
+    }
+    .admin-doc-create-edit-btn {
+        color: $textwhite;
+        background-color: $buttonsilver;
+        border-radius: 2px;
+        padding: 5px 20px;
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1201px) {
+    .main-body {
+        .admin-cap-table-card {
+            .cap-table-manage-body {
+              .table-rows {
+                  .action-div {
+                    button {
+                          padding: 2px;
+                          font-size: 15px !important;
+                      }
+                  }
+              }
+          }
+        }  
+    }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+    .main-body {
+        .admin-cap-table-card {
+          .cap-table-manage-body {
+            .table-rows {
+                .action-div {
+                    button {
+                        padding: 2px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+      }
+    }
+}
+@media (max-width: 1050px) and (min-width: 992px) {
+    .main-body {
+        .admin-cap-table-body {
+            .admin-cap-table-button-body {
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        padding: 6px 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+    .main-body {
+        .admin-cap-table-card {
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+            .table-top-portion {
+                .search-box-part {
+                    padding-right: 15px;
+                }
+                .company-category-select {
+                    padding: 0px;
+                }
+                .category-select {
+                    padding-left: 15px;
+                }
+            }
+            .table-bottom-portion {
+                .search-box-part {
+                    .form-inputs {
+                        width: 75%;
+                    }
+                }
+            }
+            .table-rows {
+                .action-div {
+                    button {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .admin-cap-table-body {
+            .adminCapTableTabContent {
+                padding: 8px 16px;
+            }
+            .pagination-left-number {
+                padding: 5px 8px !important;
+            }
+            .admin-cap-table-button-body {
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        padding: 5px 8px;
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .table-rows {
+                .header-div {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+                .data-div {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    button {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+        .admin-cap-table-content-body {
+            .certificate-modal {
+                .certificate-modal-body {
+                    .certificate-modal-data {
+                        form{
+                            .right-body{
+                                .director-div{
+                                    .director-create-modal-btn{
+                                        margin-top: -4px;
+                                        img{
+                                            width:18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@media (max-width: 810px) and (min-width: 791px) {
+    .main-body {
+        .admin-cap-table-body {
+            .admin-cap-table-button-body {
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+        .admin-cap-table-content-body {
+            .certificate-modal {
+                .certificate-modal-body {
+                    .certificate-modal-data {
+                        form{
+                            .right-body{
+                                .director-div{
+                                    .director-create-modal-btn{
+                                        margin-top: -2px;
+                                        img{
+                                            width:18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+@media (max-width: 790px) and (min-width: 768px) {
+    .main-body {
+        .admin-cap-table-body {
+            .admin-cap-table-button-body {
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+        .admin-cap-table-content-body {
+            .certificate-modal {
+                .certificate-modal-body {
+                    .certificate-modal-data {
+                        form{
+                            .right-body{
+                                .director-div{
+                                    .director-create-modal-btn{
+                                        margin-top: -2px;
+                                        img{
+                                            width:18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .main-body {
+        .alert-success {
+            width: 50% !important;
+        }
+        .admin-cap-table-body {
+              .table-rows {
+                .data-div {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+                .action-div {
+                    button {
+                        font-size: 14px !important;
+                    }
+                }
+
+            }
+            .admin-cap-table-button-card {
+                padding: 10px !important;
+            }
+            .admin-cap-table-card {
+                padding: 10px !important;
+                .table-top-portion {
+                    .company-category-select {
+                        margin-top: 10px;
+                    }
+                    .button-part {
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .pagination-left-number {
+                padding: 4px 6px !important;
+            }
+            .admin-cap-table-button-body {
+
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        padding: 3px 6px;
+                    }
+                }
+            }
+            .btn {
+                margin-top: 5px;
+            }
+            .search-btn {
+                margin-top: 0;
+            }
+
+            .table-bottom-portion {
+                .search-box-part {
+                    .form-inputs {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+        .admin-cap-table-content-body {
+            .certificate-modal {
+                .certificate-modal-body {
+                    .certificate-modal-data {
+                        form{
+                            .right-body{
+                                .director-div{
+                                    .director-create-modal-btn{
+                                        margin-top: -2px;
+                                        img{
+                                            width:18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+@media (max-width: 575px) and (min-width: 300px) {
+    .main-body {
+        .admin-cap-table-body {
+            .table-rows {
+                .data-div {
+                   span {
+                        font-size: 14px !important;
+                   }
+                }
+                .action-div {
+                    button {
+                        font-size: 14px !important;
+                   }
+                }
+            }
+            .admin-cap-table-button-card {
+                padding: 10px !important;
+            }
+            .admin-cap-table-card {
+                padding: 10px !important;
+            }
+            .select-pagination-portion {
+                .pagination-part {
+                    .pagination-number {
+                        padding: 3px;
+                    }
+                    .pagination-left-number {
+                        padding: 5px 10px;
+                    }
+                    .pagination-divider {
+                        padding: 5px 0px;
+                    }
+                }
+                .company-category-select {
+                    padding: 0;
+                }
+                .button-part {
+                    margin-top: 10px;
+                    .create-btn, .download-btn {
+                        width: 4rem;
+                        height: 30px;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+            .table-top-portion {
+                .company-category-select {
+                    padding-left: 0px !important;
+                }
+                .select-data {
+                    margin-top: 10px;
+                }
+            }
+            .cap-table-manage-body {
+                .table-rows {
+                    .action-div {
+                        button {
+                            margin: 0px;
+                            padding: 0;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            .admin-cap-table-button-body {
+                .tab-buttons {
+                    .adminCapTableTabLinks {
+                        padding: 3px 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .admin-cap-table-content-body {
+                .btn-portion {
+                    img{
+                        width: 24px;
+                    }
+                    .create-btn, .download-btn {
+                        padding-left: 0;
+                    }
+                }
+                .doc-title {
+                    width: 100%;
+                }
+                .doc-div {
+                    flex-direction: column;
+                }
+                .activity-entry-modal {
+                    .activity-entry-modal-body {
+                      .activity-entry-modal-header {
+                        .activity-entry-modal-close-btn {
+                          font-size: 5px;
+                        }
+                      }
+                    }
+                  }
+            }
+        }
+        .admin-cap-table-content-body {
+            .certificate-modal {
+                .certificate-modal-body {
+                    .certificate-modal-data {
+                        form{
+                            .right-body{
+                                .director-div{
+                                    .director-create-modal-btn{
+                                        margin-top: -2px;
+                                        img{
+                                            width:18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
