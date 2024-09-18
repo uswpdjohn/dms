@@ -26,7 +26,6 @@ class CompanyManagementController extends Controller
     public function store(CreateCompanyManagementRequest $request, StoreCompanyManagementInterface $interface)
     {
         try {
-//            $users=(new CompanyManagementCreateAction())->execute($validatedData=$request->validated());
             $users = $interface->execute($request->validated());
             return $users;
 
@@ -38,8 +37,6 @@ class CompanyManagementController extends Controller
     public function update(UpdateCompanyManagementRequest $request,$slug, UpdateCompanyManagementInterface $interface)
     {
         try {
-//            abort_unless(auth()->guard('web')->user()->can('edit.company_management'), 403, 'You do not have access to this action!');
-//            $response=(new CompanyManagementUpdateAction())->execute($validatedData=$request->validated(),$slug);
             $response = $interface->execute($request->validated(), $slug);
             $message = '';
             $status = '';
@@ -61,7 +58,6 @@ class CompanyManagementController extends Controller
         public function destroy($slug, DeleteCompanyManagementInterface $interface)
         {
             try{
-//                $response =(new CompanyManagementDestroyAction())->execute($slug);
                 $response =$interface->execute(['slug' => $slug]);
                 return $response;
             }catch(\Exception $e) {
@@ -69,11 +65,6 @@ class CompanyManagementController extends Controller
             }
         }
 
-//    public function show($id)
-//    {
-//        $responses=(new CompanyManagementShowAction())->execute($id);
-//        return view('companyManagement.info', ['responses'=>$responses]);
-//    }
 
     public function setCompany($id)
     {
@@ -83,14 +74,6 @@ class CompanyManagementController extends Controller
             $data->update(['value'=> $company->id]);
             return true;
 
-
-
-
-
-//            session()->forget('auth_user_company');
-////            session(['auth_user_company' => $company]);
-//            session()->put('auth_user_company', $company);
-//            return session()->get('auth_user_company');
         }catch (\Exception $exception){
             return $exception->getMessage();
         }

@@ -56,8 +56,6 @@ class DocumentManagementController extends Controller
         if(auth()->guard('web')->user()->hasRole('General User')){
             return view('documentManagement.generalUser.index');
         }
-
-
         abort_unless(auth()->guard('web')->user()->can('create.document_management') ||
             auth()->guard('web')->user()->can('edit.document_management') ||
             auth()->guard('web')->user()->can('view.document_management') ||
@@ -81,33 +79,12 @@ class DocumentManagementController extends Controller
             return $exception->getMessage();
         }
     }
-    public function esopDocuments($service_id,$company_id)
-    {
-        //for admin(using)
-        try{
-            return (new GetEsopDocumentListAction())->execute($service_id,$company_id, config('paginate.page_count'),'DESC');
-        }
-        catch (\Exception $exception){
-            return $exception->getMessage();
-        }
-    }
+
 
     public function search($service_id,$search)
     {
         //for admin(using)
         $documents=(new SearchDocumentAction())->execute($search,$service_id, 'DESC', config('paginate.page_count'));
-        return $documents;
-    }
-    public function esopSearch($service_id,$search,$company_id)
-    {
-        //for admin(using)
-        $documents=(new SearchEsopDocumentAction())->execute($search,$service_id,$company_id, 'DESC', config('paginate.page_count'));
-        return $documents;
-    }
-    public function esopFilterByCompany($service_id,$company_id)
-    {
-        //for admin(using)
-        $documents=(new FilterEsopDocumentAction())->execute($service_id,$company_id, 'DESC', config('paginate.page_count'));
         return $documents;
     }
 
@@ -125,23 +102,7 @@ class DocumentManagementController extends Controller
         }
 
     }
-    public function esopDel($document_id)
-    {
-        abort_unless(auth()->guard('web')->user()->can('delete.document_management'), 403, 'You do not have access to this action!');
-        try {
-            $documents=(new DeleteDocumentFromInternalDbAction())->execute($document_id);
-            if (key_exists('action', $documents)){
-                return redirect()->route('esop.index')->with('error', 'Document with completed status can not be deleted');
-            }elseif (key_exists('error', $documents)){
-                return redirect()->route('esop.index')->with('error', 'Something went wrong');
-            }
-            return redirect()->route('esop.index')->with('success', 'Document Deleted Successfully');
-        }
-        catch (\Exception $exception){
-            return $exception->getMessage();
-        }
 
-    }
     public function edit($document_id)
     {
         if(!auth()->user()->hasRole('General User')){
@@ -153,7 +114,6 @@ class DocumentManagementController extends Controller
         }catch (\Exception $exception){
             return $exception->getMessage();
         }
-
     }
 
     public function uploadDocument(UploadDocumentRequest $request)
@@ -168,7 +128,6 @@ class DocumentManagementController extends Controller
             );
         }
         catch (\Exception $exception){
-//            return $exception->getMessage();
             throw new \Exception('Error: Failed to upload document: ', $exception->getCode());
         }
 
@@ -225,8 +184,6 @@ class DocumentManagementController extends Controller
 
     public function show($document_id)
     {
-        /*return (new ShowDocumentAction())->execute($document_id);*/
-
         try {
             return (new ShowDocumentAction())->execute($document_id);
         }catch (\Exception $exception){
@@ -245,17 +202,9 @@ class DocumentManagementController extends Controller
 
     }
 
-    public function inviteToSign($document_id)
-    {
-        //for admin(using)
-        $shareholder_and_directors=(new GetDirectorShareholderAction())->execute($document_id);
-        return view('documentManagement.invite', ['document' => $document_id, 'shareholder'=>$shareholder_and_directors['shareholders'], 'director'=>$shareholder_and_directors['directors']]);
-
-    }
     public function invite(InviteToSignRequest $request,$document_id)
     {
         abort_unless(auth()->guard('web')->user()->can('view.document_management'), 403, 'You do not have access to send invitation.');
-
         try{
             $response = (new InviteToSignAction())->execute($validatedData=$request->validated(),$document_id);
             if($response){
@@ -269,26 +218,8 @@ class DocumentManagementController extends Controller
 
     }
 
-    public function cancelInvite($document_id)
-    {
-        //for admin(using)
-        $response = (new CancelInviteAction())->execute($document_id);
-        return $response;
-
-    }
     //for single
-    public function downloadDocument(DocumentDownloadRequest $request)
-    {
-        try {
-            //for customer(using)
 
-            $response = (new DownloadDocumentAction())->execute($validatedData=$request->validated());
-            return response()->download(public_path($response))->deleteFileAfterSend(true);
-//            $this->downloadLocalDocument($request['document_id'][0]);
-        }catch (\Exception $exception){
-            return view('documentManagement.admin.requestFailed');
-        }
-    }
     public function individualDownloadDocument($document_id)
     {
         //for customer(using)
@@ -317,23 +248,10 @@ class DocumentManagementController extends Controller
         }, $document[0],$headers);
     }
 
-    public function refresh($document_id)
-    {
-        //for admin(using)
-        try {
-            return (new RefreshDocumentStatusAction())->execute($document_id);
-        }
-        catch (\Exception $exception){
-            return $exception->getMessage();
-        }
-    }
-
-
 
     public function customerView($service_id,Request $request)
     {
         //for customer
-
         abort_unless(auth()->guard('web')->user()->hasRole('Company User'), 403, 'You do not have access to this action!');
         try{
             $company_id = CompanyUserSession::where('key', 'company_id')->first();
@@ -342,7 +260,6 @@ class DocumentManagementController extends Controller
             }
             $latestFour = (new RetrieveLatestFourDocumentAction())->execute($service_id);
             $document = (new RetrieveDocumentAction())->execute($service_id, $request->search, 'ASC');
-//            return ['document' => $document];
             return view('documentManagement.customer.index', ['document' => $document, 'latestFour' => $latestFour]);
         }
         catch (\Exception $exception){

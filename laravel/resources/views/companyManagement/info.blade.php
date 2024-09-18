@@ -17,15 +17,9 @@
             @endif
             <div class="card">
                 <div class="card-body row">
-                    <div class="col-4 col-md-3 col-lg-2">
-                        @if($response->image != null )
-                            <img class="b-info-img" src="{{url('/assets/images/'.$response->image)}}" alt="">
-                        @else
-                            <img class="b-info-img" src="{{asset('assets/images/company.jpg')}}" alt="">
-                        @endif
-                    </div>
+
                     <!-- TT97 changes starts -->
-                    <div class="col-8 col-md-9 col-lg-10 ps-0 company-info-part d-flex">
+                    <div class="col-8 col-md-9 col-lg-10 ps-0 company-info-part d-flex" style="margin-left: 60px;">
                         <h5 class="company-name">{{$response->name}}</h5>
                         <div class="company-info-sec d-flex">
                             <label for="" class="company-info-label">UEN:</label>

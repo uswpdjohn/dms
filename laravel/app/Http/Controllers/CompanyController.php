@@ -82,12 +82,8 @@ class CompanyController extends Controller
     {
         if (auth()->guard('web')->user()->can('create.company_management')) {
             try {
-//                $response = (new CompanyCreateAction())->execute($validatedData = $request->validated());
                 $response = $interface->execute($request->validated());
-//                var_dump(response($response));die();
-//                if (response($response)->getStatusCode() == 200) {
                     return $response = array('success' => '1', 'response' => $response, 'message' => 'New Company Created Successfully');
-//                }
             } catch (\Exception $exception) {
                 throw new \Exception($exception->getMessage());
 //                return $exception->getMessage();
@@ -101,9 +97,7 @@ class CompanyController extends Controller
     public function show($slug, ShowCompanyInterface $interface)
     {
         if (auth()->guard('web')->user()->can('view.company_management')) {
-//            $response = (new CompanyShowAction())->execute($slug);
             $response = $interface->execute(['slug'=> $slug]);
-//            return  $response;
             return view('company.view', ['response'=>$response]);
         }else{
             abort(403, 'You do not have access to this action!');
@@ -125,11 +119,9 @@ class CompanyController extends Controller
 
 
     public function update(UpdateCompanyRequest $request, $slug, UpdateCompanyInterface $interface){
-//        $response = (new CompanyUpdateAction())->execute($validatedData = $request->validated(), $slug);
         $response = $interface->execute($request->validated(), $slug);
         if(response($response)->getStatusCode() == 200){
             return redirect()->route('company.edit', $slug)->with('success','Information are saved successfully');
-//            return redirect()->back()->with('success','Information are saved successfully');
         }
     }
 
@@ -157,18 +149,10 @@ class CompanyController extends Controller
         return $response;
 
     }
-//    public function companyLiveSearch(Request $request)
-//    {
-//        $search = $request->get('search');
-//        $response=(new OnKeyUpCompanySearchAction())->execute($search);
-//        return response()->json($response);
-//    }
 
-//    public function removeFromCompany($id,$company_id,$user_type)
     public function removeFromCompany(Request $request, RemoveCompanyUserInterface $interface)
     {
         $message='';
-//        $response= (new RemoveUserFromCompanyAction())->execute($request->slug,$request->company_id,$request->user_type);
         $response= $interface->execute(['slug'=> $request->slug, 'company_id' => $request->company_id, 'user_type' => $request->user_type]);
         if (response($response)->getStatusCode() == 200){
             if ($request->user_type=='user'){
@@ -186,7 +170,6 @@ class CompanyController extends Controller
 
     public function export()
     {
-//        return Excel::download(new CompanyExport(), 'companies.xlsx'); //good
         $fileName='companies.xlsx';
         (new CompanyExport)->store($fileName); //with queue
         return Storage::download($fileName);
@@ -224,27 +207,7 @@ class CompanyController extends Controller
         return $response;
 
     }
-    /**
-     * Create Esop Reserve member for all existing company. Run this method will create the Esop Reserve member.
-     * For production server specially to create ESOP reserve member for each company
-     */
-    public function createEntries()
-    {
-        //
-        try {
-            if (auth()->guard('web')->user()->hasRole('Super Admin')){
-                $company = Company::all();
-                foreach ($company as $c){
-                    $c->companyMembers()->create(['name' => 'ESOP Reserve']);
-                }
-                return  redirect()->back()->with('success', 'ESOP Reserve Member created for all company');
-            }else{
-                abort(403, 'You are not not allowed for this action');
-            }
-        }catch (\Exception $exception){
-            throw new \Exception($exception->getMessage());
-        }
-    }
+
 
     public function makeDirectory()
     {
@@ -266,14 +229,6 @@ class CompanyController extends Controller
 
     }
 
-
-//    public function companyUser(Request $request)
-//    {
-//        $response= (new CompanyUserCreateAction())->execute($request->all());
-//        if (response($response)->getStatusCode() == 200){
-//            return $response   = array('success' => '1', 'response'=>$response);
-//        }
-//    }
 
 
 }

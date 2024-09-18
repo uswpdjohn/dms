@@ -20,24 +20,11 @@ class DashboardController extends Controller
 {
     public function dashboard(ListAdminTicketInterface $interface)
     {
-//        dd(session()->all());
-
-
-
-//        abort_unless(Auth::guard('web')->check(), 403, 'You do not have access to this action!');
-
         if (Auth::user()->hasRole('Company User')) {
             $company_id = CompanyUserSession::where('key', 'company_id')->first();
             if($company_id->value==null){
                 $response=(new SessionAction())->execute();
             }
-//            dd(Helper::auth_user_company());
-//            abort_unless(
-//                \session()->get('auth_user_company') != null,
-//                403,
-//                'Oops! We are unable to find you in any of companies. Contact with Admin to assign any of companies'
-//            );
-
             return view('companyManagement.info',
                 array(
                     'response' => (new CompanyManagementShowAction())->execute(Helper::auth_user_company()),
@@ -51,15 +38,11 @@ class DashboardController extends Controller
     }
     public function getPieChartData(ChartInterface $interface)
     {
-//        return (new ChartAction())->execute();
         return $interface->execute();
     }
 
     private function getTickets($ticketCount, $orderBy)
     {
-        /*$item = Ticket::orderBy('id', $orderBy)->take($ticketCount)->get();
-        return $item;*/
-
         return Ticket::orderBy('id', $orderBy)->take($ticketCount)->get();
     }
 }

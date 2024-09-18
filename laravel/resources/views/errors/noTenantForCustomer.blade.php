@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/goasquare.jpg')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/project-logo.jpeg')}}">
     <title>Not Found</title>
     <link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
@@ -17,8 +17,7 @@
 <div class="main-body forbidden-error-main-body">
     <div class="body-container">
         <div class="logo-portion">
-            <div class="logo"></div>
-            <div class="slogan"></div>
+            <img class="logo" src="{{asset('assets/images/project-logo.jpeg')}}" style="  height: 13rem !important;background-size: 48% 100%;margin: 0px 99px !important;">
         </div>
         <div class="top-message-portion">
             <p class="top-message">Congratulation! Your payment has been received. </p>

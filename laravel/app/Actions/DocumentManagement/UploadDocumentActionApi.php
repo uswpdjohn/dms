@@ -24,7 +24,6 @@ class UploadDocumentActionApi
             if(!key_exists('file', $validatedData)){
                 $validatedData['document_id']=$validatedData['document_hashed'];
                 (new EditDocumentAction())->execute($validatedData);
-//                (new GenerateSigningFieldAction())->execute($validatedData);
             }else{
                 $file = $validatedData['file']->getClientOriginalName();
                 $content = $validatedData['file']->get();
@@ -33,7 +32,6 @@ class UploadDocumentActionApi
                 $validatedData['document_id'] = Str::random(16);
                 if(key_exists('current_document_id', $validatedData)){
                     return (new EditDocumentAction())->execute($validatedData);
-
                 }else{
                     return (new CreateDocumentAction())->execute($validatedData);
                 }

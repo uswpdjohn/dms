@@ -52,16 +52,12 @@ class MailboxController extends Controller
 {
     public function index(Request $request, ListMailboxInterface $interface)
     {
-
-//        if (auth()->guard('web')->user()->can('index.mailbox_customer')) {
         if (auth()->guard('web')->user()->hasRole('Company User')) {
           $company_id = CompanyUserSession::where('key', 'company_id')->first();
             if($company_id->value==null){
                 $response=(new SessionAction())->execute();
             }
             $user=Auth::guard('web')->user();
-    //        abort_if(Gate::denies('mail_customer_access'),403);
-    //        if ($user->can('mailbox_customer_access')) {
                 if (count(auth()->user()->companies) > 0){
                     $companyId=Helper::auth_user_company();
                     if ($request->ajax()){
@@ -100,8 +96,6 @@ class MailboxController extends Controller
                 return $mails;
             }
             $mails=$interface->execute($request,$request->has('per_page') ? $request->per_page : config('paginate.page_count'),'DESC');
-
-
             return view('mailbox.mailbox-admin', ['mails'=>$mails,'company'=>$company]);
         }else{
             abort(403,'You do not have access to this action!');

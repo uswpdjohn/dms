@@ -5,14 +5,7 @@
         <div class="admin-company-management-view-top-portion row g-0">
             <div class="card">
                 <div class="card-body row">
-                    <div class="col-12 col-md-3 col-lg-3 col-xl-2 col-xxl-1 company-img">
-                        @if($response->image != null )
-                            <img class="b-info-img" src="{{url('/assets/images/'.$response->image)}}" alt="">
-                        @else
-                            <img class="b-info-img" src="{{asset('assets/images/company.jpg')}}" alt="">
-                        @endif
-                    </div>
-                    <div class="col-12 col-md-9 col-lg-9 col-xl-10 col-xxl-11 ps-0 company-data-container">
+                    <div class="col-12 col-md-9 col-lg-9 col-xl-10 col-xxl-11 ps-0 company-data-container" style="margin-left: 60px;">
                         <div class="d-flex company-data-inner">
                             <h5 class="company-name">{{$response->name}}</h5>
                             <div class="d-flex ms-auto company-data-btns">

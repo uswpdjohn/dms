@@ -29,23 +29,7 @@
                     <div class="card">
                     <div class="card-body row">
 
-                        <div class="col-12 col-md-3 col-lg-3 col-xl-2 col-xxl-1">
-                            <!-- file uploader -->
-                            <div class="upload-inner">
-                                <div class="company-upload-container">
-                                    <div class="upload-icon">
-                                        <i class="fa-thin fa-plus"></i>
-                                        <span>Upload</span>
-                                    </div>
-                                    <input type="file" name="image" accept=".jpg, .png, .jpeg, .jfif, .svg" id="upload-file" class="upload-input" />
-                                    <div class="img-preview-container"></div>
-                                </div>
-                            </div>
-    {{--                        <span class="text-danger" id="file_type_error"></span>--}}
-                            <!-- file uploader -->
-                        </div>
-
-                        <div class="col-12 col-md-9 col-lg-9 col-xl-10 col-xxl-11 ps-0 company-data-container">
+                        <div class="col-12 col-md-9 col-lg-9 col-xl-10 col-xxl-11 ps-0 company-data-container" style="margin-left: 60px;">
                             <div class="d-flex company-data-inner">
                                 <h5 class="company-name">{{$response->name}}</h5>
                               <input type="text" value="{{$response->id}}" id="company_id" hidden="hidden">
@@ -655,60 +639,9 @@
             }else if(userType == 'shareholder'){
                 $(shareholderFormId).attr('action', url)
             }
-            // $('#'+buttonId).getAttribute('action')
-
-            // var formData = new FormData(form)
-            // let form = $(formId)[0];
-            // var formData = new FormData(form);
-            // var formData = $('#'+formId).serialize();
-            // e.preventDefault()
-            // console.log(formData)
-            {{--$.ajaxSetup({--}}
-            {{--    headers: {--}}
-            {{--        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-            {{--    },--}}
-            {{--});--}}
-            {{--$.ajax({--}}
-            {{--    url: url,--}}
-            {{--    method: "PUT",--}}
-            {{--    // data: $('#corp-sec-doc-upload').serialize(),--}}
-            {{--    data: $(formId).serialize(),--}}
-            {{--    dataType:'json',--}}
-            {{--    processData: false,--}}
-            {{--    contentType: false,--}}
-            {{--    beforeSend: function () {--}}
-            {{--        // $("#CorpSecEditLoadingDiv").show();--}}
-            {{--    },--}}
-            {{--    success: function (data) {--}}
-            {{--        console.log(data)--}}
-            {{--    },--}}
-            {{--    error: function (xhr) {--}}
-            {{--        --}}{{--$('#corp-sec-edit-send').prop('disabled', false)--}}
-            {{--        --}}{{--$("#CorpSecEditLoadingDiv").hide();--}}
-            {{--        // if (xhr.responseJSON.hasOwnProperty('errors') == true) {--}}
-            {{--        //     $.each(xhr.responseJSON.errors, function (key, value) {--}}
-            {{--        //         $('.director-edit-' + key).text(value);--}}
-            {{--        //     });--}}
-            {{--        // }--}}
-            {{--        // else {--}}
-            {{--        --}}{{--    $("html, body").animate({scrollTop: 0});--}}
-            {{--        --}}{{--    $('#flashMessages').html(--}}
-            {{--        --}}{{--        `<div class="alert alert-success alert-access">--}}
-            {{--        --}}{{--            <img class="alert-img" src="{{asset('assets/icons/mailbody-!.png')}}" alt="">--}}
-            {{--        --}}{{--            <p class="alert-text">${xhr.responseJSON.message}</p>--}}
-            {{--        --}}{{--        </div>`--}}
-            {{--        --}}{{--    )--}}
-            {{--        --}}{{--}--}}
-            {{--        alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);--}}
-            {{--    }--}}
-            // });
         }
 
 
-
-        // $('.director-create-modal-btn').on('click', function () {
-        //
-        // })
         function back() {
             window.history.go(-1);
             // console.log();
@@ -734,32 +667,32 @@
 
         }
         // For Company Image Upload and Preview
-        var uploadContainer = document.querySelector('.company-upload-container');
-        var uploadInput = document.querySelector('.upload-input');
-        var previewContainer = document.querySelector('.img-preview-container');
+        // var uploadContainer = document.querySelector('.company-upload-container');
+        // var uploadInput = document.querySelector('.upload-input');
+        // var previewContainer = document.querySelector('.img-preview-container');
 
 
 
-        uploadContainer.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadContainer.classList.add('dragover');
-        });
-
-        uploadContainer.addEventListener('dragleave', () => {
-            uploadContainer.classList.remove('dragover');
-        });
-
-        uploadContainer.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadContainer.classList.remove('dragover');
-            var files = e.dataTransfer.files;
-            if (files.length) {
-                handleFiles(files);
-            }
-        });
-        uploadInput.addEventListener('change', () => {
-            handleFiles(uploadInput.files);
-        });
+        // uploadContainer.addEventListener('dragover', (e) => {
+        //     e.preventDefault();
+        //     uploadContainer.classList.add('dragover');
+        // });
+        //
+        // uploadContainer.addEventListener('dragleave', () => {
+        //     uploadContainer.classList.remove('dragover');
+        // });
+        //
+        // uploadContainer.addEventListener('drop', (e) => {
+        //     e.preventDefault();
+        //     uploadContainer.classList.remove('dragover');
+        //     var files = e.dataTransfer.files;
+        //     if (files.length) {
+        //         handleFiles(files);
+        //     }
+        // });
+        // uploadInput.addEventListener('change', () => {
+        //     handleFiles(uploadInput.files);
+        // });
         $(document).ready(function() {
             statusCss()
             $(".select2").select2();
