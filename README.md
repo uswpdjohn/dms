@@ -11,17 +11,25 @@ Run the following command to clone the repository
 ## Deployment
 Build the gradle in Stirline
 
-`$ cd strline/`
-
-`$ ./gradlew build`
+```
+$ cd strline/
+$ ./gradlew build
+```
 
 Build Docker in the project root
 
-`$ cd ../`
+```
+$ cd ../
+$ docker compose build
+$ docker compose up -d
+```
 
-`$ docker compose build`
+Stop the docker container (id needed)
+`$ docker compose down`
 
-`$ docker compose up -d`
+Run symlink in the laravel docker container
+
+`$ docker exec laravel_app php artisan storage:link`
 
 Run migration in the laravel docker container
 

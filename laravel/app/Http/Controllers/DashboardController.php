@@ -31,6 +31,7 @@ class DashboardController extends Controller
             if($company_id->value==null){
                 $response=(new SessionAction())->execute();
             }
+//            dd(Helper::auth_user_company());
 //            abort_unless(
 //                \session()->get('auth_user_company') != null,
 //                403,

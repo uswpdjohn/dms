@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\CompanyUserSession;
 use App\Models\Setup;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -39,11 +40,16 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        if(\auth()->user()->hasRole('Company User')){
+            $company_user_session=CompanyUserSession::where('key', 'company_id')->first();
+            $company_user_session->update(['value' => null]);
+        }
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
 
         return redirect('/');
     }
