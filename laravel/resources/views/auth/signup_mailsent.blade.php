@@ -18,7 +18,7 @@
         <img class="background-image" src="{{url('/assets/images/background.jpg')}}" alt="">
     @endif
         <div class="form-body pb-5 forget-sent-body mx-auto" id="formBody"> <!-- Newly Added Id and class here -->
-            <div class="logo"></div>
+            <img class="logo" src="{{asset('assets/images/project-logo.jpeg')}}" style="  height: 13rem;background-size: 48% 100%; margin: 0 0;">
 {{--            <div class="slogan"></div>--}}
             <hr>
             <strong><h5 style="font-weight: 600;">Request Sent Successfully</h5></strong>

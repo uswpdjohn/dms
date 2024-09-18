@@ -165,19 +165,6 @@ class UserController extends Controller
                 'message' => 'User creation failed!'
             );
         }
-//        if (response($response)->getContent() != '0') {
-//            $responseArray = array(
-//                'success' => '1',
-//                'response' => $response[0],
-//                'message' => $response[1]
-//            );
-//        }else{
-//            $responseArray = array(
-//                'error' => '0',
-//                'response' => $response,
-//                'message' => 'User creation failed!'
-//            );
-//        }
         return $request->wantsJson() ? response()->json($responseArray) : redirect()->route('user.index')->with('success', 'User Created Successfully');
     }
 
@@ -259,13 +246,6 @@ class UserController extends Controller
         if (auth()->guard('web')->user()->can('edit.user_management')) {
             try {
                 $response = (new UserUpdateAction())->execute($validatedData = $request->validated(), $slug);
-//                if (response($response)->getStatusCode() == 200) {
-//                    return $response = array(
-//                        'success' => '1',
-//                        'response' => $response,
-//                        'message' => 'User Updated Successfully'
-//                    );
-//                }
                 return redirect()->route('user.index')->with('success', 'User Updated Successfully');
 
             } catch (Exception $exception) {

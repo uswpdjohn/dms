@@ -14,17 +14,45 @@
                 <p class="alert-text">{{session('error')}}</p>
             </div>
         @endif
-        <div class="card admin-dashboard-overview-card col-12 col-md-10 col-lg-9">
-            <div class="card-body header-card-body">
-
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="pie-chart-container">
-                        <div id="customerPieChart" class="customer-pie-chart"></div>
-                    </div>
-
+            <div class="card col-md-3"  style="border-radius: 8px;margin-right: 12px;">
+                <div class="card-body" style="font-size: 20px; display: flex;">
+                    <span>Total Documents:</span>
+                    <span style="margin-left: auto">{{$data['totalNoOfDocument']}}</span>
                 </div>
+
             </div>
-        </div>
+            <div class="card col-md-3"  style="border-radius: 8px;margin-right: 12px;">
+                <div class="card-body" style="font-size: 20px; display: flex;">
+                    <span>Uploaded Today:</span>
+                    <span style="margin-left: auto">{{$data['uploadedToday']}}</span>
+                </div>
+
+            </div>
+            <div class="card col-md-3"  style="border-radius: 8px;margin-right: 12px;">
+                <div class="card-body" style="font-size: 18px; display: flex;">
+                    <span>Total User:</span>
+                    <span style="margin-left: auto">{{$data['totalUser']}}</span>
+                </div>
+
+            </div>
+            <div class="card col-md-3"  style="border-radius: 8px;margin-right: 12px;">
+                <div class="card-body" style="font-size: 18px; display: flex;">
+                    <span>Total Mailboxes:</span>
+                    <span style="margin-left: auto">{{$data['mailboxes']}}</span>
+                </div>
+
+            </div>
+{{--        <div class="card admin-dashboard-overview-card col-12 col-md-10 col-lg-9">--}}
+{{--            <div class="card-body header-card-body">--}}
+
+{{--                <div class="col-12 col-md-12 col-lg-12">--}}
+{{--                    <div class="pie-chart-container">--}}
+{{--                        <div id="customerPieChart" class="customer-pie-chart"></div>--}}
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
     </div>
 

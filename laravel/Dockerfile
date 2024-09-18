@@ -6,7 +6,6 @@ RUN apt-get update -y && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# RUN docker-php-ext-install pdo mbstring
 
 WORKDIR /app
 
@@ -17,8 +16,6 @@ RUN composer install
 COPY .env.example .env
 
 RUN php artisan key:generate
-
-# RUN php artisan migrate
 
 CMD php artisan serve --host=0.0.0.0 --port=8081
 

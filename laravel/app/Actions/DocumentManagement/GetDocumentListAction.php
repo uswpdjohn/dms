@@ -11,7 +11,7 @@ class GetDocumentListAction
 {
     public function execute($service_id,$count,$orderBy)
     {
-        if(auth()->guard('web')->user()->hasRole('Company Owner')) {
+        if(auth()->guard('web')->user()->hasRole('Company Owner') || auth()->guard('web')->user()->hasRole('General User')) {
             $company_ids = Company::where('created_by', auth()->user()->id)->pluck('id');
             $document = DocumentManagement::whereIn('company_id',$company_ids)->with('companies')->whereHas('companies')
                 ->where('service_id',$service_id)

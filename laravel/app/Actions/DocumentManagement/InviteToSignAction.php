@@ -35,10 +35,12 @@ class InviteToSignAction
             $ccs[] = $shareholders_and_directors[$i]->ccs;
         }
         for ($j=0;$j<=count($invite_emails)-1;$j++){
+
             $details = [
                 'subject' => 'USW-MSC | Temporary File Download Link',
-                'body' => "This is your temporary file download link. URl: ". $response ."\n This link will be invalid after".config('tempUrlExpiryTime.expiry')." minutes",
+                'body' => "This is your temporary file download link. URl: ". $response ."\n This link will be invalid after ".config('tempUrlExpiryTime.expiry')." minutes",
                 'to' => $invite_emails[$j],
+                'purpose' => 'temporary download link send'
             ];
             try {
                 $mail = new MailHelper($details);
@@ -47,7 +49,10 @@ class InviteToSignAction
                 throw new \Exception($exception->getMessage());
 //                    return ['send_mail' => false];
             }
+
         }
+
+        return true;
 
 
 

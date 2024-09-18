@@ -3,6 +3,7 @@
 namespace App\Actions\Ticket;
 
 
+use App\Helpers\Helper;
 use App\Helpers\MailHelper;
 use App\Interfaces\Ticket\StoreTicketInterface;
 use App\Models\Category;
@@ -25,7 +26,7 @@ class TicketCreateAction implements StoreTicketInterface
             $ticket->status = 'open';
             $ticket->issuer_id = Auth::guard('web')->user()->id;
             $ticket->category_id = $validatedData['category_id'];
-            $ticket->company_id = \session()->get('auth_user_company')->id;
+            $ticket->company_id = Helper::auth_user_company();
 
             if (request()->hasFile('file')) {
                 $file=$validatedData['file'];

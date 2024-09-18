@@ -29,6 +29,8 @@ use App\Api\GetUserApi;
 use App\Api\UploadDocumentApi;
 use App\Http\Requests\DocumentDownloadRequest;
 use App\Http\Requests\EditDocumentRequest;
+use App\Http\Requests\GeneralDocumentUpdateRequest;
+use App\Http\Requests\GeneralDocumentUploadRequest;
 use App\Http\Requests\InviteToSignRequest;
 use App\Http\Requests\UploadDocumentRequest;
 use App\Models\Company;
@@ -54,6 +56,7 @@ class DocumentManagementController extends Controller
         if(auth()->guard('web')->user()->hasRole('General User')){
             return view('documentManagement.generalUser.index');
         }
+
 
         abort_unless(auth()->guard('web')->user()->can('create.document_management') ||
             auth()->guard('web')->user()->can('edit.document_management') ||
@@ -110,35 +113,20 @@ class DocumentManagementController extends Controller
 
     public function del($document_id)
     {
-        //for admin(using
-        /*if (auth()->guard('web')->user()->can('delete.document_management')) {
-            $documents=(new DeleteDocumentFromInternalDbAction())->execute($document_id);
-            return redirect()->route('document-management.index')->with('success', 'Document Deleted Successfully');
-        }else{
-            abort(403,'You do not have access to this action!');
-//            return $response  = array('abort' => '403','message'=> 'Oops! You do not have sufficient permission to delete.');
-        }*/
-
-
-
-        abort_unless(auth()->guard('web')->user()->can('delete.document_management'), 403, 'You do not have access to this action!');
+        if(!auth()->user()->hasRole('General User')){
+            abort_unless(auth()->guard('web')->user()->can('delete.document_management'), 403, 'You do not have access to this action!');
+        }
         try {
             $documents=(new DeleteDocumentFromInternalDbAction())->execute($document_id);
-            if (key_exists('action', $documents)){
-                return redirect()->route('document-management.index')->with('error', 'Document with completed status can not be deleted');
-            }elseif (key_exists('error', $documents)){
-                return redirect()->route('document-management.index')->with('error', 'Something went wrong');
-            }
             return redirect()->route('document-management.index')->with('success', 'Document Deleted Successfully');
         }
         catch (\Exception $exception){
-            return $exception->getMessage();
+            return redirect()->route('document-management.index')->with('error', 'Something went wrong');
         }
 
     }
     public function esopDel($document_id)
     {
-
         abort_unless(auth()->guard('web')->user()->can('delete.document_management'), 403, 'You do not have access to this action!');
         try {
             $documents=(new DeleteDocumentFromInternalDbAction())->execute($document_id);
@@ -156,16 +144,9 @@ class DocumentManagementController extends Controller
     }
     public function edit($document_id)
     {
-        //for admin(using)
-/*        if (auth()->guard('web')->user()->can('edit.document_management')||auth()->guard('web')->user()->can('view.document_management')) {
-            $documents=(new GetDocumentAction())->execute($document_id);
-            return  $documents;
-        }else{
-            return $response  = array('abort' => '403','message'=> 'You do not have access to edit the document.');
-        }*/
-
-
-        abort_if((!auth()->guard('web')->user()->can('edit.document_management'))|| (!auth()->guard('web')->user()->can('view.document_management')), 403, 'You do not have access to this action!');
+        if(!auth()->user()->hasRole('General User')){
+            abort_if((!auth()->guard('web')->user()->can('edit.document_management'))|| (!auth()->guard('web')->user()->can('view.document_management')), 403, 'You do not have access to this action!');
+        }
 
         try {
             return (new GetDocumentAction())->execute($document_id);
@@ -175,34 +156,8 @@ class DocumentManagementController extends Controller
 
     }
 
-
-
     public function uploadDocument(UploadDocumentRequest $request)
     {
-
-        //for admin(using)
-        /*try {
-            if (auth()->guard('web')->user()->can('create.document_management')) {
-                $response = (new UploadDocumentActionApi())->execute($validatedData = $request->validated());
-                $documentId = $response->getId();
-                return array('success' => '1', 'response' => $response, 'message' => 'Document Uploaded Successfully', 'url' => 'https://app-eval.signnow.com/webapp/document/' . $documentId);
-            } else {
-                return $response = array('abort' => '403', 'message' => 'You do not have access to create document.');
-            }
-        }catch(EntityManagerException $exception){
-            throw new \Exception('Error: Failed to upload document');
-//            throw new \Exception($exception->getMessage());
-        }catch (\Exception $exception){
-//            var_dump(get_class($exception));
-//            die();
-//            return array('error' => '0', 'message'=> 'Error: Failed to upload document');
-//            throw new \Error($exception->getMessage());
-            throw new \Exception('ERROR [SignNow API]: '.$exception->getMessage());
-//            return $exception->getMessage();
-        }*/
-
-
-
         abort_unless(auth()->guard('web')->user()->can('create.document_management'), 403, 'You do not have access to create document.');
         try{
             $response = (new UploadDocumentActionApi())->execute($validatedData = $request->validated());
@@ -210,51 +165,47 @@ class DocumentManagementController extends Controller
                 'success' => '1',
                 'response' => $response,
                 'message' => 'Document Uploaded Successfully',
-//                'url' => 'https://app-eval.signnow.com/webapp/document/' . $response->getId()
-//                'url' => 'https://app.signnow.com/webapp/document/' . $response->getId() //production
             );
         }
-//        catch(EntityManagerException $exception){
-//            throw new \Exception('ERROR [SignNow API]: '.$exception->getMessage());
-//        }
         catch (\Exception $exception){
 //            return $exception->getMessage();
             throw new \Exception('Error: Failed to upload document: ', $exception->getCode());
         }
 
     }
+    public function generalDocumentUpload(GeneralDocumentUploadRequest $request)
+    {
+        try{
+            $company=Company::where('created_by', auth()->user()->id)->first();
+            $response = (new UploadDocumentActionApi())->execute($validatedData = $request->validated() + ['company_id' =>$company->id ]);
+            return array(
+                'success' => '1',
+                'response' => $response,
+                'message' => 'Document Uploaded Successfully',
+            );
+        }
+        catch (\Exception $exception){
+            throw new \Exception('Error: Failed to upload document: ', $exception->getCode());
+        }
+
+    }
+    public function generalDocumentUpdate(GeneralDocumentUpdateRequest $request)
+    {
+        try{
+            $response = (new UploadDocumentActionApi())->execute($validatedData=$request->validated());
+            return array(
+                'success' => '1',
+                'response'=>$response,
+                'message'=> 'Document Uploaded Successfully',
+            );
+        }
+        catch (\Exception $exception){
+            throw new \Exception('ERROR: '.$exception->getMessage());
+        }
+
+    }
     public function editDocument(EditDocumentRequest $request)
     {
-        //for admin(using)
-        /*try {
-            if (auth()->guard('web')->user()->can('edit.document_management')) {
-                $response = (new UploadDocumentActionApi())->execute($validatedData=$request->validated());
-                if ($request->file('file')){
-                    $documentId=$response->getId();
-                }else{
-                    $documentId=$request->document_hashed;
-                }
-
-
-                return $response  = array('success' => '1', 'response'=>$response, 'message'=> 'Document Uploaded Successfully', 'url'=> 'https://app-eval.signnow.com/webapp/document/'.$documentId);
-//            return response()->json($response);
-            }else{
-                return $response  = array('abort' => '403','message'=> 'You do not have access to edit the document.');
-            }
-
-        }catch(EntityManagerException $exception){
-            throw new \Exception('Error: Failed to upload document');
-//            throw new \Exception($exception->getMessage());
-        }catch (\Exception $exception){
-//            var_dump(get_class($exception));
-//            die();
-//            return array('error' => '0', 'message'=> 'Error: Failed to upload document');
-//            throw new \Error($exception->getMessage());
-            throw new \Exception('ERROR [SignNow API]: '.$exception->getMessage());
-//            return $exception->getMessage();
-        }*/
-
-
         abort_unless(auth()->guard('web')->user()->can('edit.document_management'), 403, 'You do not have access to edit the document.');
 
         try{
@@ -264,15 +215,10 @@ class DocumentManagementController extends Controller
                 'success' => '1',
                 'response'=>$response,
                 'message'=> 'Document Uploaded Successfully',
-//                'url'=> 'https://app-eval.signnow.com/webapp/document/'.$documentId
-//                'url'=> 'https://app.signnow.com/webapp/document/'.$documentId //production
             );
         }
-//        catch(EntityManagerException $exception){
-//            throw new \Exception('Error: Failed to upload document');
-//        }
         catch (\Exception $exception){
-            throw new \Exception('ERROR [SignNow API]: '.$exception->getMessage());
+            throw new \Exception('ERROR: '.$exception->getMessage());
         }
 
     }
@@ -308,41 +254,16 @@ class DocumentManagementController extends Controller
     }
     public function invite(InviteToSignRequest $request,$document_id)
     {
-        //for admin(using)
-        /*if (auth()->guard('web')->user()->can('view.document_management')) {
-            $response = (new InviteToSignAction())->execute($validatedData=$request->validated(),$document_id);
-            if(response($response)->getStatusCode() == 200){
-                return $response  = array('success' => '1', 'response'=>$response);
-            }else{
-                return $response  = array('abort' => '500','message'=> 'Something went wrong');
-            }
-        }else{
-            return $response  = array('abort' => '403','message'=> 'You do not have access to send invitation.');
-        }*/
-
-
-
         abort_unless(auth()->guard('web')->user()->can('view.document_management'), 403, 'You do not have access to send invitation.');
 
         try{
             $response = (new InviteToSignAction())->execute($validatedData=$request->validated(),$document_id);
-
-            if (key_exists('success', $response)){
+            if($response){
                 return array('success' => '1', 'response'=>$response);
-            }elseif (key_exists('failed', $response)){
-                return array('abort' => '500', 'message'=>'Failed to send invitations.Check signing field(s)');
             }
-            return array('abort' => '500','message'=> 'Something went wrong');
-//            return response($response)->getStatusCode() == 200 ?
-//                array('success' => '1', 'response'=>$response) :
-//                array('abort' => '500','message'=> 'Something went wrong');
 
-        }
-        catch(EntityManagerException $exception){
-//            throw new \Exception('Error: Failed to invite signers');
-            throw new \Exception($exception->getMessage());
-        }catch (\Exception $exception){
-            throw new \Exception('ERROR [SignNow API]: '.$exception->getMessage());
+        } catch (\Exception $exception){
+            throw new \Exception('ERROR : '.$exception->getMessage());
         }
 
 
@@ -382,8 +303,6 @@ class DocumentManagementController extends Controller
 
     public function downloadLocalDocument($document_id)
     {
-//        $response = (new DownloadLocalFileAction())->execute($document_id);
-//        dd($response);
         $document = DocumentManagement::where('document_id', $document_id)->pluck('file');
 
         $file =  Storage::disk('public')->get($document[0]);
@@ -396,8 +315,6 @@ class DocumentManagementController extends Controller
         return response()->streamDownload(function () use ( $decrypted) {
             echo $decrypted;
         }, $document[0],$headers);
-//        return $path_to_file;
-//        return response()->download($response);
     }
 
     public function refresh($document_id)
@@ -468,12 +385,6 @@ class DocumentManagementController extends Controller
         return response()->streamDownload(function () use ($decrypted) {
             echo $decrypted;
         }, $path,$headers);
-
-
-//        return response()->make($decrypt, 200, array(
-//            'Content-Type' => 'application/pdf',
-//
-//        ));
     }
 
 

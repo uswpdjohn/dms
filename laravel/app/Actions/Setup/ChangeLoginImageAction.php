@@ -18,7 +18,8 @@ class ChangeLoginImageAction
             $filename= $validatedData['login_bg_image']->getClientOriginalName();
             $contents = file_get_contents($validatedData['login_bg_image']);
             file_put_contents(public_path('/assets/images/'.$filename),$contents); //put the content in local storage
-            if ($setup->value != null){
+            if ($setup->value != null && $setup->value!='default_bg.jpg'){
+
                 unlink(public_path("assets/images/".$setup->value));
             }
 

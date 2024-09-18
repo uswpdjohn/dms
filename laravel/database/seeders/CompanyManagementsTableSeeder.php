@@ -17,22 +17,22 @@ class CompanyManagementsTableSeeder extends Seeder
         CompanyManagement::truncate();
         $company_managements=[
             [
-                'first_name' => 'Robert',
-                'last_name' => 'Hook',
-                'email' => 'pauldebjit84+1@gmail.com',
-                'ccs' => ['yahoodebu23+1@gmail.com','yahoodebu23+2@gmail.com'],
+                'first_name' => 'PD',
+                'last_name' => 'John',
+                'email' => 'pdjohnusw9975@gmail.com',
+                'ccs' => ['pdjohnusw9975+3@gmail.com','pdjohnusw9975+4@gmail.com'],
             ],
             [
-                'first_name' => 'Miguel',
-                'last_name' => 'Salazar',
-                'email' => 'pauldebjit84+2@gmail.com',
-                'ccs' => ['yahoodebu23+3@gmail.com','yahoodebu23+4@gmail.com'],
+                'first_name' => 'Pd',
+                'last_name' => 'John USW',
+                'email' => 'pdjohnusw9975+1@gmail.com',
+                'ccs' => ['pdjohnusw9975+5@gmail.com','pdjohnusw9975+6@gmail.com'],
             ],
             [
-                'first_name' => 'Guzman',
-                'last_name' => 'Chapo',
-                'email' => 'pauldebjit84+3@gmail.com',
-                'ccs' => ['yahoodebu23+5@gmail.com','yahoodebu23+6@gmail.com'],
+                'first_name' => 'John',
+                'last_name' => 'Pd',
+                'email' => 'pdjohnusw9975+2@gmail.com',
+                'ccs' => ['pdjohnusw9975+7@gmail.com','pdjohnusw997+8@gmail.com'],
             ],
         ];
         foreach ($company_managements as $company_management){

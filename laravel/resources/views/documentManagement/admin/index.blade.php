@@ -455,6 +455,7 @@
                                             <select class="form-control select form-select" name="company_id"
                                                     id="corp_sec_company_id" required>
                                                 <option hidden class="first-option" value="">Select</option>
+
                                                 @foreach($companies as $company)
                                                     <option
                                                         value="{{$company->id}}">{{ucfirst($company->name)}}</option>
@@ -463,6 +464,7 @@
                                         </fieldset>
                                         <span class="text-danger corpSec-company_id"></span>
                                     </div>
+
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
@@ -4723,7 +4725,7 @@
             let director = $('#directorsId').val().length;
             // console.log(shareholder)
             // console.log(director)
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#corpSecNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#corp-sec-send').prop('disabled', false)
                 return false;
@@ -4808,7 +4810,7 @@
             $('#corpSecEditNoSignerAlert').text('')
             let shareholder = $('#corpSecEditShareholdersId').val().length;
             let director = $('#corpSecEditDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#corpSecEditNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#corp-sec-edit-send').prop('disabled', false)
                 return false;
@@ -4958,7 +4960,7 @@
             $('#tax-send').prop('disabled', true)
             let shareholder = $('#taxShareholdersId').val().length;
             let director = $('#taxDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#taxNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#tax-send').prop('disabled', false)
                 return false;
@@ -5034,7 +5036,7 @@
             $('#tax-edit-send').prop('disabled', true)
             let shareholder = $('#taxEditShareholdersId').val().length;
             let director = $('#taxEditDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#taxEditNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#tax-edit-send').prop('disabled', false)
                 return false;
@@ -5176,7 +5178,7 @@
             $('#acc-send').prop('disabled', true)
             let shareholder = $('#accShareholdersId').val().length;
             let director = $('#accDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#accNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#acc-send').prop('disabled', false)
                 return false;
@@ -5391,7 +5393,7 @@
             $('#hr-send').prop('disabled', true)
             let shareholder = $('#hrShareholdersId').val().length;
             let director = $('#hrDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#hrNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#hr-send').prop('disabled', false)
                 return false;
@@ -5466,7 +5468,7 @@
             $('#hr-edit-send').prop('disabled', true)
             let shareholder = $('#hrEditShareholdersId').val().length;
             let director = $('#hrEditDirectorsId').val().length;
-            if (director < 1 || shareholder < 1) {
+            if (director < 1 && shareholder < 1) {
                 $('#hrEditNoSignerAlert').text('* Minimum One Director Or Shareholder Is Required')
                 $('#hr-edit-send').prop('disabled', false)
                 return false;

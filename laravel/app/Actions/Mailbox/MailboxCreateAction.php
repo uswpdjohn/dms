@@ -109,15 +109,15 @@ class MailboxCreateAction implements StoreMailboxInterface
                             /**
                              * Send e-mail notification
                              * */
-//                            try {
-//                                SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
-//                            }catch (\Exception $exception){
-//                                $this->deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
-//                                return ['send_mail' => false];
-//                            }
+                            try {
+                                SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
+                            }catch (\Exception $exception){
+                                self::deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
+                                return ['send_mail' => false];
+                            }
 
-//                            $this->notifyAdminUsers($create_mail);
-//                            $this->notifyCompanyUsers($validatedData['company_id'], $create_mail);
+                            self::notifyAdminUsers($create_mail);
+                            self::notifyCompanyUsers($validatedData['company_id'], $create_mail);
 
 
 
@@ -146,35 +146,35 @@ class MailboxCreateAction implements StoreMailboxInterface
                     $mailbox->directory = $directory;
                     $mailbox->save();
 
-//                    $this->notifyAdminUsers($mailbox);
-//                    $this->notifyCompanyUsers($validatedData['company_id'],$mailbox);
+                    self::notifyAdminUsers($mailbox);
+                    self::notifyCompanyUsers($validatedData['company_id'],$mailbox);
 
 
                     /**
                      * Send email notification
                      */
-//                    try {
-//                        SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
-//                    }catch (\Exception $exception){
-//                        $this->deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
-//                        return ['send_mail' => false];
-//                    }
+                    try {
+                        SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
+                    }catch (\Exception $exception){
+                        self::deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
+                        return ['send_mail' => false];
+                    }
                     DB::commit();
                     return ['success' => true];
                 }
             }else{
                 $mailbox = Mailbox::create($validatedData);
 
-//                $this->notifyAdminUsers($mailbox);
-//                $this->notifyCompanyUsers($validatedData['company_id'],$mailbox);
+                self::notifyAdminUsers($mailbox);
+                self::notifyCompanyUsers($validatedData['company_id'],$mailbox);
 
                 //send mail
-//                try {
-//                    SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
-//                }catch (\Exception $exception){
-//                    $this->deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
-//                    return ['send_mail' => false];
-//                }
+                try {
+                    SendMailToCompanyUser::dispatch($validatedData['company_id'],$validatedData['from'],$validatedData['title'],$validatedData['category']);
+                }catch (\Exception $exception){
+                    self::deleteDirectoryOnFailure($validatedData['directory'],$validatedData['category'],$validatedData['company_id']);
+                    return ['send_mail' => false];
+                }
                 DB::commit();
                 return ['success' => true];
             }
@@ -185,8 +185,8 @@ class MailboxCreateAction implements StoreMailboxInterface
         }
     }
 
-    protected function notifyAdminUsers($mailbox){
-        $adminUsers = User::role('Admin')->get();
+    protected static function notifyAdminUsers($mailbox){
+        $adminUsers = User::role('Employee')->get();
         if(count($adminUsers)>0) {
             foreach ($adminUsers as $user) {
                 $user->notify(new MailboxNotification($mailbox));

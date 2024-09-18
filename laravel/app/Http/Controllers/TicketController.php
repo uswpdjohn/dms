@@ -73,6 +73,8 @@ class TicketController extends Controller
     public function store(CreateTicketRequest $request, StoreTicketInterface $interface)
     {
         $response = $interface->execute($validatedData=$request->validated());
+
+
         if (key_exists('success', $response)){
             return redirect()->route('dashboard')->with('success','Ticket Submitted Successfully');
         }elseif (key_exists('send_mail', $response)){

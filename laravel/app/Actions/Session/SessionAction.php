@@ -14,7 +14,7 @@ class SessionAction
         $companies=auth()->user()->companies;
         if(!$companies->isEmpty()){
             $data =CompanyUserSession::where('key', 'company_id')->first();
-            $data->update(['value', $companies[0]->id]);
+            $data->update(['value'=> $companies[0]->id]);
         }
     }
 

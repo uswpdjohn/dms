@@ -8,6 +8,7 @@ use App\Http\Requests\CreateUserRequest;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -130,6 +131,14 @@ class UsersTableSeeder extends Seeder
             if ($role){
                 $user->assignRole($role);
             }
+            if($item['email'] == 'shiny.general@gmail.com'){
+                Company::create([
+                    'name' => $item['first_name'],
+                    'uen' => Str::random(10),
+                    'created_by' => $user->id,
+                ]);
+
+            }
             if($item['email'] == 'shiny.user@gmail.com'){
                 $company = Company::where('id', 1)->first();
                 $company->users()->attach($user->id, ['user_type' => 'user']);
@@ -145,6 +154,19 @@ class UsersTableSeeder extends Seeder
                     'created_by'=>$user->id,
                 ]);
                 $employee->assignRole('Employee');
+                $employee->syncPermissions(['view.mailbox', 'create.mailbox', 'edit.mailbox','delete.mailbox',
+                    'create.user_management','edit.user_management','delete.user_management','view.user_management',
+                    'edit.document_management', 'create.document_management','view.document_management',
+                    'delete.document_management','view.company_management','create.company_management','edit.company_management',
+                    'delete.company_management']);
+            }
+            if($item['email'] == 'john.general@gmail.com'){
+                 Company::create([
+                    'name' => $item['first_name'],
+                    'uen' => Str::random(10),
+                    'created_by' => $user->id,
+                ]);
+
             }
             if($item['email'] == 'john.owner@gmail.com'){
                 $employee=User::create([
@@ -156,7 +178,12 @@ class UsersTableSeeder extends Seeder
                     'status'=>'active',
                     'created_by'=>$user->id,
                 ]);
+
                 $employee->assignRole('Employee');
+                $employee->syncPermissions(['view.mailbox', 'create.mailbox', 'edit.mailbox','delete.mailbox',
+                    'create.user_management','edit.user_management','delete.user_management','view.user_management',
+                    'edit.document_management', 'create.document_management','view.document_management',
+                    'delete.document_management','view.company_management','create.company_management','edit.company_management', 'delete.company_management']);
             }
             app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 //            if ($role->name=='Admin' || $role->name=='Super Admin'){

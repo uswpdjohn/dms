@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function index()
     {
+        if (auth()->user()->hasRole('General User')){
+            return redirect()->route('document-management.index');
+        }
         return  redirect()->route('dashboard');
     }
 }

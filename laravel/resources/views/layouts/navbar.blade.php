@@ -28,33 +28,33 @@
                         <a class="nav-link dropdown-toggle" href="#" id="notificationDropdownMenuLink" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="notification-icon"><i class="fa-regular fa-bell bell-icon"></i></span>
-{{--                            @if(auth()->guard('web')->user() && count(auth()->user()->notifications->where('read_at',null )) > 0)--}}
-{{--                                <span class="badge">{{count(auth()->user()->notifications->where('read_at',null))}}</span>--}}
-{{--                            @endif--}}
+                            @if(auth()->guard('web')->user() && count(auth()->user()->notifications->where('read_at',null )) > 0)
+                                <span class="badge">{{count(auth()->user()->notifications->where('read_at',null))}}</span>
+                            @endif
                         </a>
 
 
                         <ul class="dropdown-menu notification-menu" aria-labelledby="notificationDropdownMenuLink">
                             <li class="notification-upper">
                                 <ul class="notifications-part">
-{{--                                    @if(auth()->guard('web')->user())--}}
-{{--                                        @foreach(auth()->user()->notifications->take(5) as $key=>$notification)--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item notification-body mark"--}}
-{{--                                                   onclick="markAsRead({{$key}})" id="{{$key}}"--}}
-{{--                                                   data-id="{{$notification['id']}}" href="{{route('notification.index')}}">--}}
-{{--                                                    @if($notification['read_at'] != null)--}}
-{{--                                                        <p class="notification-text"--}}
-{{--                                                           style="color: #777777; font-weight: 400;">{{$notification['data']['notification']}}</p>--}}
-{{--                                                    @else--}}
-{{--                                                        <p class="notification-text"--}}
-{{--                                                           style="color:#000000;font-weight: 400;">{{$notification['data']['notification']}}</p>--}}
-{{--                                                    @endif--}}
-{{--                                                    <p class="notification-time">{{$notification['created_at']->diffForHumans()}}</p>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                        @endforeach--}}
-{{--                                    @endif--}}
+                                    @if(auth()->guard('web')->user())
+                                        @foreach(auth()->user()->notifications->take(5) as $key=>$notification)
+                                            <li>
+                                                <a class="dropdown-item notification-body mark"
+                                                   onclick="markAsRead({{$key}})" id="{{$key}}"
+                                                   data-id="{{$notification['id']}}" href="{{route('notification.index')}}">
+                                                    @if($notification['read_at'] != null)
+                                                        <p class="notification-text"
+                                                           style="color: #777777; font-weight: 400;">{{$notification['data']['notification']}}</p>
+                                                    @else
+                                                        <p class="notification-text"
+                                                           style="color:#000000;font-weight: 400;">{{$notification['data']['notification']}}</p>
+                                                    @endif
+                                                    <p class="notification-time">{{$notification['created_at']->diffForHumans()}}</p>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                             </li>
                             <li class="notification-footer">

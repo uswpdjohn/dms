@@ -5,6 +5,7 @@ namespace App\Actions\User;
 use App\Actions\ActionClass;
 use App\Actions\Permission\SyncPermission;
 use App\Models\User;
+use Complex\Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Spatie\Permission\Models\Role;
@@ -104,6 +105,7 @@ class UserUpdateAction
             return $update_user;
         }catch (\Exception $exception){
             DB::rollBack();
+
             return $exception->getMessage();
         }
 

@@ -34,6 +34,9 @@ Route::middleware(['web', 'auth'])->group(function () {
         //NEW
         Route::get('{document_id}/generate-temp-url', 'generateTempUrl')->name('generate.temp.url');
 
+        //FOR GENERAL USER
+        Route::post('upload-general-document', 'generalDocumentUpload')->name('general.upload.document');
+        Route::post('update-general-document', 'generalDocumentUpdate')->name('general.update.document'); //edit submit
     });
 
 });

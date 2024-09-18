@@ -46,15 +46,11 @@ class CompanyController extends Controller
             auth()->guard('web')->user()->can('edit.company_management') ||
             auth()->guard('web')->user()->can('view.company_management') ||
             auth()->guard('web')->user()->can('delete.company_management')){
-//            $ssics= SSIC::select('id', 'title', 'code')->get();
             if ($request->ajax()){
-//                $companies = (new CompanyListAction())->execute($request->has('page_count') ? $request->page_count : config('paginate.page_count'),'DESC',$request);
                 $companies = $interface->execute($request->all(),$request->has('page_count') ? $request->page_count : config('paginate.page_count'),'DESC');
                 return $companies;
             }
-//            $companies = (new CompanyListAction())->execute($request->has('page_count') ? $request->page_count : config('paginate.page_count'),'DESC',$request);
             $companies = $interface->execute($request->all(),$request->has('page_count') ? $request->page_count : config('paginate.page_count'),'DESC');
-//            return view('company.index',['companies'=>$companies, 'ssics'=>$ssics]);
             return view('company.index',compact('companies'));
         }
         abort(403, 'You do not have access to this action!');

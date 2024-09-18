@@ -24,6 +24,14 @@ class CompanyExport implements FromQuery, ShouldQueue,WithHeadings,WithMapping,S
     {
 
 //        return Company::query()->select('name', 'fye');
+        if(auth()->user()->hasRole('Company Owner')){
+            return Company::query()->where('created_by', auth()->user()->id)->with(['primary_industry_service_ssic','secondary_industry_service_ssic'])
+                ->select('name', 'status', 'fye','uen','address_line', 'incorporation_date', 'last_agm_filed', 'last_ar_filed','primary_industry_service_ssic_id', 'secondary_industry_service_ssic_id');
+        }
+        if(auth()->user()->hasRole('Employee')){
+            return Company::query()->where('created_by', auth()->user()->created_by)->with(['primary_industry_service_ssic','secondary_industry_service_ssic'])
+                ->select('name', 'status', 'fye','uen','address_line', 'incorporation_date', 'last_agm_filed', 'last_ar_filed','primary_industry_service_ssic_id', 'secondary_industry_service_ssic_id');
+        }
         return Company::query()->with(['primary_industry_service_ssic','secondary_industry_service_ssic'])
             ->select('name', 'status', 'fye','uen','address_line', 'incorporation_date', 'last_agm_filed', 'last_ar_filed','primary_industry_service_ssic_id', 'secondary_industry_service_ssic_id');
 //        return Company::select('name', 'fye');

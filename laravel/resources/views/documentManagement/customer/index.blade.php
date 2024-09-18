@@ -47,10 +47,10 @@
         <div class="customer-document-management-search-btn-portion col-12">
             <div class="card">
                 <div class="card-body d-flex">
-                    <div class="left-side-portion d-flex">
-                        <button type="button" id="topDownloadBtn" class="btn download-btn active">Download</button>
-                        <span class="text-danger ms-3" id="download-btn-error-text"></span>
-                    </div>
+{{--                    <div class="left-side-portion d-flex">--}}
+{{--                        <button type="button" id="topDownloadBtn" class="btn download-btn active">Download</button>--}}
+{{--                        <span class="text-danger ms-3" id="download-btn-error-text"></span>--}}
+{{--                    </div>--}}
                     <div class="right-side-portion">
                         <div class="sb-part search-box-part">
 
@@ -114,17 +114,10 @@
                                             @foreach($document['document'] as $gitem)
                                                 <div class="col-sm-6 col-md-4 col-lg-3">
                                                     <div class="card">
-                                                        <div class="checkbox-area">
-                                                            <input class="document-checkbox grid-input"
-                                                                   type="checkbox" name="document_id[]"
-                                                                   value="{{$gitem['document_id']}}">
-                                                        </div>
-{{--                                                        <div class="card-body">--}}
-{{--                                                            <div class="image-portion">--}}
-{{--                                                                <img class="document-image"--}}
-{{--                                                                     src="{{url('/images/thumbnail/'.$gitem['document_id'].'.png')}}"--}}
-{{--                                                                     alt="{{$gitem['document_id']}}">--}}
-{{--                                                            </div>--}}
+{{--                                                        <div class="checkbox-area">--}}
+{{--                                                            <input class="document-checkbox grid-input"--}}
+{{--                                                                   type="checkbox" name="document_id[]"--}}
+{{--                                                                   value="{{$gitem['document_id']}}">--}}
 {{--                                                        </div>--}}
                                                         <div class="text-btn-portion">
                                                             <div class="text-portion">
@@ -174,12 +167,12 @@
                                                         <!-- Main row start -->
                                                         @foreach($document['document'] as $gitem)
                                                             <div class="tr row">
-                                                                <div class="name-data td col-5 col-md-5 col-lg-7">
-                                                                    <input class="document-checkbox"
-                                                                           type="checkbox" name="document_id[]"
-                                                                           value="{{$gitem['document_id']}}">
-                                                                    {{$gitem['name']}}
-                                                                </div>
+{{--                                                                <div class="name-data td col-5 col-md-5 col-lg-7">--}}
+{{--                                                                    <input class="document-checkbox"--}}
+{{--                                                                           type="checkbox" name="document_id[]"--}}
+{{--                                                                           value="{{$gitem['document_id']}}">--}}
+{{--                                                                    {{$gitem['name']}}--}}
+{{--                                                                </div>--}}
                                                                 <div
                                                                     class="update-date-data td col-3 col-md-3 col-lg-4">{{$gitem['updated_at']}}</div>
                                                                 <div class="action-data td col-2 col-md-2 col-lg-1">
@@ -230,26 +223,7 @@
                                 <!-- Dynamic "Id" , "aria-labelledby", "data-bs-parent" will be generated here by concatenating the file year -->
                                 <div class="accordion-body">
                                     <!-- Tabs navs -->
-                                    {{--START Previously used for month pills--}}
-                                    {{--                                    <ul class="nav nav-pills mb-3" id="pills-tab-{{str_replace(' ', '', $year)}}" role="tablist">--}}
-                                    {{--                                        @foreach($mailbox as $key=>$value)--}}
-                                    {{--                                            <li class="nav-item" role="presentation">--}}
-                                    {{--                                                <button class="nav-link {{ $loop->first ?  'active' : '' }}" id="pills-{{$key}}-{{str_replace(' ', '', $year)}}-tab"--}}
-                                    {{--                                                        data-bs-toggle="pill" data-bs-target="#pills-{{$key}}-{{str_replace(' ', '', $year)}}"--}}
-                                    {{--                                                        type="button" role="tab"--}}
-                                    {{--                                                        aria-controls="pills-{{$key}}-{{str_replace(' ', '', $year)}}"--}}
-                                    {{--                                                        aria-selected="true">{{str_replace(' ', '', $year)}}</button>--}}
-                                    {{--                                            </li>--}}
-                                    {{--                                        @endforeach--}}
-                                    {{--                                    </ul>--}}
-                                    {{--END Previously used for month pills--}}
-
                                     <div class="tab-content" id="pills-tabContent-{{str_replace(' ', '', $year)}}">
-                                        {{--                                    <div class="tab-content" id="pills-tabContent">--}}
-                                        <!--For all "tab-pane" buttons dynamic "Id","aria-labelledby" will be generated here by concatenating the file year -->
-                                        {{--                                            @foreach($mailbox as $key=>$gitem)--}}
-                                        {{--                                                <div class="tab-pane fade {{ $loop->first ?  'show active' : '' }}" id="pills-{{$key}}-{{str_replace(' ', '', $year)}}"--}}
-                                        {{--                                                     role="tabpanel" aria-labelledby="pills-{{$key}}-{{str_replace(' ', '', $year)}}-tab">--}}
                                         <div class="tab-pane fade show active"
                                              id="pills-{{str_replace(' ', '', $year)}}"
                                              role="tabpanel"
@@ -260,18 +234,11 @@
                                                     <!-- Start of the main Card -->
                                                     <div class="col-sm-6 col-md-4 col-lg-3">
                                                         <div class="card">
-                                                            <div class="checkbox-area">
-                                                                <input class="document-checkbox grid-input"
-                                                                       type="checkbox" name="files[]"
-                                                                       {{--                                                                                   value="{{$gitem['file']}}">--}}
-                                                                       value="{{'company_'.$gitem['company_id'].'/'.Helper::convertToTitleCase($gitem['category']).'/'.$gitem['directory'].'/'.$gitem['file']}}">
-                                                            </div>
-{{--                                                            <div class="card-body">--}}
-{{--                                                                <div class="image-portion">--}}
-{{--                                                                    <img class="document-image"--}}
-{{--                                                                         src="{{asset('images/GOA.png')}}"--}}
-{{--                                                                         alt="{{$gitem['file']}}">--}}
-{{--                                                                </div>--}}
+{{--                                                            <div class="checkbox-area">--}}
+{{--                                                                <input class="document-checkbox grid-input"--}}
+{{--                                                                       type="checkbox" name="files[]"--}}
+{{--                                                                       --}}{{--                                                                                   value="{{$gitem['file']}}">--}}
+{{--                                                                       value="{{'company_'.$gitem['company_id'].'/'.Helper::convertToTitleCase($gitem['category']).'/'.$gitem['directory'].'/'.$gitem['file']}}">--}}
 {{--                                                            </div>--}}
                                                             <div class="text-btn-portion">
                                                                 <div class="text-portion">
@@ -321,31 +288,16 @@
                                                         <div class="tbody">
                                                             @foreach($mailbox as $litem)
                                                                 <!-- Main row start -->
-                                                                {{--                                                                    @if(key_exists('document_id', $litem))--}}
-                                                                {{--                                                                        <div class="tr row">--}}
-                                                                {{--                                                                            <div class="name-data td col-5 col-md-5 col-lg-7">--}}
-                                                                {{--                                                                                <input class="document-checkbox"--}}
-                                                                {{--                                                                                       type="checkbox" name="document_id[]"--}}
-                                                                {{--                                                                                       value="{{$litem['document_id']}}">--}}
-                                                                {{--                                                                                {{$litem['name']}}--}}
-                                                                {{--                                                                            </div>--}}
-                                                                {{--                                                                            <div class="update-date-data td col-3 col-md-3 col-lg-4">{{$litem['updated_at']}}</div>--}}
-                                                                {{--                                                                            <div--}}
-                                                                {{--                                                                                class="action-data td col-2 col-md-2 col-lg-1">--}}
-                                                                {{--                                                                                <button type="submit" class="btn download-btn list-{{$litem['document_id']}}" id="{{$litem['document_id']}}" onclick="individualDownload(this)">Download</button>--}}
-                                                                {{--                                                                                <a href="#" class="btn download-btn" type="submit" id="{{$item['document_id']}}" onclick="individualDownload(this)">{{item['downloaded_at'] != null ? 'Downloaded' : 'Download'}}</a>--}}
-                                                                {{--                                                                            </div>--}}
-                                                                {{--                                                                        </div>--}}
-                                                                {{--                                                                    @else--}}
+
                                                                 <div class="tr row">
-                                                                    <div class="name-data td col-5 col-md-5 col-lg-7">
-                                                                        <input class="document-checkbox"
-                                                                               type="checkbox" name="files[]"
-                                                                               {{--                                                                                       value="{{$litem['file']}}">--}}
-                                                                               value="{{'company_'.$litem['company_id'].'/'.Helper::convertToTitleCase($gitem['category']).'/'.$litem['directory'].'/'.$litem['file']}}">
-                                                                        {{$litem['title']}}
-                                                                    </div>
-                                                                    <div
+{{--                                                                    <div class="name-data td col-5 col-md-5 col-lg-7">--}}
+{{--                                                                        <input class="document-checkbox"--}}
+{{--                                                                               type="checkbox" name="files[]"--}}
+{{--                                                                               --}}{{--                                                                                       value="{{$litem['file']}}">--}}
+{{--                                                                               value="{{'company_'.$litem['company_id'].'/'.Helper::convertToTitleCase($gitem['category']).'/'.$litem['directory'].'/'.$litem['file']}}">--}}
+{{--                                                                        {{$litem['title']}}--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div--}}
                                                                         class="update-date-data td col-3 col-md-3 col-lg-4">{{\Carbon\Carbon::parse($litem['updated_at'])->timezone('Asia/Singapore')->format('d M Y H:i')}}</div>
                                                                     <div
                                                                         class="action-data td col-2 col-md-2 col-lg-1">

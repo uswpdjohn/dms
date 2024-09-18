@@ -109,7 +109,7 @@
                             <td><b style="color: #718096;">{{$details['title']}}</b></td>
                         </tr>
                         <tr class="justified_text">
-                            <td><span style="color: #718096;">We have sent it to your {{$details['category']}} folder for your perusal and handling.</span><br>
+                            <td><span style="color: #718096;">We have sent it to your {{$details['folder']}} folder for your perusal and handling.</span><br>
                             </td>
                         </tr>
                         <tr>
@@ -128,7 +128,7 @@
                     @elseif(key_exists('purpose',$details) && $details['purpose'] == 'request for signup')
                         <tr class="justified_text" style="margin-top: 20px;">
                             <td><span
-                                    style="color: #718096;">You are receiving this email because {{$details['first_name']}} {{$details['last_name']}} is requested for an account opening in Gateway of Asia.</span>
+                                    style="color: #718096;">You are receiving this email because {{$details['first_name']}} {{$details['last_name']}} is requested for an account opening in USW-MSC.</span>
                             </td>
                         </tr>
                         <tr class="justified_text">
@@ -160,7 +160,11 @@
                             </td>
                         </tr>
                         <br>
-
+                    @elseif(key_exists('purpose',$details) && $details['purpose'] =='temporary download link send')
+                        <tr class="justified_text" style="margin-top: 20px;">
+                            <td><span style="color: #718096;">{{$details['body']}}</span>
+                            </td>
+                        </tr>
                     @endif
                     @if(key_exists('remember_token',$details))
                         <tr>

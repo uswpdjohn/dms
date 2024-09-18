@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\CompanyManagement\CompanyManagementShowAction;
 use App\Actions\Dashboard\ChartAction;
+use App\Actions\Dashboard\GetDashboardData;
 use App\Actions\Session\SessionAction;
 use App\Actions\Ticket\TicketAdminListAction;
 use App\Helpers\Helper;
@@ -27,9 +28,7 @@ class DashboardController extends Controller
 
         if (Auth::user()->hasRole('Company User')) {
             $company_id = CompanyUserSession::where('key', 'company_id')->first();
-
             if($company_id->value==null){
-
                 $response=(new SessionAction())->execute();
             }
 //            abort_unless(
@@ -45,7 +44,8 @@ class DashboardController extends Controller
                 )
             );
         }
-        return view('dashboard.dashboard');
+        $data=  (new GetDashboardData())->execute();
+        return view('dashboard.dashboard',compact('data'));
 
     }
     public function getPieChartData(ChartInterface $interface)

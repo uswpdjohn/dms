@@ -74,6 +74,7 @@ class UserCreateAction implements StoreUserInterface
                     }
 
                 }
+
                 $user_create->first_name=$validatedData['first_name'];
                 if(key_exists('last_name', $validatedData)){
 
@@ -98,6 +99,13 @@ class UserCreateAction implements StoreUserInterface
                 if(key_exists('company_id',$validatedData)){
                     $validatedData['user_id']=$user_create->id;
                     (new CompanyUserCreateAction())->execute($validatedData);
+                }
+                if($validatedData['role'] == 'General User'){
+                    Company::create([
+                        'name' => $validatedData['first_name'],
+                        'uen' => Str::random(10),
+                        'created_by' => $user_create->id,
+                    ]);
                 }
 
                 //assign permission
@@ -157,6 +165,7 @@ class UserCreateAction implements StoreUserInterface
 
 //                event(new Registered($user_create)); //for email verification
                 DB::commit();
+
                 return array(
                     'success' => true,
                     'message'=> 'User Created Successfully'
