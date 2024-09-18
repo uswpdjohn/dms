@@ -2431,16 +2431,35 @@
                 urlWrapper = 'hr-temp'
             }
             var textToCopy = $('#'+urlWrapper).text();
-            navigator.clipboard.writeText(textToCopy).then(function() {
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            textArea.style.opacity = 0;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const success = document.execCommand('copy');
                 $('#'+urlWrapper).next('span').next('span').text('')
                 $('#'+urlWrapper).next('span').next('span').append(`<code> copied</code`)
+                setTimeout(function () {
+                    $('#'+urlWrapper).next('span').next('span').text('')
+                }, 4000);
+                // console.log(`Text copy was ${success ? 'successful' : 'unsuccessful'}.`);
+            } catch (err) {
+                console.error(err.name, err.message);
+            }
+            document.body.removeChild(textArea);
 
-            }).catch(function(err) {
-                $('#'+urlWrapper).next('span').next('span').append(`<code>something went wrong!</code`)
-            });
-            setTimeout(function () {
-                $('#'+urlWrapper).next('span').next('span').text('')
-            }, 4000);
+            // navigator.clipboard.writeText(textToCopy).then(function() {
+            //     $('#'+urlWrapper).next('span').next('span').text('')
+            //     $('#'+urlWrapper).next('span').next('span').append(`<code> copied</code`)
+            //
+            // }).catch(function(err) {
+            //     $('#'+urlWrapper).next('span').next('span').append(`<code>something went wrong!</code`)
+            // });
+            // setTimeout(function () {
+            //     $('#'+urlWrapper).next('span').next('span').text('')
+            // }, 4000);
         }
 
 
