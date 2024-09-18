@@ -182,16 +182,13 @@
         <div style="padding: 10px;color: skyblue;">Supporting Tools</div>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start pt-2" id="menu">
             <li class="nav-item ">
-                <a href="#" class="nav-link align-middle px-0">
-                    <i class="fa-regular fa-circle-dot" style="margin-right: 13px;"></i>Tool 1</span>
+                <a href="/spb/merge-pdfs" class="nav-link align-middle px-0">
+                    <i class="fa-regular fa-circle-dot" style="margin-right: 13px;"></i>Merge PDF</span>
                 </a>
-            </li><li class="nav-item ">
-                <a href="#" class="nav-link align-middle px-0">
-                    <i class="fa-regular fa-circle-dot" style="margin-right: 13px;"></i>Tool 2</span>
-                </a>
-            </li><li class="nav-item ">
-                <a href="#" class="nav-link align-middle px-0">
-                    <i class="fa-regular fa-circle-dot" style="margin-right: 13px;"></i>Tool 3</span>
+            </li>
+            <li class="nav-item ">
+                <a href="/spb/split-pdfs" class="nav-link align-middle px-0">
+                    <i class="fa-regular fa-circle-dot" style="margin-right: 13px;"></i>Split PDF</span>
                 </a>
             </li>
         </ul>
