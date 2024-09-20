@@ -36,6 +36,7 @@ Run migration in the laravel docker container
 `$ docker exec laravel_app php artisan migrate`
 
 Run seeder command (optional)
+
 `$ docker exec laravel_app php artisan migrate --seed`
 
 ## Live Server
