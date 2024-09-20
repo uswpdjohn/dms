@@ -12,7 +12,7 @@ Run the following command to clone the repository
 Build the gradle in Stirline
 
 ```
-$ cd strline/
+$ cd strling/
 $ ./gradlew build
 ```
 
